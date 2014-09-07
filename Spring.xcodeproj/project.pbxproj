@@ -22,6 +22,9 @@
 		5AA3CBA819BBC9F200D07D51 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA3CB8719BBC9F200D07D51 /* UIKit.framework */; };
 		5AA3CBB019BBC9F200D07D51 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5AA3CBAE19BBC9F200D07D51 /* InfoPlist.strings */; };
 		5AA3CBB219BBC9F200D07D51 /* SpringTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA3CBB119BBC9F200D07D51 /* SpringTests.m */; };
+		5AA3CBBD19BBF01F00D07D51 /* EventTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA3CBBC19BBF01F00D07D51 /* EventTableViewCell.m */; };
+		5AA3CBC019BC126000D07D51 /* EventDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA3CBBF19BC126000D07D51 /* EventDetailViewController.m */; };
+		5AA3CBC319BC13DA00D07D51 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA3CBC219BC13DA00D07D51 /* Event.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +59,12 @@
 		5AA3CBAD19BBC9F200D07D51 /* SpringTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SpringTests-Info.plist"; sourceTree = "<group>"; };
 		5AA3CBAF19BBC9F200D07D51 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5AA3CBB119BBC9F200D07D51 /* SpringTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpringTests.m; sourceTree = "<group>"; };
+		5AA3CBBB19BBF01F00D07D51 /* EventTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventTableViewCell.h; sourceTree = "<group>"; };
+		5AA3CBBC19BBF01F00D07D51 /* EventTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventTableViewCell.m; sourceTree = "<group>"; };
+		5AA3CBBE19BC126000D07D51 /* EventDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventDetailViewController.h; sourceTree = "<group>"; };
+		5AA3CBBF19BC126000D07D51 /* EventDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventDetailViewController.m; sourceTree = "<group>"; };
+		5AA3CBC119BC13DA00D07D51 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		5AA3CBC219BC13DA00D07D51 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,8 +127,14 @@
 				5AA3CB9219BBC9F200D07D51 /* AppDelegate.h */,
 				5AA3CB9319BBC9F200D07D51 /* AppDelegate.m */,
 				5AA3CB9519BBC9F200D07D51 /* Main.storyboard */,
+				5AA3CBBE19BC126000D07D51 /* EventDetailViewController.h */,
+				5AA3CBBF19BC126000D07D51 /* EventDetailViewController.m */,
+				5AA3CBBB19BBF01F00D07D51 /* EventTableViewCell.h */,
+				5AA3CBBC19BBF01F00D07D51 /* EventTableViewCell.m */,
 				5AA3CB9819BBC9F200D07D51 /* FirstViewController.h */,
 				5AA3CB9919BBC9F200D07D51 /* FirstViewController.m */,
+				5AA3CBC119BC13DA00D07D51 /* Event.h */,
+				5AA3CBC219BC13DA00D07D51 /* Event.m */,
 				5AA3CB9B19BBC9F200D07D51 /* SecondViewController.h */,
 				5AA3CB9C19BBC9F200D07D51 /* SecondViewController.m */,
 				5AA3CB9E19BBC9F200D07D51 /* Images.xcassets */,
@@ -203,6 +218,9 @@
 			attributes = {
 				LastUpgradeCheck = 0510;
 				TargetAttributes = {
+					5AA3CB7F19BBC9F200D07D51 = {
+						DevelopmentTeam = FCFZ9EC7VS;
+					};
 					5AA3CBA319BBC9F200D07D51 = {
 						TestTargetID = 5AA3CB7F19BBC9F200D07D51;
 					};
@@ -253,10 +271,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AA3CBC019BC126000D07D51 /* EventDetailViewController.m in Sources */,
 				5AA3CB9D19BBC9F200D07D51 /* SecondViewController.m in Sources */,
 				5AA3CB9419BBC9F200D07D51 /* AppDelegate.m in Sources */,
 				5AA3CB9A19BBC9F200D07D51 /* FirstViewController.m in Sources */,
 				5AA3CB9019BBC9F200D07D51 /* main.m in Sources */,
+				5AA3CBBD19BBF01F00D07D51 /* EventTableViewCell.m in Sources */,
+				5AA3CBC319BC13DA00D07D51 /* Event.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,10 +402,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Spring/Spring-Prefix.pch";
 				INFOPLIST_FILE = "Spring/Spring-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -394,10 +418,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Spring/Spring-Prefix.pch";
 				INFOPLIST_FILE = "Spring/Spring-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

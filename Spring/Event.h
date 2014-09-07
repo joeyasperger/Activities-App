@@ -10,4 +10,11 @@
 
 @interface Event : NSObject
 
+@property NSInteger ID;
+@property NSString *eventName;
+@property NSString *userName;
+@property NSInteger numberInterested;
+@property NSString *message;
+@property NSString *activityName;
+
 @end

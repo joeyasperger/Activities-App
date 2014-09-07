@@ -10,4 +10,11 @@
 
 @implementation Event
 
+@synthesize ID = _ID;
+@synthesize eventName = _eventName;
+@synthesize userName = _userName;
+@synthesize activityName = _activityName;
+@synthesize message = _message;
+@synthesize numberInterested = _numberInterested;
+
 @end
