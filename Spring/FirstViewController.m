@@ -8,9 +8,11 @@
 
 #import "FirstViewController.h"
 #import "EventTableViewCell.h"
+#import "EventDetailViewController.h"
 #import "Event.h"
 
 @interface FirstViewController ()
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -65,6 +67,14 @@
     cell.messageLabel.text = ((Event*)events[row]).message;
     
     return cell;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"ShowEventDetail"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        EventDetailViewController *destViewController = segue.destinationViewController;
+        destViewController.event = [events objectAtIndex:indexPath.row];
+    }
 }
 
 @end

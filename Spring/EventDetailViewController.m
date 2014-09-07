@@ -7,12 +7,25 @@
 //
 
 #import "EventDetailViewController.h"
+#import "Event.h"
 
 @interface EventDetailViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *userLabel;
+@property (weak, nonatomic) IBOutlet UILabel *activityLabel;
+@property (weak, nonatomic) IBOutlet UILabel *messageLabel;
+@property (weak, nonatomic) IBOutlet UILabel *peopleInterestedLabel;
+@property (weak, nonatomic) IBOutlet UINavigationItem *eventTitleLabel;
 
 @end
 
 @implementation EventDetailViewController
+
+@synthesize userLabel = _userLabel;
+@synthesize activityLabel = _activityLabel;
+@synthesize messageLabel = _messageLabel;
+@synthesize peopleInterestedLabel = _peopleInterestedLabel;
+@synthesize eventTitleLabel = _eventTitleLabel;
+@synthesize event = _event;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,6 +39,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.userLabel.text = [NSString stringWithFormat:@"Creator: %@", self.event.userName];
+    self.activityLabel.text = [NSString stringWithFormat:@"Type: %@", self.event.activityName];
+    self.messageLabel.text = [NSString stringWithFormat:@"Message: %@", self.event.message];
+    self.peopleInterestedLabel.text = [NSString stringWithFormat:@"%i people interested", self.event.numberInterested];
+    self.eventTitleLabel.title = self.event.eventName;
     // Do any additional setup after loading the view.
 }
 
