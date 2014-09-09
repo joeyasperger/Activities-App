@@ -10,4 +10,8 @@
 
 @interface UserProfile : NSObject
 
++(BOOL) loggedIn;
++(NSString*) userName;
++(NSString*) email;
+
 @end

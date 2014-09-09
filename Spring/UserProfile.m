@@ -10,4 +10,17 @@
 
 @implementation UserProfile
 
++(BOOL) loggedIn{
+    return YES;
+}
+
++(NSString*) userName{
+    return @"Joey Asperger";
+}
+
++(NSString*) email{
+   return @"joeyasperger@gmail.com";
+}
+
+
 @end

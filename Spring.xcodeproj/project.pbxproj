@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A92AEAC19BEC8F8001C52F7 /* UserProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A92AEAB19BEC8F8001C52F7 /* UserProfile.m */; };
 		5AA3CB8419BBC9F200D07D51 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA3CB8319BBC9F200D07D51 /* Foundation.framework */; };
 		5AA3CB8619BBC9F200D07D51 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA3CB8519BBC9F200D07D51 /* CoreGraphics.framework */; };
 		5AA3CB8819BBC9F200D07D51 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA3CB8719BBC9F200D07D51 /* UIKit.framework */; };
@@ -26,7 +27,6 @@
 		5AA3CBC019BC126000D07D51 /* EventDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA3CBBF19BC126000D07D51 /* EventDetailViewController.m */; };
 		5AA3CBC319BC13DA00D07D51 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA3CBC219BC13DA00D07D51 /* Event.m */; };
 		5AF94FB319BE395F0043E062 /* ServerInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AF94FB219BE395F0043E062 /* ServerInfo.m */; };
-		5AF94FB519BE5ED80043E062 /* allevents.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5AF94FB419BE5ED80043E062 /* allevents.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5A92AEAA19BEC8F8001C52F7 /* UserProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfile.h; sourceTree = "<group>"; };
+		5A92AEAB19BEC8F8001C52F7 /* UserProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfile.m; sourceTree = "<group>"; };
 		5AA3CB8019BBC9F200D07D51 /* Spring.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spring.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AA3CB8319BBC9F200D07D51 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5AA3CB8519BBC9F200D07D51 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -69,7 +71,6 @@
 		5AA3CBC219BC13DA00D07D51 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		5AF94FB119BE395F0043E062 /* ServerInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerInfo.h; sourceTree = "<group>"; };
 		5AF94FB219BE395F0043E062 /* ServerInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerInfo.m; sourceTree = "<group>"; };
-		5AF94FB419BE5ED80043E062 /* allevents.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = allevents.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +133,8 @@
 				5AA3CB9219BBC9F200D07D51 /* AppDelegate.h */,
 				5AA3CB9319BBC9F200D07D51 /* AppDelegate.m */,
 				5AA3CB9519BBC9F200D07D51 /* Main.storyboard */,
+				5A92AEAA19BEC8F8001C52F7 /* UserProfile.h */,
+				5A92AEAB19BEC8F8001C52F7 /* UserProfile.m */,
 				5AA3CBBE19BC126000D07D51 /* EventDetailViewController.h */,
 				5AA3CBBF19BC126000D07D51 /* EventDetailViewController.m */,
 				5AA3CBBB19BBF01F00D07D51 /* EventTableViewCell.h */,
@@ -153,7 +156,6 @@
 		5AA3CB8A19BBC9F200D07D51 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				5AF94FB419BE5ED80043E062 /* allevents.plist */,
 				5AA3CB8B19BBC9F200D07D51 /* Spring-Info.plist */,
 				5AA3CB8C19BBC9F200D07D51 /* InfoPlist.strings */,
 				5AA3CB8F19BBC9F200D07D51 /* main.m */,
@@ -261,7 +263,6 @@
 				5AA3CB9F19BBC9F200D07D51 /* Images.xcassets in Resources */,
 				5AA3CB8E19BBC9F200D07D51 /* InfoPlist.strings in Resources */,
 				5AA3CB9719BBC9F200D07D51 /* Main.storyboard in Resources */,
-				5AF94FB519BE5ED80043E062 /* allevents.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +283,7 @@
 			files = (
 				5AA3CBC019BC126000D07D51 /* EventDetailViewController.m in Sources */,
 				5AA3CB9D19BBC9F200D07D51 /* MoreViewController.m in Sources */,
+				5A92AEAC19BEC8F8001C52F7 /* UserProfile.m in Sources */,
 				5AF94FB319BE395F0043E062 /* ServerInfo.m in Sources */,
 				5AA3CB9419BBC9F200D07D51 /* AppDelegate.m in Sources */,
 				5AA3CB9A19BBC9F200D07D51 /* FeedViewController.m in Sources */,
