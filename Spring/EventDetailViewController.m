@@ -42,7 +42,7 @@
     self.userLabel.text = [NSString stringWithFormat:@"Creator: %@", self.event.userName];
     self.activityLabel.text = [NSString stringWithFormat:@"Type: %@", self.event.activityName];
     self.messageLabel.text = [NSString stringWithFormat:@"Message: %@", self.event.message];
-    self.peopleInterestedLabel.text = [NSString stringWithFormat:@"%i people interested", self.event.numberInterested];
+    self.peopleInterestedLabel.text = [NSString stringWithFormat:@"%ld people interested", (long)self.event.numberInterested];
     self.eventTitleLabel.title = self.event.eventName;
     // Do any additional setup after loading the view.
 }

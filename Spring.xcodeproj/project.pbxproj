@@ -14,8 +14,8 @@
 		5AA3CB9019BBC9F200D07D51 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA3CB8F19BBC9F200D07D51 /* main.m */; };
 		5AA3CB9419BBC9F200D07D51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA3CB9319BBC9F200D07D51 /* AppDelegate.m */; };
 		5AA3CB9719BBC9F200D07D51 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AA3CB9519BBC9F200D07D51 /* Main.storyboard */; };
-		5AA3CB9A19BBC9F200D07D51 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA3CB9919BBC9F200D07D51 /* FirstViewController.m */; };
-		5AA3CB9D19BBC9F200D07D51 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA3CB9C19BBC9F200D07D51 /* SecondViewController.m */; };
+		5AA3CB9A19BBC9F200D07D51 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA3CB9919BBC9F200D07D51 /* FeedViewController.m */; };
+		5AA3CB9D19BBC9F200D07D51 /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA3CB9C19BBC9F200D07D51 /* MoreViewController.m */; };
 		5AA3CB9F19BBC9F200D07D51 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AA3CB9E19BBC9F200D07D51 /* Images.xcassets */; };
 		5AA3CBA619BBC9F200D07D51 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA3CBA519BBC9F200D07D51 /* XCTest.framework */; };
 		5AA3CBA719BBC9F200D07D51 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA3CB8319BBC9F200D07D51 /* Foundation.framework */; };
@@ -25,6 +25,8 @@
 		5AA3CBBD19BBF01F00D07D51 /* EventTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA3CBBC19BBF01F00D07D51 /* EventTableViewCell.m */; };
 		5AA3CBC019BC126000D07D51 /* EventDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA3CBBF19BC126000D07D51 /* EventDetailViewController.m */; };
 		5AA3CBC319BC13DA00D07D51 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA3CBC219BC13DA00D07D51 /* Event.m */; };
+		5AF94FB319BE395F0043E062 /* ServerInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AF94FB219BE395F0043E062 /* ServerInfo.m */; };
+		5AF94FB519BE5ED80043E062 /* allevents.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5AF94FB419BE5ED80043E062 /* allevents.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,10 +51,10 @@
 		5AA3CB9219BBC9F200D07D51 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5AA3CB9319BBC9F200D07D51 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		5AA3CB9619BBC9F200D07D51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		5AA3CB9819BBC9F200D07D51 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		5AA3CB9919BBC9F200D07D51 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		5AA3CB9B19BBC9F200D07D51 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		5AA3CB9C19BBC9F200D07D51 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		5AA3CB9819BBC9F200D07D51 /* FeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedViewController.h; sourceTree = "<group>"; };
+		5AA3CB9919BBC9F200D07D51 /* FeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedViewController.m; sourceTree = "<group>"; };
+		5AA3CB9B19BBC9F200D07D51 /* MoreViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoreViewController.h; sourceTree = "<group>"; };
+		5AA3CB9C19BBC9F200D07D51 /* MoreViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoreViewController.m; sourceTree = "<group>"; };
 		5AA3CB9E19BBC9F200D07D51 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5AA3CBA419BBC9F200D07D51 /* SpringTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpringTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AA3CBA519BBC9F200D07D51 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -65,6 +67,9 @@
 		5AA3CBBF19BC126000D07D51 /* EventDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventDetailViewController.m; sourceTree = "<group>"; };
 		5AA3CBC119BC13DA00D07D51 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
 		5AA3CBC219BC13DA00D07D51 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
+		5AF94FB119BE395F0043E062 /* ServerInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerInfo.h; sourceTree = "<group>"; };
+		5AF94FB219BE395F0043E062 /* ServerInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerInfo.m; sourceTree = "<group>"; };
+		5AF94FB419BE5ED80043E062 /* allevents.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = allevents.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,12 +136,14 @@
 				5AA3CBBF19BC126000D07D51 /* EventDetailViewController.m */,
 				5AA3CBBB19BBF01F00D07D51 /* EventTableViewCell.h */,
 				5AA3CBBC19BBF01F00D07D51 /* EventTableViewCell.m */,
-				5AA3CB9819BBC9F200D07D51 /* FirstViewController.h */,
-				5AA3CB9919BBC9F200D07D51 /* FirstViewController.m */,
+				5AA3CB9819BBC9F200D07D51 /* FeedViewController.h */,
+				5AA3CB9919BBC9F200D07D51 /* FeedViewController.m */,
+				5AF94FB119BE395F0043E062 /* ServerInfo.h */,
+				5AF94FB219BE395F0043E062 /* ServerInfo.m */,
 				5AA3CBC119BC13DA00D07D51 /* Event.h */,
 				5AA3CBC219BC13DA00D07D51 /* Event.m */,
-				5AA3CB9B19BBC9F200D07D51 /* SecondViewController.h */,
-				5AA3CB9C19BBC9F200D07D51 /* SecondViewController.m */,
+				5AA3CB9B19BBC9F200D07D51 /* MoreViewController.h */,
+				5AA3CB9C19BBC9F200D07D51 /* MoreViewController.m */,
 				5AA3CB9E19BBC9F200D07D51 /* Images.xcassets */,
 				5AA3CB8A19BBC9F200D07D51 /* Supporting Files */,
 			);
@@ -146,6 +153,7 @@
 		5AA3CB8A19BBC9F200D07D51 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5AF94FB419BE5ED80043E062 /* allevents.plist */,
 				5AA3CB8B19BBC9F200D07D51 /* Spring-Info.plist */,
 				5AA3CB8C19BBC9F200D07D51 /* InfoPlist.strings */,
 				5AA3CB8F19BBC9F200D07D51 /* main.m */,
@@ -253,6 +261,7 @@
 				5AA3CB9F19BBC9F200D07D51 /* Images.xcassets in Resources */,
 				5AA3CB8E19BBC9F200D07D51 /* InfoPlist.strings in Resources */,
 				5AA3CB9719BBC9F200D07D51 /* Main.storyboard in Resources */,
+				5AF94FB519BE5ED80043E062 /* allevents.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,9 +281,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AA3CBC019BC126000D07D51 /* EventDetailViewController.m in Sources */,
-				5AA3CB9D19BBC9F200D07D51 /* SecondViewController.m in Sources */,
+				5AA3CB9D19BBC9F200D07D51 /* MoreViewController.m in Sources */,
+				5AF94FB319BE395F0043E062 /* ServerInfo.m in Sources */,
 				5AA3CB9419BBC9F200D07D51 /* AppDelegate.m in Sources */,
-				5AA3CB9A19BBC9F200D07D51 /* FirstViewController.m in Sources */,
+				5AA3CB9A19BBC9F200D07D51 /* FeedViewController.m in Sources */,
 				5AA3CB9019BBC9F200D07D51 /* main.m in Sources */,
 				5AA3CBBD19BBF01F00D07D51 /* EventTableViewCell.m in Sources */,
 				5AA3CBC319BC13DA00D07D51 /* Event.m in Sources */,
@@ -488,6 +498,7 @@
 				5AA3CBB719BBC9F200D07D51 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5AA3CBB819BBC9F200D07D51 /* Build configuration list for PBXNativeTarget "SpringTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +507,7 @@
 				5AA3CBBA19BBC9F200D07D51 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

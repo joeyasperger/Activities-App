@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>ID</key>
+		<string>1</string>
+		<key>activity</key>
+		<string>Wiffleball</string>
+		<key>description</key>
+		<string>Anyone want to play some wiffleball?</string>
+		<key>eventName</key>
+		<string>Wiffleball Game</string>
+		<key>numberInterested</key>
+		<string>0</string>
+		<key>userID</key>
+		<string>33</string>
+		<key>username</key>
+		<string>Joey Asperger</string>
+	</dict>
+	<dict>
+		<key>ID</key>
+		<string>2</string>
+		<key>activity</key>
+		<string>Baseball</string>
+		<key>description</key>
+		<string>I want to play a baseball?</string>
+		<key>eventName</key>
+		<string>Baseball</string>
+		<key>numberInterested</key>
+		<string>0</string>
+		<key>userID</key>
+		<string>34</string>
+		<key>username</key>
+		<string>Luke Asperger</string>
+	</dict>
+	<dict>
+		<key>ID</key>
+		<string>3</string>
+		<key>activity</key>
+		<string>Soccer</string>
+		<key>description</key>
+		<string>Who wants to get some soccer training in?</string>
+		<key>eventName</key>
+		<string>Soccer Training</string>
+		<key>numberInterested</key>
+		<string>0</string>
+		<key>userID</key>
+		<string>35</string>
+		<key>username</key>
+		<string>Alex Pinon</string>
+	</dict>
+	<dict>
+		<key>ID</key>
+		<string>4</string>
+		<key>activity</key>
+		<string>Football</string>
+		<key>description</key>
+		<string>Let's get a game of football going</string>
+		<key>eventName</key>
+		<string>Football</string>
+		<key>numberInterested</key>
+		<string>0</string>
+		<key>userID</key>
+		<string>36</string>
+		<key>username</key>
+		<string>Jake Zelek</string>
+	</dict>
+</array>
+</plist>
