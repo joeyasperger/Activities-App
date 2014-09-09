@@ -1,5 +1,0 @@
-from _<$managedObjectClassName$> import _<$managedObjectClassName$>
-
-class <$managedObjectClassName$>(_<$managedObjectClassName$>):
-    pass
-    # Custom logic goes here.

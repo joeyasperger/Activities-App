@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5A92AEAC19BEC8F8001C52F7 /* UserProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A92AEAB19BEC8F8001C52F7 /* UserProfile.m */; };
+		5A92AEAF19BF6B38001C52F7 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A92AEAE19BF6B38001C52F7 /* LoginViewController.m */; };
 		5AA3CB8419BBC9F200D07D51 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA3CB8319BBC9F200D07D51 /* Foundation.framework */; };
 		5AA3CB8619BBC9F200D07D51 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA3CB8519BBC9F200D07D51 /* CoreGraphics.framework */; };
 		5AA3CB8819BBC9F200D07D51 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA3CB8719BBC9F200D07D51 /* UIKit.framework */; };
@@ -42,6 +43,8 @@
 /* Begin PBXFileReference section */
 		5A92AEAA19BEC8F8001C52F7 /* UserProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfile.h; sourceTree = "<group>"; };
 		5A92AEAB19BEC8F8001C52F7 /* UserProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfile.m; sourceTree = "<group>"; };
+		5A92AEAD19BF6B38001C52F7 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		5A92AEAE19BF6B38001C52F7 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		5AA3CB8019BBC9F200D07D51 /* Spring.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spring.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AA3CB8319BBC9F200D07D51 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5AA3CB8519BBC9F200D07D51 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -135,6 +138,8 @@
 				5AA3CB9519BBC9F200D07D51 /* Main.storyboard */,
 				5A92AEAA19BEC8F8001C52F7 /* UserProfile.h */,
 				5A92AEAB19BEC8F8001C52F7 /* UserProfile.m */,
+				5A92AEAD19BF6B38001C52F7 /* LoginViewController.h */,
+				5A92AEAE19BF6B38001C52F7 /* LoginViewController.m */,
 				5AA3CBBE19BC126000D07D51 /* EventDetailViewController.h */,
 				5AA3CBBF19BC126000D07D51 /* EventDetailViewController.m */,
 				5AA3CBBB19BBF01F00D07D51 /* EventTableViewCell.h */,
@@ -285,6 +290,7 @@
 				5AA3CB9D19BBC9F200D07D51 /* MoreViewController.m in Sources */,
 				5A92AEAC19BEC8F8001C52F7 /* UserProfile.m in Sources */,
 				5AF94FB319BE395F0043E062 /* ServerInfo.m in Sources */,
+				5A92AEAF19BF6B38001C52F7 /* LoginViewController.m in Sources */,
 				5AA3CB9419BBC9F200D07D51 /* AppDelegate.m in Sources */,
 				5AA3CB9A19BBC9F200D07D51 /* FeedViewController.m in Sources */,
 				5AA3CB9019BBC9F200D07D51 /* main.m in Sources */,

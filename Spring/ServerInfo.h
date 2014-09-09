@@ -12,4 +12,7 @@
 
 @interface ServerInfo : NSObject
 
++(NSString*) alleventsURL;
++(NSString*) friendsURL:(NSInteger)userID;
+
 @end

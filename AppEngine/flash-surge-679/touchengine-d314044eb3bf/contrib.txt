@@ -1,3 +1,0 @@
-There are many projects to which touchengine is indebted.  Please see the contrib files in the various subdirectories to learn more about them.
-
-mogenerator by Jonathan "Wolf" Rentzsch and friends and hacked by us to generate python files is available in its canonical form from http://github.com/rentzsch/mogenerator

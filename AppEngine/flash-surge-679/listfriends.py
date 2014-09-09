@@ -5,7 +5,6 @@ import plistlib
 class ListFriends(webapp2.RequestHandler):
 
     def get(self):
-        # Checks for active Google account session
         self.response.headers['Content-Type'] = 'text/plain'
         conn = db.get_connection()
         cursor = conn.cursor()

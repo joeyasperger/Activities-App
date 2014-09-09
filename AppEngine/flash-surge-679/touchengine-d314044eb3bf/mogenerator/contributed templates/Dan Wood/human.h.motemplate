@@ -1,8 +1,0 @@
-#import "_<$managedObjectClassName$>.h"
-
-@interface <$managedObjectClassName$> : _<$managedObjectClassName$>
-{
-
-}
-
-@end

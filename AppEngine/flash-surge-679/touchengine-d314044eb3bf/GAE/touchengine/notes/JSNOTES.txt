@@ -1,9 +1,0 @@
-Bulk loading:
-
-bulkload_client.py --filename doctors.csv --kind Doctor --url http://localhost:8080/doctorload
-INFO     2009-02-21 18:47:56,280 bulkload_client.py] Starting import; maximum 10 entities per post
-INFO     2009-02-21 18:47:56,281 bulkload_client.py] Importing 5 entities in 62 bytes
-INFO     2009-02-21 18:47:56,330 bulkload_client.py] Import succcessful
-jonathan-saggaus-macbook-air:gae-json-rest-read-only jonathan$ bulkload_client.py --filename pagers.csv --kind Pager --url http://localhost:8080/pagerloadINFO     2009-02-21 18:48:00,614 bulkload_client.py] Starting import; maximum 10 entities per post
-INFO     2009-02-21 18:48:00,614 bulkload_client.py] Importing 5 entities in 159 bytes
-INFO     2009-02-21 18:48:00,691 bulkload_client.py] Import succcessful

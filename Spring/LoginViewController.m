@@ -9,10 +9,17 @@
 #import "LoginViewController.h"
 
 @interface LoginViewController ()
+@property (strong, nonatomic) IBOutlet UIView *emailField;
+@property (strong, nonatomic) IBOutlet UIView *passwordField;
 
 @end
 
 @implementation LoginViewController
+
+
+- (IBAction)Login:(id)sender {
+    [self performSegueWithIdentifier:@"LoginSegue" sender:sender];
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -45,5 +52,11 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"LoginSegue"]) {
+        
+    }
+}
 
 @end
