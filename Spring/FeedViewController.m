@@ -30,7 +30,7 @@
     
     self.responseData = [NSMutableData data];
     NSURLRequest *request = [NSURLRequest requestWithURL:
-                             [NSURL URLWithString:@ALL_EVENTS]];
+                             [NSURL URLWithString:[ServerInfo alleventsURL]]];
     [[NSURLConnection alloc] initWithRequest:request delegate:self];
     
     events = [NSMutableArray new];

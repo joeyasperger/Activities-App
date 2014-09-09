@@ -13,5 +13,10 @@
 +(BOOL) loggedIn;
 +(NSString*) userName;
 +(NSString*) email;
++(NSInteger) userID;
++(void) setID:(NSInteger)userid;
++(void) setName:(NSString*)username;
++(void) setEmail:(NSString*)userEmail;
++(void) setLoggedIn:(BOOL)userLoggedIn;
 
 @end

@@ -7,19 +7,72 @@
 //
 
 #import "LoginViewController.h"
+#import "ServerInfo.h"
+#import "UserProfile.h"
 
 @interface LoginViewController ()
-@property (strong, nonatomic) IBOutlet UIView *emailField;
-@property (strong, nonatomic) IBOutlet UIView *passwordField;
+@property (strong, nonatomic) IBOutlet UITextField *emailField;
+@property (strong, nonatomic) IBOutlet UITextField *passwordField;
+@property (weak, nonatomic) IBOutlet UILabel *errorLabel;
+@property NSMutableData *responseData;
+@property id sender;
 
 @end
 
 @implementation LoginViewController
 
+@synthesize sender = _sender;
+@synthesize emailField = _emailField;
+@synthesize passwordField = _passwordField;
+@synthesize responseData = _responseData;
+@synthesize errorLabel = _errorLabel;
 
 - (IBAction)Login:(id)sender {
-    [self performSegueWithIdentifier:@"LoginSegue" sender:sender];
+    NSURLRequest *request = [NSURLRequest requestWithURL:
+                             [NSURL URLWithString:[ServerInfo loginURL:self.emailField.text password:self.passwordField.text]]];
+    [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    self.sender = sender;
 }
+
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
+    NSLog(@"didReceiveResponse");
+    [self.responseData setLength:0];
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
+    [self.responseData appendData:data];
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
+    NSLog(@"didFailWithError");
+    NSLog(@"Connection failed: %@", [error description]);
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
+    NSLog(@"connectionDidFinishLoading");
+    NSLog(@"Succeeded! Received %ld bytes of data",(long)[self.responseData length]);
+    
+    NSString* pliststr = [[NSString alloc] initWithData:self.responseData encoding:NSUTF8StringEncoding];
+    NSLog(@"%@", pliststr);
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *pathString = [documentsDirectory stringByAppendingPathComponent:@"userinfo.plist"];
+    
+    [pliststr writeToFile:pathString atomically:YES encoding:NSUTF8StringEncoding error:nil];
+    
+    NSDictionary *userplist = [NSDictionary dictionaryWithContentsOfFile:pathString];
+    if ([[userplist valueForKey:@"error"]  isEqual: @"none"]){
+        [UserProfile setLoggedIn:YES];
+        [UserProfile setEmail:[userplist valueForKey:@"email"]];
+        [UserProfile setID:[userplist valueForKey:@"id"]];
+        [self performSegueWithIdentifier:@"LoginSegue" sender:self.sender];
+    }
+    else{
+        self.errorLabel.text = [userplist valueForKey:@"error"];
+    }
+    
+}
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -34,6 +87,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.errorLabel.text = @"";
 }
 
 - (void)didReceiveMemoryWarning

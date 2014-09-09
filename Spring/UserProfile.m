@@ -8,6 +8,11 @@
 
 #import "UserProfile.h"
 
+static NSString* email;
+static NSInteger userID;
+static BOOL loggedIn;
+static NSString* name;
+
 @implementation UserProfile
 
 +(BOOL) loggedIn{
@@ -15,11 +20,31 @@
 }
 
 +(NSString*) userName{
-    return @"Joey Asperger";
+    return name;
 }
 
 +(NSString*) email{
-   return @"joeyasperger@gmail.com";
+   return email;
+}
+
++(NSInteger) userID{
+    return userID;
+}
+
++(void) setEmail:(NSString *)userEmail{
+    email = userEmail;
+}
+
++(void) setID:(NSInteger)userid{
+    userID = userid;
+}
+
++(void) setLoggedIn:(BOOL)userLoggedIn{
+    loggedIn = userLoggedIn;
+}
+
++(void) setName:(NSString *)username{
+    name = username;
 }
 
 

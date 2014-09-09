@@ -8,8 +8,7 @@
 
 #import "ServerInfo.h"
 
-static NSString *host = @"http://192.168.1.134:8000";
-
+static NSString *host = @"http://192.168.1.134:8080";
 
 @implementation ServerInfo
 
@@ -19,6 +18,10 @@ static NSString *host = @"http://192.168.1.134:8000";
 
 +(NSString*) friendsURL:(NSInteger)userID{
     return [NSString stringWithFormat:@"%@/listfriends?id=%ld", host, userID];
+}
+
++(NSString*) loginURL:(NSString *)email password:(NSString *)password{
+    return [NSString stringWithFormat:@"%@/login?email=%@&password=%@", host, email, password];
 }
 
 @end

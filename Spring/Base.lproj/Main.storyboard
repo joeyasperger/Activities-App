@@ -183,12 +183,20 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Invalid email address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9mb-cH-SSt">
+                                <rect key="frame" x="43" y="278" width="234" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="emailField" destination="beh-zs-YTu" id="EYN-z1-xIy"/>
-                        <outlet property="passwordField" destination="nkw-VV-EGI" id="8Zh-K1-09f"/>
+                        <outlet property="emailField" destination="TG6-HI-7dR" id="WxL-8n-elx"/>
+                        <outlet property="errorLabel" destination="9mb-cH-SSt" id="8Yh-Ji-R9g"/>
+                        <outlet property="passwordField" destination="nkw-VV-EGI" id="BfL-3w-ZNy"/>
                         <segue destination="8YX-ce-x5E" kind="modal" identifier="LoginSegue" modalTransitionStyle="coverVertical" id="KJ9-33-cdY"/>
                     </connections>
                 </viewController>
