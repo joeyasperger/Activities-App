@@ -28,10 +28,15 @@
 @synthesize errorLabel = _errorLabel;
 
 - (IBAction)Login:(id)sender {
+    self.sender = sender;
+    [self sendLoginRequest];
+}
+
+-(void)sendLoginRequest{
+    self.responseData = [NSMutableData data];
     NSURLRequest *request = [NSURLRequest requestWithURL:
                              [NSURL URLWithString:[ServerInfo loginURL:self.emailField.text password:self.passwordField.text]]];
     [[NSURLConnection alloc] initWithRequest:request delegate:self];
-    self.sender = sender;
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
@@ -51,7 +56,6 @@
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
     NSLog(@"connectionDidFinishLoading");
     NSLog(@"Succeeded! Received %ld bytes of data",(long)[self.responseData length]);
-    
     NSString* pliststr = [[NSString alloc] initWithData:self.responseData encoding:NSUTF8StringEncoding];
     NSLog(@"%@", pliststr);
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -64,15 +68,23 @@
     if ([[userplist valueForKey:@"error"]  isEqual: @"none"]){
         [UserProfile setLoggedIn:YES];
         [UserProfile setEmail:[userplist valueForKey:@"email"]];
-        [UserProfile setID:[userplist valueForKey:@"id"]];
+        [UserProfile setID:[[userplist valueForKey:@"id"] integerValue]];
         [self performSegueWithIdentifier:@"LoginSegue" sender:self.sender];
     }
     else{
         self.errorLabel.text = [userplist valueForKey:@"error"];
     }
-    
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if (textField == self.passwordField) {
+        self.sender = nil;
+        [self sendLoginRequest];
+    } else if (textField == self.emailField) {
+        [self.passwordField becomeFirstResponder];
+    }
+    return YES;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
