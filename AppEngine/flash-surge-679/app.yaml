@@ -1,0 +1,29 @@
+application: flash-surge-679
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+
+- url: /
+  script: default.application
+
+- url: /users
+  script: users.application
+
+- url: /dbsetup
+  script: dbsetup.application
+
+- url: /showactivities
+  script: showactivities.application
+
+- url: /showinterests
+  script: showinterests.application
+
+- url: /allevents
+  script: allevents.application
+
+- url: /listfriends
+  script: listfriends.application
+

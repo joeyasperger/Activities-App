@@ -1,0 +1,8 @@
+Touchengine makes heavy use of the gae-rest-json project.
+
+The gae-json-rest project does essentially what we want to do with touchengine minus the plist functionality.  It uses simple json and some plain-jane xml foo to communicate (which we'll replace with xml plists) and (this is the genius part) is able to enumerate the properties of the GAE model objects at runtime using python's inspect module (inspect.getMembers()) in conjunction with getattr() on classes that have registered with a model class registry.  
+
+I've (saggau) made a few additions to it by adding the ability to follow class references (obj x has one / has many obj y)
+
+
+Fortunately, it's Apache licensed which is, as far as I can tell, fully compatible with the MIT license.  

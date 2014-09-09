@@ -1,0 +1,16 @@
+
+To download what's currently in the local db (assuming you're running the demo server on localhost:8081):
+
+appcfg.py download_data --verbose --url=http://localhost:8081/remote_api --config_file=bulkloader.yaml --application=doctorpagers --kind=Doctor --filename=doctors.new.csv .
+
+appcfg.py download_data --verbose --url=http://localhost:8081/remote_api --config_file=bulkloader.yaml --application=doctorpagers --kind=Pager --filename=pagers.new.csv .
+
+
+To upload:
+
+appcfg.py upload_data --verbose --url=http://localhost:8081/remote_api --config_file=bulkloader.yaml --application=doctorpagers --kind=Pager --filename=pagers.csv .
+
+appcfg.py upload_data --verbose --url=http://localhost:8081/remote_api --config_file=bulkloader.yaml --application=doctorpagers --kind=Doctor --filename=doctors.csv .
+
+
+To upload or download to the appspot.com demo, just remove the --url=http://localhost:8081/remote_api argument and it will default there.

@@ -1,0 +1,68 @@
+Iphone ideas // GAE connection timeline
+
+
+TODO::: Look at gdata API for stuff we can steal, esp. authentication.
+        Look at openradar for interesting GAE stuff
+        Find a simple "lite" app idea to get something released quickly
+        Find out if GAE apps can run on google for your domain for the enterprisey stuff
+
+Milestone 1:: Get GAE to serve Plist representations of data
+
+Make main.py in gae-json-rest GET methods return plists instead of json
+Possibly reimplement simple json using plists
+
+Milestone 2:: Get GAE to modify entities based on content of Plists being passed in rather than json.
+
+Make main.py PUT, POST, and DELETE accept plists rather than JSON
+
+Housekeeping (before or after Milestone 2):: Download gae-json-rest as an svn:external and make my code reference it without changing it.  (FOR NOW, PUT IT IN SVN ... DO THIS IMMEDIATELY!)
+
+Milestone 3:: Minimize number of queries between phone and GAE (will require some real-world testing)
+
+Make main.py GET return nested array (or dictionary, see below*) of any number of entities in a plist (figure out how to tell it which is first and which last)
+Make main.py GET return nested array (or dict) of an arbitrary list of entities.  
+
+Set preference on a per-connection (or per query?) basis that will cause the returned data to be more "filled in"  (say) Instead of putting a link to a given piece of data in the plist, just spit out the data into the plist (nested).  This could cause the circular reference problem, though.  Perhaps best to limit the depth here or customize a given GAE app to push the data in sane chunks per application.  Could, however, keep a list of archived objects and kill circular references by putting links in for any data that is already in the tree someplace.
+
+Make plist caching thing able to handle both atomic and mass updates (at least on download and possibly on upload, too).  If I ask the server for a boatload of data, the plist importer should know to split them up into smaller plists indexed at the URL I *would* have used to get them individually.  *This might be easier if I embed the URL you "would" have gone to in the nested plist representation with the URL as the dictionary key.
+
+Milestone 4 (possibly interchangeable with 3 or even 2):: Authentication using google IDs
+
+Milestone 5:: Set value for key/keypath on cocoa objects will send updates to server
+
+Milestone 6:: offline caching of all data CHANGES to push to server later. (!!pain in ass if data can be modified from multiple devices)
+              and or ...Collect set value for key/keypath in a buffer and send only on manual update or after collection reaches a 
+              certain size (or both).  Example:  I set max buffer depth to (say) 6, set 5 key/value pairs.  On next set, it pushes info 
+              to server.  (warning:: if I lose connection to server, the pain in ass problem comes up again)
+
+Milestone 7 (possibly earlier or later):: Integration with google docs (?)
+
+Milestone 8:: Offline caching of ALL types of data (including images, etc.)  
+
+Possibly make a web archive: Pull down an arbitrary web page, traverse its images (DOM?), cache the images in disk, replace all image hrefs in html with relative links
+This could be made easier by stealing django templates or rentzsch's string replacement thing and serve only templates from GAE which we can then reassemble on the phone.  The templates could reference images, etc from the GAE 
+
+Milestone 6:: Generic slurping of data model in cocoa.  In other words, cocoa data model is only a very virtual thing that is representative of what's on app engine.  
+
+
+
+Application 1 (Milestones 1 - 3)         :: Make a simple reader / editor for the doctor / pager example as I go?
+Application 2 (Milestones 3 - 5 - health):: Make a simple weight tracker application like my spreadsheet app?  
+                                            or... Do the skin fold / fitness test part of the application for the workout people?
+Application 3 (atomcloud?)               :: OPML importer for GAE or perhaps read google feeds somehow directly, caches web pages and feed info
+Application 4 (survey generator)         :: integrate google docs forms and spreadsheets
+               
+ 
+Other Apps (more complex -- require earlier apps to be working):
+
+1.  Google docs offline reader / sync tool
+2.  Contacts manager (integrate with gmail contacts?? possible?) with OCR on the phone.  Something of an aside.  UI might be tough to figure out.
+3.  Multiple choice app -- this would require some polish AND will likely require someone other than me to do some marketing
+4.  Dailies -- Niche app for syndicating rough cuts and dailies to movie execs (app is easy, integrating with final cut... maybe not... would probably have to buy a dev version of final cut server.  Expensive?)  Marketing idea: buy some iPod touches, get them engraved, give them away to movie execs.
+5.  Sooloos remote -- Keep on Peter and friends.  They NEED this app
+6.  Non shitty delicious.com app that caches content
+
+Timeline:  EVERYTHING MUST BE AT LEAST MARGINALLY PRETTY OR SLICK.  AUDIENCE = HUGE or TINY, nothing in middle.  Either a given app is for EVERYONE with $.99 or for ALMOST NOONE for a shiload of money
+Phase 1 -- GEEK CRED BUILDING / CATCHUP:  Small, quick-to-market, free applications + open source project + nerd networking.  
+Phase 2 -- WHORING MYSELF: Push contract work hard, start Larger, paid applications -- become the "enterprise" iPhone guy? (by connecting everything to servers vie plists and python).  
+Phase 3 -- EMPIRE BUILDING: Taper off the contract work personally by hiring subcontractors to do contract work as the larger commercial applications bring in more $$.  Focus on 

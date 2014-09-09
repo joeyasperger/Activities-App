@@ -1,0 +1,47 @@
+# A sample of a declarative input conversion.
+# Each transformer describes:
+#  * The external connector (CSV, XML, etc.). And some flags for that.
+#    On import, generates a dict-per-record.
+#  * Some description of the transform of input dict->model (or entity).
+
+# Equivalent of 'import foo' in Python.
+python_preamble:
+- import: models
+- import: base64
+- import: re
+- import: google.appengine.ext.bulkload.transform
+- import: google.appengine.ext.bulkload.bulkloader_wizard
+- import: google.appengine.api.datastore
+- import: google.appengine.api.users
+
+# List of all the transformer classes.
+transformers:
+- model: models.Doctor
+  connector: csv
+  connector_options:
+    encoding: utf-8
+    columns: from_header
+  property_map:
+    - property: __key__
+      external_name: ID
+      export_transform: transform.key_id_or_name_as_string
+    - property: name
+      external_name: name
+
+- model: models.Pager
+  connector: csv
+  connector_options:
+    encoding: utf-8
+    columns: from_header
+  property_map:
+    - property: __key__
+      external_name: ID
+      export_transform: transform.key_id_or_name_as_string
+    - property: name
+      external_name: name
+    - property: number
+      external_name: number
+    - property: doctor
+      external_name: doctorID
+      import_transform: transform.create_foreign_key('Doctor')
+      export_transform: transform.key_id_or_name_as_string

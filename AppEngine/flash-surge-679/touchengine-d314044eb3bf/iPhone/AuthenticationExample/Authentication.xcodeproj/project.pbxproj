@@ -1,0 +1,360 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D3623260D0F684500981E51 /* AuthenticationAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AuthenticationAppDelegate.m */; };
+		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
+		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
+		AB2144A1124ED7C9003AC0A9 /* AuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB21449C124ED7C9003AC0A9 /* AuthenticationViewController.m */; };
+		AB2144A2124ED7C9003AC0A9 /* AuthenticationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB21449D124ED7C9003AC0A9 /* AuthenticationViewController.xib */; };
+		AB2144A3124ED7C9003AC0A9 /* CaptchaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB21449F124ED7C9003AC0A9 /* CaptchaViewController.m */; };
+		AB2144A4124ED7C9003AC0A9 /* CaptchaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB2144A0124ED7C9003AC0A9 /* CaptchaViewController.xib */; };
+		AB2AB789123C46E8000B6344 /* GTMNSString+URLArguments.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2AB741123C46E8000B6344 /* GTMNSString+URLArguments.m */; };
+		AB2AB7AE123C46E8000B6344 /* GoogleAppEngineAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2AB785123C46E8000B6344 /* GoogleAppEngineAuth.m */; };
+		AB2AB7AF123C46E8000B6344 /* GoogleClientLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2AB787123C46E8000B6344 /* GoogleClientLogin.m */; };
+		AB2AB7B0123C46E8000B6344 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AB2AB788123C46E8000B6344 /* README.md */; };
+		AB2AB842123C5B40000B6344 /* GTMGatherInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2AB834123C5B40000B6344 /* GTMGatherInputStream.m */; };
+		AB2AB843123C5B40000B6344 /* GTMHTTPFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2AB836123C5B40000B6344 /* GTMHTTPFetcher.m */; };
+		AB2AB844123C5B40000B6344 /* GTMHTTPFetcherLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2AB838123C5B40000B6344 /* GTMHTTPFetcherLogging.m */; };
+		AB2AB845123C5B40000B6344 /* GTMHTTPFetcherService.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2AB83A123C5B40000B6344 /* GTMHTTPFetcherService.m */; };
+		AB2AB846123C5B40000B6344 /* GTMHTTPFetchHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2AB83C123C5B40000B6344 /* GTMHTTPFetchHistory.m */; };
+		AB2AB847123C5B40000B6344 /* GTMHTTPUploadFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2AB83E123C5B40000B6344 /* GTMHTTPUploadFetcher.m */; };
+		AB2AB848123C5B40000B6344 /* GTMMIMEDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2AB840123C5B40000B6344 /* GTMMIMEDocument.m */; };
+		AB2AB849123C5B40000B6344 /* ReleaseNotes.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB2AB841123C5B40000B6344 /* ReleaseNotes.txt */; };
+		ABF36816123C878800E18CCA /* QuickFetchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF36814123C878800E18CCA /* QuickFetchViewController.m */; };
+		ABF36817123C878800E18CCA /* QuickFetchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABF36815123C878800E18CCA /* QuickFetchViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D3623240D0F684500981E51 /* AuthenticationAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AuthenticationAppDelegate.h; path = Classes/AuthenticationAppDelegate.h; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* AuthenticationAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AuthenticationAppDelegate.m; path = Classes/AuthenticationAppDelegate.m; sourceTree = "<group>"; };
+		1D6058910D05DD3D006BFB54 /* Authentication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Authentication.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		32CA4F630368D1EE00C91783 /* Authentication_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Authentication_Prefix.pch; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* Authentication-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Authentication-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		AB21449B124ED7C9003AC0A9 /* AuthenticationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AuthenticationViewController.h; path = ../AuthenticationViews/AuthenticationViewController.h; sourceTree = SOURCE_ROOT; };
+		AB21449C124ED7C9003AC0A9 /* AuthenticationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AuthenticationViewController.m; path = ../AuthenticationViews/AuthenticationViewController.m; sourceTree = SOURCE_ROOT; };
+		AB21449D124ED7C9003AC0A9 /* AuthenticationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AuthenticationViewController.xib; path = ../AuthenticationViews/AuthenticationViewController.xib; sourceTree = SOURCE_ROOT; };
+		AB21449E124ED7C9003AC0A9 /* CaptchaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CaptchaViewController.h; path = ../AuthenticationViews/CaptchaViewController.h; sourceTree = SOURCE_ROOT; };
+		AB21449F124ED7C9003AC0A9 /* CaptchaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CaptchaViewController.m; path = ../AuthenticationViews/CaptchaViewController.m; sourceTree = SOURCE_ROOT; };
+		AB2144A0124ED7C9003AC0A9 /* CaptchaViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CaptchaViewController.xib; path = ../AuthenticationViews/CaptchaViewController.xib; sourceTree = SOURCE_ROOT; };
+		AB2AB740123C46E8000B6344 /* GTMNSString+URLArguments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "GTMNSString+URLArguments.h"; path = "../GTMSubset/GTMNSString+URLArguments.h"; sourceTree = SOURCE_ROOT; };
+		AB2AB741123C46E8000B6344 /* GTMNSString+URLArguments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "GTMNSString+URLArguments.m"; path = "../GTMSubset/GTMNSString+URLArguments.m"; sourceTree = SOURCE_ROOT; };
+		AB2AB784123C46E8000B6344 /* GoogleAppEngineAuth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GoogleAppEngineAuth.h; path = ../GoogleAppEngineAuthGithub/GoogleAppEngineAuth.h; sourceTree = SOURCE_ROOT; };
+		AB2AB785123C46E8000B6344 /* GoogleAppEngineAuth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GoogleAppEngineAuth.m; path = ../GoogleAppEngineAuthGithub/GoogleAppEngineAuth.m; sourceTree = SOURCE_ROOT; };
+		AB2AB786123C46E8000B6344 /* GoogleClientLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GoogleClientLogin.h; path = ../GoogleAppEngineAuthGithub/GoogleClientLogin.h; sourceTree = SOURCE_ROOT; };
+		AB2AB787123C46E8000B6344 /* GoogleClientLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GoogleClientLogin.m; path = ../GoogleAppEngineAuthGithub/GoogleClientLogin.m; sourceTree = SOURCE_ROOT; };
+		AB2AB788123C46E8000B6344 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = ../GoogleAppEngineAuthGithub/README.md; sourceTree = SOURCE_ROOT; };
+		AB2AB7BA123C4797000B6344 /* GTMGarbageCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTMGarbageCollection.h; path = ../GTMSubset/GTMGarbageCollection.h; sourceTree = SOURCE_ROOT; };
+		AB2AB7BD123C47CF000B6344 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTMDefines.h; path = ../GTMSubset/GTMDefines.h; sourceTree = SOURCE_ROOT; };
+		AB2AB833123C5B40000B6344 /* GTMGatherInputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTMGatherInputStream.h; path = ../gtmOauth/HTTPFetcher/GTMGatherInputStream.h; sourceTree = SOURCE_ROOT; };
+		AB2AB834123C5B40000B6344 /* GTMGatherInputStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTMGatherInputStream.m; path = ../gtmOauth/HTTPFetcher/GTMGatherInputStream.m; sourceTree = SOURCE_ROOT; };
+		AB2AB835123C5B40000B6344 /* GTMHTTPFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTMHTTPFetcher.h; path = ../gtmOauth/HTTPFetcher/GTMHTTPFetcher.h; sourceTree = SOURCE_ROOT; };
+		AB2AB836123C5B40000B6344 /* GTMHTTPFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTMHTTPFetcher.m; path = ../gtmOauth/HTTPFetcher/GTMHTTPFetcher.m; sourceTree = SOURCE_ROOT; };
+		AB2AB837123C5B40000B6344 /* GTMHTTPFetcherLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTMHTTPFetcherLogging.h; path = ../gtmOauth/HTTPFetcher/GTMHTTPFetcherLogging.h; sourceTree = SOURCE_ROOT; };
+		AB2AB838123C5B40000B6344 /* GTMHTTPFetcherLogging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTMHTTPFetcherLogging.m; path = ../gtmOauth/HTTPFetcher/GTMHTTPFetcherLogging.m; sourceTree = SOURCE_ROOT; };
+		AB2AB839123C5B40000B6344 /* GTMHTTPFetcherService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTMHTTPFetcherService.h; path = ../gtmOauth/HTTPFetcher/GTMHTTPFetcherService.h; sourceTree = SOURCE_ROOT; };
+		AB2AB83A123C5B40000B6344 /* GTMHTTPFetcherService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTMHTTPFetcherService.m; path = ../gtmOauth/HTTPFetcher/GTMHTTPFetcherService.m; sourceTree = SOURCE_ROOT; };
+		AB2AB83B123C5B40000B6344 /* GTMHTTPFetchHistory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTMHTTPFetchHistory.h; path = ../gtmOauth/HTTPFetcher/GTMHTTPFetchHistory.h; sourceTree = SOURCE_ROOT; };
+		AB2AB83C123C5B40000B6344 /* GTMHTTPFetchHistory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTMHTTPFetchHistory.m; path = ../gtmOauth/HTTPFetcher/GTMHTTPFetchHistory.m; sourceTree = SOURCE_ROOT; };
+		AB2AB83D123C5B40000B6344 /* GTMHTTPUploadFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTMHTTPUploadFetcher.h; path = ../gtmOauth/HTTPFetcher/GTMHTTPUploadFetcher.h; sourceTree = SOURCE_ROOT; };
+		AB2AB83E123C5B40000B6344 /* GTMHTTPUploadFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTMHTTPUploadFetcher.m; path = ../gtmOauth/HTTPFetcher/GTMHTTPUploadFetcher.m; sourceTree = SOURCE_ROOT; };
+		AB2AB83F123C5B40000B6344 /* GTMMIMEDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTMMIMEDocument.h; path = ../gtmOauth/HTTPFetcher/GTMMIMEDocument.h; sourceTree = SOURCE_ROOT; };
+		AB2AB840123C5B40000B6344 /* GTMMIMEDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTMMIMEDocument.m; path = ../gtmOauth/HTTPFetcher/GTMMIMEDocument.m; sourceTree = SOURCE_ROOT; };
+		AB2AB841123C5B40000B6344 /* ReleaseNotes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ReleaseNotes.txt; path = ../gtmOauth/HTTPFetcher/ReleaseNotes.txt; sourceTree = SOURCE_ROOT; };
+		ABF36813123C878800E18CCA /* QuickFetchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickFetchViewController.h; sourceTree = "<group>"; };
+		ABF36814123C878800E18CCA /* QuickFetchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuickFetchViewController.m; sourceTree = "<group>"; };
+		ABF36815123C878800E18CCA /* QuickFetchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuickFetchViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058910D05DD3D006BFB54 /* Authentication.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				AB2AB73F123C46E8000B6344 /* GTMSubset */,
+				AB2AB742123C46E8000B6344 /* GoogleAppEngineAuthGithub */,
+				AB21449B124ED7C9003AC0A9 /* AuthenticationViewController.h */,
+				AB21449C124ED7C9003AC0A9 /* AuthenticationViewController.m */,
+				AB21449D124ED7C9003AC0A9 /* AuthenticationViewController.xib */,
+				AB21449E124ED7C9003AC0A9 /* CaptchaViewController.h */,
+				AB21449F124ED7C9003AC0A9 /* CaptchaViewController.m */,
+				AB2144A0124ED7C9003AC0A9 /* CaptchaViewController.xib */,
+				1D3623240D0F684500981E51 /* AuthenticationAppDelegate.h */,
+				1D3623250D0F684500981E51 /* AuthenticationAppDelegate.m */,
+				ABF36815123C878800E18CCA /* QuickFetchViewController.xib */,
+				ABF36813123C878800E18CCA /* QuickFetchViewController.h */,
+				ABF36814123C878800E18CCA /* QuickFetchViewController.m */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = CustomTemplate;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32CA4F630368D1EE00C91783 /* Authentication_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
+				8D1107310486CEB800E47090 /* Authentication-Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AB2AB73F123C46E8000B6344 /* GTMSubset */ = {
+			isa = PBXGroup;
+			children = (
+				AB2AB833123C5B40000B6344 /* GTMGatherInputStream.h */,
+				AB2AB834123C5B40000B6344 /* GTMGatherInputStream.m */,
+				AB2AB835123C5B40000B6344 /* GTMHTTPFetcher.h */,
+				AB2AB836123C5B40000B6344 /* GTMHTTPFetcher.m */,
+				AB2AB837123C5B40000B6344 /* GTMHTTPFetcherLogging.h */,
+				AB2AB838123C5B40000B6344 /* GTMHTTPFetcherLogging.m */,
+				AB2AB839123C5B40000B6344 /* GTMHTTPFetcherService.h */,
+				AB2AB83A123C5B40000B6344 /* GTMHTTPFetcherService.m */,
+				AB2AB83B123C5B40000B6344 /* GTMHTTPFetchHistory.h */,
+				AB2AB83C123C5B40000B6344 /* GTMHTTPFetchHistory.m */,
+				AB2AB83D123C5B40000B6344 /* GTMHTTPUploadFetcher.h */,
+				AB2AB83E123C5B40000B6344 /* GTMHTTPUploadFetcher.m */,
+				AB2AB83F123C5B40000B6344 /* GTMMIMEDocument.h */,
+				AB2AB840123C5B40000B6344 /* GTMMIMEDocument.m */,
+				AB2AB841123C5B40000B6344 /* ReleaseNotes.txt */,
+				AB2AB7BD123C47CF000B6344 /* GTMDefines.h */,
+				AB2AB7BA123C4797000B6344 /* GTMGarbageCollection.h */,
+				AB2AB740123C46E8000B6344 /* GTMNSString+URLArguments.h */,
+				AB2AB741123C46E8000B6344 /* GTMNSString+URLArguments.m */,
+			);
+			name = GTMSubset;
+			path = ../GTMSubset;
+			sourceTree = SOURCE_ROOT;
+		};
+		AB2AB742123C46E8000B6344 /* GoogleAppEngineAuthGithub */ = {
+			isa = PBXGroup;
+			children = (
+				AB2AB784123C46E8000B6344 /* GoogleAppEngineAuth.h */,
+				AB2AB785123C46E8000B6344 /* GoogleAppEngineAuth.m */,
+				AB2AB786123C46E8000B6344 /* GoogleClientLogin.h */,
+				AB2AB787123C46E8000B6344 /* GoogleClientLogin.m */,
+				AB2AB788123C46E8000B6344 /* README.md */,
+			);
+			name = GoogleAppEngineAuthGithub;
+			path = ../GoogleAppEngineAuthGithub;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* Authentication */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Authentication" */;
+			buildPhases = (
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Authentication;
+			productName = Authentication;
+			productReference = 1D6058910D05DD3D006BFB54 /* Authentication.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Authentication" */;
+			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* Authentication */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
+				AB2AB7B0123C46E8000B6344 /* README.md in Resources */,
+				AB2AB849123C5B40000B6344 /* ReleaseNotes.txt in Resources */,
+				ABF36817123C878800E18CCA /* QuickFetchViewController.xib in Resources */,
+				AB2144A2124ED7C9003AC0A9 /* AuthenticationViewController.xib in Resources */,
+				AB2144A4124ED7C9003AC0A9 /* CaptchaViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				1D3623260D0F684500981E51 /* AuthenticationAppDelegate.m in Sources */,
+				AB2AB789123C46E8000B6344 /* GTMNSString+URLArguments.m in Sources */,
+				AB2AB7AE123C46E8000B6344 /* GoogleAppEngineAuth.m in Sources */,
+				AB2AB7AF123C46E8000B6344 /* GoogleClientLogin.m in Sources */,
+				AB2AB842123C5B40000B6344 /* GTMGatherInputStream.m in Sources */,
+				AB2AB843123C5B40000B6344 /* GTMHTTPFetcher.m in Sources */,
+				AB2AB844123C5B40000B6344 /* GTMHTTPFetcherLogging.m in Sources */,
+				AB2AB845123C5B40000B6344 /* GTMHTTPFetcherService.m in Sources */,
+				AB2AB846123C5B40000B6344 /* GTMHTTPFetchHistory.m in Sources */,
+				AB2AB847123C5B40000B6344 /* GTMHTTPUploadFetcher.m in Sources */,
+				AB2AB848123C5B40000B6344 /* GTMMIMEDocument.m in Sources */,
+				ABF36816123C878800E18CCA /* QuickFetchViewController.m in Sources */,
+				AB2144A1124ED7C9003AC0A9 /* AuthenticationViewController.m in Sources */,
+				AB2144A3124ED7C9003AC0A9 /* CaptchaViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Authentication_Prefix.pch;
+				INFOPLIST_FILE = "Authentication-Info.plist";
+				PRODUCT_NAME = Authentication;
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Authentication_Prefix.pch;
+				INFOPLIST_FILE = "Authentication-Info.plist";
+				PRODUCT_NAME = Authentication;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = iphoneos4.1;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PREBINDING = NO;
+				SDKROOT = iphoneos4.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Authentication" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Authentication" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
