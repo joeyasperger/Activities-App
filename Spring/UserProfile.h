@@ -19,4 +19,6 @@
 +(void) setEmail:(NSString*)userEmail;
 +(void) setLoggedIn:(BOOL)userLoggedIn;
 
++ (void) logout;
+
 @end

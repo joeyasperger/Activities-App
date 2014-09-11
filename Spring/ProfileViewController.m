@@ -7,12 +7,22 @@
 //
 
 #import "ProfileViewController.h"
+#import "UserProfile.h"
 
 @interface ProfileViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 
 @end
 
 @implementation ProfileViewController
+
+
+@synthesize nameLabel = _nameLabel;
+
+- (IBAction)logOut:(id)sender {
+    
+}
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,6 +37,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.nameLabel.text = [UserProfile userName];
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,15 +46,17 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    
+    if ([segue.identifier isEqualToString:@"LogoutSeque"]) {
+        [UserProfile logout];
+    }
 }
-*/
+
 
 @end

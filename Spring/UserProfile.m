@@ -47,5 +47,12 @@ static NSString* name;
     name = username;
 }
 
++(void) logout{
+    [self setEmail:@""];
+    [self setLoggedIn:NO];
+    [self setID:0];
+    [self setName:@""];
+}
+
 
 @end

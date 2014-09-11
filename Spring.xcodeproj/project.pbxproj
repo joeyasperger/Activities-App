@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		5A92AEAC19BEC8F8001C52F7 /* UserProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A92AEAB19BEC8F8001C52F7 /* UserProfile.m */; };
 		5A92AEAF19BF6B38001C52F7 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A92AEAE19BF6B38001C52F7 /* LoginViewController.m */; };
+		5A92AEB419BFA486001C52F7 /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A92AEB319BFA486001C52F7 /* FriendsViewController.m */; };
+		5A92AEB719BFA548001C52F7 /* Friend.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A92AEB619BFA548001C52F7 /* Friend.m */; };
+		5A92AEBD19BFE899001C52F7 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A92AEBC19BFE899001C52F7 /* ProfileViewController.m */; };
+		5A92AEC019C21E74001C52F7 /* CreateEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A92AEBF19C21E74001C52F7 /* CreateEventViewController.m */; };
 		5AA3CB8419BBC9F200D07D51 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA3CB8319BBC9F200D07D51 /* Foundation.framework */; };
 		5AA3CB8619BBC9F200D07D51 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA3CB8519BBC9F200D07D51 /* CoreGraphics.framework */; };
 		5AA3CB8819BBC9F200D07D51 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA3CB8719BBC9F200D07D51 /* UIKit.framework */; };
@@ -45,6 +49,14 @@
 		5A92AEAB19BEC8F8001C52F7 /* UserProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfile.m; sourceTree = "<group>"; };
 		5A92AEAD19BF6B38001C52F7 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		5A92AEAE19BF6B38001C52F7 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		5A92AEB219BFA486001C52F7 /* FriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsViewController.h; sourceTree = "<group>"; };
+		5A92AEB319BFA486001C52F7 /* FriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsViewController.m; sourceTree = "<group>"; };
+		5A92AEB519BFA548001C52F7 /* Friend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Friend.h; sourceTree = "<group>"; };
+		5A92AEB619BFA548001C52F7 /* Friend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Friend.m; sourceTree = "<group>"; };
+		5A92AEBB19BFE899001C52F7 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		5A92AEBC19BFE899001C52F7 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		5A92AEBE19C21E74001C52F7 /* CreateEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateEventViewController.h; sourceTree = "<group>"; };
+		5A92AEBF19C21E74001C52F7 /* CreateEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateEventViewController.m; sourceTree = "<group>"; };
 		5AA3CB8019BBC9F200D07D51 /* Spring.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spring.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AA3CB8319BBC9F200D07D51 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5AA3CB8519BBC9F200D07D51 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -136,6 +148,12 @@
 				5AA3CB9219BBC9F200D07D51 /* AppDelegate.h */,
 				5AA3CB9319BBC9F200D07D51 /* AppDelegate.m */,
 				5AA3CB9519BBC9F200D07D51 /* Main.storyboard */,
+				5A92AEBE19C21E74001C52F7 /* CreateEventViewController.h */,
+				5A92AEBF19C21E74001C52F7 /* CreateEventViewController.m */,
+				5A92AEBB19BFE899001C52F7 /* ProfileViewController.h */,
+				5A92AEBC19BFE899001C52F7 /* ProfileViewController.m */,
+				5A92AEB219BFA486001C52F7 /* FriendsViewController.h */,
+				5A92AEB319BFA486001C52F7 /* FriendsViewController.m */,
 				5A92AEAA19BEC8F8001C52F7 /* UserProfile.h */,
 				5A92AEAB19BEC8F8001C52F7 /* UserProfile.m */,
 				5A92AEAD19BF6B38001C52F7 /* LoginViewController.h */,
@@ -148,6 +166,8 @@
 				5AA3CB9919BBC9F200D07D51 /* FeedViewController.m */,
 				5AF94FB119BE395F0043E062 /* ServerInfo.h */,
 				5AF94FB219BE395F0043E062 /* ServerInfo.m */,
+				5A92AEB519BFA548001C52F7 /* Friend.h */,
+				5A92AEB619BFA548001C52F7 /* Friend.m */,
 				5AA3CBC119BC13DA00D07D51 /* Event.h */,
 				5AA3CBC219BC13DA00D07D51 /* Event.m */,
 				5AA3CB9B19BBC9F200D07D51 /* MoreViewController.h */,
@@ -289,10 +309,14 @@
 				5AA3CBC019BC126000D07D51 /* EventDetailViewController.m in Sources */,
 				5AA3CB9D19BBC9F200D07D51 /* MoreViewController.m in Sources */,
 				5A92AEAC19BEC8F8001C52F7 /* UserProfile.m in Sources */,
+				5A92AEB719BFA548001C52F7 /* Friend.m in Sources */,
 				5AF94FB319BE395F0043E062 /* ServerInfo.m in Sources */,
 				5A92AEAF19BF6B38001C52F7 /* LoginViewController.m in Sources */,
 				5AA3CB9419BBC9F200D07D51 /* AppDelegate.m in Sources */,
+				5A92AEC019C21E74001C52F7 /* CreateEventViewController.m in Sources */,
+				5A92AEB419BFA486001C52F7 /* FriendsViewController.m in Sources */,
 				5AA3CB9A19BBC9F200D07D51 /* FeedViewController.m in Sources */,
+				5A92AEBD19BFE899001C52F7 /* ProfileViewController.m in Sources */,
 				5AA3CB9019BBC9F200D07D51 /* main.m in Sources */,
 				5AA3CBBD19BBF01F00D07D51 /* EventTableViewCell.m in Sources */,
 				5AA3CBC319BC13DA00D07D51 /* Event.m in Sources */,

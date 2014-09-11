@@ -9,10 +9,18 @@
 #import "CreateEventViewController.h"
 
 @interface CreateEventViewController ()
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+
+@property (weak, nonatomic) IBOutlet UIPickerView *recipientPicker;
+@property NSArray *recipientOptions;
 
 @end
 
 @implementation CreateEventViewController
+
+@synthesize recipientPicker = _recipientPicker;
+@synthesize recipientOptions = _recipientOptions;
+@synthesize scrollView = _scrollView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,6 +35,27 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [self.scrollView setScrollEnabled:YES];
+    [self.scrollView setContentSize:CGSizeMake(320, 1000)];
+    self.recipientOptions = @[@"Anyone", @"Friends Only", @"Select Group", @"Select Friends"];
+}
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+    return 1;
+}
+
+// The number of rows of data
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+    return self.recipientOptions.count;
+}
+
+// The data to return for the row and component (column) that's being passed in
+- (NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    return self.recipientOptions[row];
 }
 
 - (void)didReceiveMemoryWarning

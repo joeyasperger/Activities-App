@@ -10,4 +10,7 @@
 
 @interface Friend : NSObject
 
+@property NSString *name;
+@property NSInteger *userID;
+
 @end

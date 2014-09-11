@@ -1,6 +1,3 @@
-
-USE myapp;
-
 DROP TABLE IF EXISTS user_activities;
 DROP TABLE IF EXISTS friends;
 DROP TABLE IF EXISTS events;

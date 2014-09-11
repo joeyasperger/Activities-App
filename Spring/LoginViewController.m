@@ -69,6 +69,7 @@
         [UserProfile setLoggedIn:YES];
         [UserProfile setEmail:[userplist valueForKey:@"email"]];
         [UserProfile setID:[[userplist valueForKey:@"id"] integerValue]];
+        [UserProfile setName:[userplist valueForKey:@"username"]];
         [self performSegueWithIdentifier:@"LoginSegue" sender:self.sender];
     }
     else{
