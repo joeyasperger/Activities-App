@@ -14,5 +14,6 @@
 +(NSString*) friendsURL:(NSInteger)userID;
 +(NSString*) interestsURL:(NSInteger)userID;
 +(NSString*) loginURL:(NSString*)email password:(NSString*)password;
++(NSString*) allactivitesURL;
 
 @end

@@ -88,6 +88,7 @@
         activity.activityID = [[activityDict valueForKey:@"activity_id"] integerValue];
         activity.name = [activityDict valueForKey:@"activity_name"];
         activity.categoryID = [[activityDict valueForKey:@"category_id"] integerValue];
+        activity.categoryName = [activityDict valueForKey:@"category_name"];
         [activities addObject:activity];
     }
     

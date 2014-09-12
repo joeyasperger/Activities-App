@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A693E8619C3A884005C5377 /* CategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A693E8519C3A884005C5377 /* CategoryViewController.m */; };
 		5A92AEAC19BEC8F8001C52F7 /* UserProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A92AEAB19BEC8F8001C52F7 /* UserProfile.m */; };
 		5A92AEAF19BF6B38001C52F7 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A92AEAE19BF6B38001C52F7 /* LoginViewController.m */; };
 		5A92AEB419BFA486001C52F7 /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A92AEB319BFA486001C52F7 /* FriendsViewController.m */; };
@@ -48,6 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5A693E8419C3A884005C5377 /* CategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryViewController.h; sourceTree = "<group>"; };
+		5A693E8519C3A884005C5377 /* CategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryViewController.m; sourceTree = "<group>"; };
 		5A92AEAA19BEC8F8001C52F7 /* UserProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfile.h; sourceTree = "<group>"; };
 		5A92AEAB19BEC8F8001C52F7 /* UserProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfile.m; sourceTree = "<group>"; };
 		5A92AEAD19BF6B38001C52F7 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -159,6 +162,8 @@
 				5AA3CB9519BBC9F200D07D51 /* Main.storyboard */,
 				5A92AEC119C24C90001C52F7 /* MyInterestsViewController.h */,
 				5A92AEC219C24C90001C52F7 /* MyInterestsViewController.m */,
+				5A693E8419C3A884005C5377 /* CategoryViewController.h */,
+				5A693E8519C3A884005C5377 /* CategoryViewController.m */,
 				5A92AEC719C257D4001C52F7 /* TableDownloader.h */,
 				5A92AEC819C257D4001C52F7 /* TableDownloader.m */,
 				5A92AEBE19C21E74001C52F7 /* CreateEventViewController.h */,
@@ -325,6 +330,7 @@
 				5A92AEC919C257D4001C52F7 /* TableDownloader.m in Sources */,
 				5AA3CB9D19BBC9F200D07D51 /* MoreViewController.m in Sources */,
 				5A92AEC619C251A1001C52F7 /* Activity.m in Sources */,
+				5A693E8619C3A884005C5377 /* CategoryViewController.m in Sources */,
 				5A92AEAC19BEC8F8001C52F7 /* UserProfile.m in Sources */,
 				5A92AEB719BFA548001C52F7 /* Friend.m in Sources */,
 				5AF94FB319BE395F0043E062 /* ServerInfo.m in Sources */,
