@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TableDownloader.h"
 
-@interface FriendsViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
+@interface FriendsViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, TableDownloaderDelegate>
 
 @end

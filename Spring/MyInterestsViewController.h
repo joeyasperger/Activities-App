@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TableDownloader.h"
 
-@interface MyInterestsViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
+@interface MyInterestsViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, TableDownloaderDelegate>
 
 @end

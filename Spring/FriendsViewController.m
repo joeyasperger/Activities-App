@@ -14,7 +14,6 @@
 @interface FriendsViewController ()
 
 @property NSMutableArray *friends;
-@property NSMutableData *responseData;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 
@@ -23,7 +22,6 @@
 @implementation FriendsViewController
 
 @synthesize friends = _friends;
-@synthesize responseData = _responseData;
 @synthesize tableView = _tableView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -40,10 +38,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.friends = [NSMutableArray new];
-    self.responseData = [NSMutableData data];
-    NSURLRequest *request = [NSURLRequest requestWithURL:
-                             [NSURL URLWithString:[ServerInfo friendsURL:[UserProfile userID]]]];
-    [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    TableDownloader *downloader = [[TableDownloader alloc] initWithURL:[ServerInfo friendsURL:[UserProfile userID]] type:FRIEND_DOWNLOADER saveFile:@"myfriends.plist"];
+    downloader.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,7 +47,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+/*
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
     NSLog(@"didReceiveResponse");
     [self.responseData setLength:0];
@@ -89,6 +85,11 @@
     }
     [self.tableView reloadData];
     
+}*/
+
+-(void) downloadCompleted:(NSMutableArray *)array{
+    self.friends = array;
+    [self.tableView reloadData];
 }
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{

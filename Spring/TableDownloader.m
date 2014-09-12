@@ -8,8 +8,7 @@
 
 #import "TableDownloader.h"
 #import "Activity.h"
-
-#define ACTIVITY_DOWNLOADER 1
+#import "Friend.h"
 
 @interface TableDownloader ()
 
@@ -20,21 +19,27 @@
 
 @end
 
+
 @implementation TableDownloader
 
 @synthesize responseData = _responseData;
 @synthesize urlString = _urlString;
 @synthesize filename = _filename;
 @synthesize type = _type;
+@synthesize delegate = _delegate;
 
--(void) initWithURL:(NSString*)url type:(NSInteger) type finishedSelector:(SEL)finishedSelector saveFile:(NSString *)file{
-    self.urlString = url;
-    self.filename = file;
-    self.type = type;
-    self.responseData = [NSMutableData data];
-    NSURLRequest *request = [NSURLRequest requestWithURL:
-                             [NSURL URLWithString:self.urlString]];
-    [[NSURLConnection alloc] initWithRequest:request delegate:self];
+
+-(id) initWithURL:(NSString*)url type:(NSInteger) type saveFile:(NSString *)file{
+    if (self = [super init]){
+        self.urlString = url;
+        self.filename = file;
+        self.type = type;
+        self.responseData = [NSMutableData data];
+        NSURLRequest *request = [NSURLRequest requestWithURL:
+                                 [NSURL URLWithString:self.urlString]];
+        [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    }
+    return self;
     
 }
 
@@ -67,6 +72,9 @@
     if (self.type == ACTIVITY_DOWNLOADER){
         [self readActivityPlist:pathString];
     }
+    else if (self.type == FRIEND_DOWNLOADER){
+        [self readFriendPlist:pathString];
+    }
     
     
 }
@@ -80,11 +88,24 @@
         activity.activityID = [[activityDict valueForKey:@"activity_id"] integerValue];
         activity.name = [activityDict valueForKey:@"activity_name"];
         activity.categoryID = [[activityDict valueForKey:@"category_id"] integerValue];
-        
         [activities addObject:activity];
     }
     
-    //send back with selector
+    //send back to delegate
+    [self.delegate downloadCompleted:activities];
+}
+
+-(void) readFriendPlist:(NSString*)pathString{
+    NSMutableArray *friends = [NSMutableArray array];
+    NSArray *friendsPlist = [NSArray arrayWithContentsOfFile:pathString];
+    for (int i = 0; i < [friendsPlist count]; i++){
+        NSDictionary *friendDict = [friendsPlist objectAtIndex:i];
+        Friend *newFriend = [Friend new];
+        newFriend.userID = [[friendDict valueForKey:@"userID"] integerValue];
+        newFriend.name = [friendDict valueForKey:@"username"];
+        [friends addObject:newFriend];
+    }
+    [self.delegate downloadCompleted:friends];
 }
 
 @end

@@ -13,7 +13,6 @@
 
 @interface MyInterestsViewController ()
 
-@property NSMutableData *responseData;
 @property NSMutableArray *activities;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -21,7 +20,6 @@
 
 @implementation MyInterestsViewController
 
-@synthesize responseData = _responseData;
 @synthesize activities = _activities;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -38,50 +36,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.activities = [NSMutableArray array];
-    self.responseData = [NSMutableData data];
-    NSURLRequest *request = [NSURLRequest requestWithURL:
-                             [NSURL URLWithString:[ServerInfo interestsURL:[UserProfile userID]]]];
-    [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    TableDownloader *downloader = [[TableDownloader alloc] initWithURL:[ServerInfo interestsURL:[UserProfile userID]] type:ACTIVITY_DOWNLOADER saveFile:@"myinterests.plist"];
+    downloader.delegate = self;
 }
 
-- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
-    NSLog(@"didReceiveResponse");
-    [self.responseData setLength:0];
-}
-
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
-    [self.responseData appendData:data];
-}
-
-- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
-    NSLog(@"didFailWithError");
-    NSLog(@"Connection failed: %@", [error description]);
-}
-
-- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
-    NSLog(@"connectionDidFinishLoading");
-    NSLog(@"Succeeded! Received %ld bytes of data",(long)[self.responseData length]);
-    
-    NSString* pliststr = [[NSString alloc] initWithData:self.responseData encoding:NSUTF8StringEncoding];
-    NSLog(@"%@", pliststr);
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSString *pathString = [documentsDirectory stringByAppendingPathComponent:@"userinterests.plist"];
-    
-    [pliststr writeToFile:pathString atomically:YES encoding:NSUTF8StringEncoding error:nil];
-    
-    NSArray *plistInterests = [NSArray arrayWithContentsOfFile:pathString];
-    for (int i = 0; i < [plistInterests count]; i++){
-        NSDictionary *activityDict = [plistInterests objectAtIndex:i];
-        Activity *activity = [Activity new];
-        activity.activityID = [[activityDict valueForKey:@"activity_id"] integerValue];
-        activity.name = [activityDict valueForKey:@"activity_name"];
-        activity.categoryID = [activityDict valueForKey:@"category_id"];
-        
-        [self.activities addObject:activity];
-    }
+-(void) downloadCompleted:(NSMutableArray *)array{
+    self.activities = array;
     [self.tableView reloadData];
-    
 }
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
