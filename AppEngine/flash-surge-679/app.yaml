@@ -29,3 +29,6 @@ handlers:
 
 - url: /login
   script: login.application
+
+- url: /listinterests
+  script: listinterests.application

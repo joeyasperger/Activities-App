@@ -9,7 +9,8 @@
 #import "ServerInfo.h"
 
 // static NSString *host = @"http://192.168.1.134:8080";
-static NSString *host = @"http://flash-surge-679.appspot.com";
+//static NSString *host = @"http://flash-surge-679.appspot.com";
+static NSString *host = @"http://10.0.1.117:8080";
 
 @implementation ServerInfo
 
@@ -19,6 +20,10 @@ static NSString *host = @"http://flash-surge-679.appspot.com";
 
 +(NSString*) friendsURL:(NSInteger)userID{
     return [NSString stringWithFormat:@"%@/listfriends?id=%ld", host, userID];
+}
+
++(NSString*) interestsURL:(NSInteger)userID{
+    return [NSString stringWithFormat:@"%@/listinterests?id=%ld", host, userID];
 }
 
 +(NSString*) loginURL:(NSString *)email password:(NSString *)password{

@@ -8,12 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-#define ALL_EVENTS "http://192.168.1.134:8080/allevents"
-
 @interface ServerInfo : NSObject
 
 +(NSString*) alleventsURL;
 +(NSString*) friendsURL:(NSInteger)userID;
++(NSString*) interestsURL:(NSInteger)userID;
 +(NSString*) loginURL:(NSString*)email password:(NSString*)password;
 
 @end

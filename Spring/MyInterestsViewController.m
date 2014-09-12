@@ -1,30 +1,28 @@
 //
-//  FriendsViewController.m
+//  MyInterestsViewController.m
 //  Spring
 //
-//  Created by Joseph Asperger on 9/9/14.
+//  Created by Joseph Asperger on 9/11/14.
 //
 //
 
-#import "FriendsViewController.h"
-#import "Friend.h"
+#import "MyInterestsViewController.h"
 #import "ServerInfo.h"
 #import "UserProfile.h"
+#import "Activity.h"
 
-@interface FriendsViewController ()
+@interface MyInterestsViewController ()
 
-@property NSMutableArray *friends;
 @property NSMutableData *responseData;
-@property (strong, nonatomic) IBOutlet UITableView *tableView;
-
+@property NSMutableArray *activities;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
-@implementation FriendsViewController
+@implementation MyInterestsViewController
 
-@synthesize friends = _friends;
 @synthesize responseData = _responseData;
-@synthesize tableView = _tableView;
+@synthesize activities = _activities;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -39,17 +37,11 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.friends = [NSMutableArray new];
+    self.activities = [NSMutableArray array];
     self.responseData = [NSMutableData data];
     NSURLRequest *request = [NSURLRequest requestWithURL:
-                             [NSURL URLWithString:[ServerInfo friendsURL:[UserProfile userID]]]];
+                             [NSURL URLWithString:[ServerInfo interestsURL:[UserProfile userID]]]];
     [[NSURLConnection alloc] initWithRequest:request delegate:self];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
@@ -74,25 +66,26 @@
     NSLog(@"%@", pliststr);
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSString *pathString = [documentsDirectory stringByAppendingPathComponent:@"friends.plist"];
+    NSString *pathString = [documentsDirectory stringByAppendingPathComponent:@"userinterests.plist"];
     
     [pliststr writeToFile:pathString atomically:YES encoding:NSUTF8StringEncoding error:nil];
     
-    NSArray *plistFriends = [NSArray arrayWithContentsOfFile:pathString];
-    for (int i = 0; i < [plistFriends count]; i++){
-        NSDictionary *friendDict = [plistFriends objectAtIndex:i];
-        Friend *newFriend = [Friend new];
-        newFriend.userID = [[friendDict valueForKey:@"userID"] integerValue];
-        newFriend.name = [friendDict valueForKey:@"username"];
+    NSArray *plistInterests = [NSArray arrayWithContentsOfFile:pathString];
+    for (int i = 0; i < [plistInterests count]; i++){
+        NSDictionary *activityDict = [plistInterests objectAtIndex:i];
+        Activity *activity = [Activity new];
+        activity.activityID = [[activityDict valueForKey:@"activity_id"] integerValue];
+        activity.name = [activityDict valueForKey:@"activity_name"];
+        activity.categoryID = [activityDict valueForKey:@"category_id"];
         
-        [self.friends addObject:newFriend];
+        [self.activities addObject:activity];
     }
     [self.tableView reloadData];
     
 }
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return [self.friends count];
+    return [self.activities count];
     
 }
 
@@ -106,10 +99,14 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     
-    cell.textLabel.text = ((Friend*)self.friends[indexPath.row]).name;
-    cell.imageView.image = [UIImage imageNamed:@"greybox.jpg"];
-    
+    cell.textLabel.text = ((Activity*)self.activities[indexPath.row]).name;    
     return cell;
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 /*

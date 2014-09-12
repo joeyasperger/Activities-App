@@ -525,16 +525,30 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             </objects>
             <point key="canvasLocation" x="698" y="-178"/>
         </scene>
-        <!--View Controller - My Interests-->
+        <!--My Interests View Controller - My Interests-->
         <scene sceneID="1i0-VD-rDn">
             <objects>
-                <viewController id="DOv-3G-Chd" sceneMemberID="viewController">
+                <viewController id="DOv-3G-Chd" customClass="MyInterestsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RN6-Sk-6Kw">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="lpe-Mn-J7z">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="DOv-3G-Chd" id="Xa1-z8-dxK"/>
+                                    <outlet property="delegate" destination="DOv-3G-Chd" id="uBJ-Rr-tIZ"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="My Interests" id="Uth-NE-PPu"/>
+                    <connections>
+                        <outlet property="tableView" destination="lpe-Mn-J7z" id="xab-lL-pNH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KGb-TB-WIR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
