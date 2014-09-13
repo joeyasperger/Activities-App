@@ -54,11 +54,26 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
-    
-    cell.textLabel.text = ((Activity*)self.activities[indexPath.row]).name;
+    Activity *activity = self.activities[indexPath.row];
+    cell.textLabel.text = activity.name;
     UIButton *button = [UIButton buttonWithType:UIButtonTypeContactAdd];
     [button setUserInteractionEnabled:NO];
     cell.accessoryView = button;
+    
+    //check if it is one of the user's interests
+    BOOL isInterest = NO;
+    for (Activity *userActivity in self.userActivities){
+        if (userActivity.activityID == activity.activityID){
+            isInterest = YES;
+        }
+    }
+    if (isInterest){
+        NSLog(@"%@", activity.name);
+        cell.userInteractionEnabled = NO;
+        cell.textLabel.enabled = NO;
+        cell.detailTextLabel.enabled = NO;
+    }
+    
     return cell;
 }
 

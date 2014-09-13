@@ -110,7 +110,7 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"AddActivites"]) {
+    if ([segue.identifier isEqualToString:@"AddActivities"]) {
         CategoryViewController *destViewController = segue.destinationViewController;
         destViewController.userActivities = self.activities;
     }
