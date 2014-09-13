@@ -12,4 +12,6 @@
 
 @interface CategoryViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, TableDownloaderDelegate>
 
+@property NSMutableArray *userActivities;
+
 @end

@@ -10,7 +10,8 @@ class ListInterests(webapp2.RequestHandler):
         cursor = conn.cursor()
         userID = self.request.get('id')
         cursor.execute("SELECT a.activity_name, a.ID, a.category_ID, c.category_name FROM activities a \
-            INNER JOIN user_activities ua ON ua.activity_ID=a.ID INNER JOIN categories c ON a.category_ID=c.ID WHERE ua.user_ID=%s",
+            INNER JOIN user_activities ua ON ua.activity_ID=a.ID INNER JOIN categories c ON a.category_ID=c.ID WHERE ua.user_ID=%s \
+            ORDER BY a.activity_name",
             [userID])
         rows = cursor.fetchall()
         interests = []

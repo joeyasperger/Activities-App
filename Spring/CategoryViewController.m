@@ -9,6 +9,7 @@
 #import "CategoryViewController.h"
 #import "Activity.h"
 #import "ServerInfo.h"
+#import "ActivityViewController.h"
 
 @interface CategoryViewController ()
 
@@ -23,6 +24,7 @@
 @synthesize activities = _activities;
 @synthesize categoryNames = _categoryNames;
 @synthesize tableView =_tableView;
+@synthesize userActivities = _userActivities;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -64,26 +66,37 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
-    
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     cell.textLabel.text = (NSString*)self.categoryNames[indexPath.row];
     return cell;
 }
 
+- (void) tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [self performSegueWithIdentifier:@"ShowActivitiesForCategory" sender:nil];
+}
+
+
 -(void) downloadCompleted:(NSMutableArray *)array{
+    // put all the unique category names into an self.categoryNames
     for (int i = 0; i < [array count]; i++){
         NSString *categoryName = ((Activity*)array[i]).categoryName;
         BOOL alreadyExists = NO;
         for (NSString *string in self.categoryNames){
             if ([string isEqual:categoryName]){
-                
+                alreadyExists = YES;
             }
         }
-        [self.categoryNames addObject:categoryName];
+        if (alreadyExists == NO){
+            [self.categoryNames addObject:categoryName];
+        }
+        
+        // also fill activities array
+        [self.activities addObject:array[i]];
     }
     [self.tableView reloadData];
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -91,7 +104,23 @@
 {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"ShowActivitiesForCategory"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        ActivityViewController *destViewController = segue.destinationViewController;
+        
+        //get activities for selected category
+        NSMutableArray *categoryActivities = [NSMutableArray array];
+        NSString *categoryName = [self.categoryNames objectAtIndex:indexPath.row];
+        for (Activity *activity in self.activities){
+            if ([categoryName isEqual:activity.categoryName]){
+                [categoryActivities addObject:activity];
+            }
+        }
+        destViewController.activities = categoryActivities;
+        destViewController.categoryName = categoryName;
+        destViewController.userActivities = self.userActivities;
+    }
 }
-*/
+
 
 @end

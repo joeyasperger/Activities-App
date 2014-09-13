@@ -47,13 +47,15 @@ def addActivitiesForCategory(cursor, category, activities):
 
 def addActivities(cursor):
     sports = ['Baseball', 'Basketball', 'Football', 'Soccer', 'Water Polo', 
-        'Wiffleball', 'Softball', 'Rugby', 'Kickball']
+        'Wiffleball', 'Softball', 'Rugby', 'Kickball', 'Ultimate Frisbee', 'Golf', 'Volleyball', 'Tennis', 'Table Tennis']
     outdoors = ['Hiking', 'Mountain Biking', 'Road Cycling', 'Whitewater Rafting', 
-        'Rock Climbing', 'Surfing']
-    funAndGames = ['Laser Tag', 'Capture the Flag']
+        'Rock Climbing', 'Surfing', 'Kayaking', 'Canoeing', 'Skiing', 'Snowboarding', 'Fishing', 'Beach']
+    funAndGames = ['Laser Tag', 'Capture the Flag', 'Kart Racing', 'Minigolf']
+    spectatorSports = ['MLB Baseball', 'NCAA Football', 'NCAA Basketball', 'NBA Basketball', 'NFL Football', 'MLS Soccer']
     addActivitiesForCategory(cursor, 'sports', sports)
     addActivitiesForCategory(cursor, 'outdoors', outdoors)
     addActivitiesForCategory(cursor, 'Fun and Games', funAndGames)
+    addActivitiesForCategory(cursor, 'Spectator Sports', spectatorSports)
 
 def addInterests(cursor, userEmail, activities):
     userID = db.userIdFromEmail(cursor, userEmail)
@@ -80,7 +82,7 @@ def addEvent(cursor, userEmail, eventName, activity, description):
 
 def addTestEvents(cursor):
     addEvent(cursor, "joeyasperger@gmail.com", "Wiffleball Game", "Wiffleball", "Anyone want to play some wiffleball?")
-    addEvent(cursor, "lukeasperger@gmail.com", "Baseball", "Baseball", "I want to play a baseball?")
+    addEvent(cursor, "lukeasperger@gmail.com", "Baseball", "Baseball", "I want to play a baseball")
     addEvent(cursor, 'alexpinon@gmail.com', 'Soccer Training', 'Soccer', 'Who wants to get some soccer training in?')
     addEvent(cursor, 'jakezelek@gmail.com', 'Football', 'Football', "Let's get a game of football going")
 
@@ -101,7 +103,7 @@ def addTestRecords():
     conn = db.get_connection()
     cursor = conn.cursor()
     addTestUsers(cursor)
-    categories = ['Sports', 'Outdoors', 'Fun and Games', 'Music']
+    categories = ['Sports', 'Outdoors', 'Fun and Games', 'Leisure', 'Music', 'Spectator Sports', 'Live Events']
     addCategories(cursor, categories)
     addActivities(cursor)
     addTestInterests(cursor)

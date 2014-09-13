@@ -10,7 +10,7 @@ class AllActivities(webapp2.RequestHandler):
         conn = db.get_connection()
         cursor = conn.cursor()
         cursor.execute("SELECT a.activity_name, a.ID, a.category_ID, c.category_name FROM activities a \
-            INNER JOIN categories c on a.category_ID=c.ID;")
+            INNER JOIN categories c on a.category_ID=c.ID ORDER BY c.category_name, a.activity_name;")
         rows = cursor.fetchall()
         activities = []
         for i in range(cursor.rowcount):

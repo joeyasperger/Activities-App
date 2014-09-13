@@ -23,6 +23,7 @@
 }
 
 @synthesize responseData = _responseData;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -79,25 +80,6 @@
     
 }
 
-- (void) loadTestEvents{
-    NSArray *userNames = [NSArray arrayWithObjects:@"Joey Asperger", @"Alex Pinon", @"Jake Zelek", @"Luke Asperger", @"Katie Wardlaw", @"Rachel Hoang", nil];
-    NSArray *eventNames = [NSArray arrayWithObjects:@"Wiffleball Game", @"Soccer", @"Football", @"Baseball Game", @"Soccer", @"Basketball Game", nil];
-    NSArray *activityNames = [NSArray arrayWithObjects:@"Wiffleball", @"Soccer", @"Football", @"Baseball", @"Soccer", @"Basketball", nil];
-    NSArray *messages = [NSArray arrayWithObjects:@"Anyone want to play some wiffle ball?", @"Who wants to play soccer?", @"I want to play some football", @"I am a total loser", @"Anyone up for some soccer", @"Who's down to play some basketball", nil];
-    long numbersInterested[6] = {14, 11, 8, 0, 12, 7};
-    events = [NSMutableArray new];
-    for (int i = 0; i < 6; i++){
-        Event *event = [Event new];
-        event.ID = i;
-        event.userName = [userNames objectAtIndex:i];
-        event.eventName = [eventNames objectAtIndex:i];
-        event.activityName = [activityNames objectAtIndex:i];
-        event.message = [messages objectAtIndex:i];
-        event.numberInterested = numbersInterested[i];
-        [events addObject:event];
-    }
-}
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -124,7 +106,6 @@
     
     return cell;
 }
-
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"ShowEventDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
