@@ -19,7 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *editButton;
 @property BOOL inEditMode;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *addActivitiesButton;
-@property (copy) NSMutableArray *initialActivities;
+@property NSMutableArray *activitiesToDelete;
 
 @end
 
@@ -29,6 +29,7 @@
 @synthesize activities = _activities;
 @synthesize inEditMode = _inEditMode;
 @synthesize addActivitiesButton = _addActivitiesButton;
+@synthesize activitiesToDelete = _activitiesToDelete;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -46,8 +47,6 @@
     self.activities = [NSMutableArray array];
     TableDownloader *downloader = [[TableDownloader alloc] initWithURL:[ServerInfo interestsURL:[UserProfile userID]] type:ACTIVITY_DOWNLOADER saveFile:@"myinterests.plist"];
     downloader.delegate = self;
-    self.addActivitiesButton.enabled = NO;
-    [self.addActivitiesButton.customView setAlpha:0.0];
 }
 
 -(void) downloadCompleted:(NSMutableArray *)array{
@@ -57,34 +56,27 @@
 
 - (IBAction)editPressed:(id)sender {
     if (!self.inEditMode){
-        [self.tableView setEditing:YES animated:YES];
-        self.inEditMode = YES;
-        [sender setTitle:@"Done"];
-        [UIView animateWithDuration:0.2 animations:^{
-            [self.addActivitiesButton.customView setAlpha:1.0];
-        }];
-        self.addActivitiesButton.enabled = YES;
-        self.initialActivities = self.activities;
+        [self startEditing];
     }else{
-        [self.tableView setEditing:NO animated:YES];
-        self.inEditMode = NO;
-        [sender setTitle:@"Edit"];
-        [UIView animateWithDuration:0.2 animations:^{
-            [self.addActivitiesButton.customView setAlpha:0.0];
-        }];
-        self.addActivitiesButton.enabled = NO;
         [self doneEditing];
     }
 }
 
+-(void) startEditing{
+    [self.tableView setEditing:YES animated:YES];
+    self.inEditMode = YES;
+    [self.editButton setTitle:@"Done"];
+    self.activitiesToDelete = [NSMutableArray array];
+}
+
 -(void) doneEditing{
-    //determine which activities were added
-    
+    [self.tableView setEditing:NO animated:YES];
+    self.inEditMode = NO;
+    [self.editButton setTitle:@"Edit"];
 }
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return [self.activities count];
-    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -105,6 +97,7 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [self.activitiesToDelete addObject:[self.activities objectAtIndex:indexPath.row]];
         [self.activities removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     }
@@ -114,11 +107,11 @@
     [self.tableView reloadData];
 }
 
-/*
-- (BOOL) canPerformUnwindSegueAction:(SEL)action fromViewController:(UIViewController *)fromViewController withSender:(id)sender{
-    [self.tableView reloadData];
-    return YES;
-}*/
+-(void) viewWillDisappear:(BOOL)animated{
+    if (self.inEditMode){
+        [self doneEditing];
+    }
+}
 
 - (void)didReceiveMemoryWarning
 {

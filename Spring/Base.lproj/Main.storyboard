@@ -536,20 +536,21 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="My Interests" id="Uth-NE-PPu">
-                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="Fbc-dI-wRH">
+                        <barButtonItem key="leftBarButtonItem" title="Edit" id="Fbc-dI-wRH">
                             <connections>
-                                <segue destination="rcW-d6-Eep" kind="push" identifier="AddActivities" id="n8G-BJ-Pie"/>
+                                <action selector="editPressed:" destination="DOv-3G-Chd" id="kHU-Hy-IzR"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Edit" id="Nqu-aY-WVZ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Nqu-aY-WVZ">
                             <connections>
                                 <action selector="editPressed:" destination="DOv-3G-Chd" id="kbd-nM-wQV"/>
+                                <segue destination="rcW-d6-Eep" kind="push" id="h8L-N7-gtw"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="addActivitiesButton" destination="Fbc-dI-wRH" id="vnM-2h-mnl"/>
-                        <outlet property="editButton" destination="Nqu-aY-WVZ" id="XZC-b9-gPf"/>
+                        <outlet property="addActivitiesButton" destination="Nqu-aY-WVZ" id="Ud5-Mg-bOh"/>
+                        <outlet property="editButton" destination="Fbc-dI-wRH" id="hEt-R3-aVP"/>
                         <outlet property="tableView" destination="lpe-Mn-J7z" id="xab-lL-pNH"/>
                     </connections>
                 </viewController>
