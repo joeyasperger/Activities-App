@@ -13,7 +13,7 @@ class ListFriends(webapp2.RequestHandler):
             email = self.request.get('email')
             userID = db.userIdFromEmail(cursor, email)
         cursor.execute("SELECT u.username, u.ID FROM users u INNER JOIN friends f ON u.ID=f.user1_ID WHERE f.user2_ID=%s \
-            UNION SELECT u.username, u.ID FROM users u INNER JOIN friends f ON u.ID=f.user2_ID WHERE f.user1_ID=%s;",
+            UNION SELECT u.username, u.ID FROM users u INNER JOIN friends f ON u.ID=f.user2_ID WHERE f.user1_ID=%s ORDER BY 1",
             [userID, userID])
         rows = cursor.fetchall()
         friends = []

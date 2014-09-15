@@ -35,3 +35,6 @@ handlers:
 
 - url: /allactivities
   script: allactivities.application
+
+- url: /editinterests
+  script: editinterests.application

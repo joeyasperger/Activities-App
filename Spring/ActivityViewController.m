@@ -68,13 +68,26 @@
         }
     }
     if (isInterest){
-        NSLog(@"%@", activity.name);
         cell.userInteractionEnabled = NO;
         cell.textLabel.enabled = NO;
         cell.detailTextLabel.enabled = NO;
+        cell.accessoryView = nil;
     }
     
     return cell;
+}
+
+-(void) tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    // add activity to userActivities
+    for (Activity *activity in self.activities){
+        Activity *selectedActivity = self.activities[indexPath.row];
+        if (selectedActivity.activityID == activity.activityID){
+            [self.userActivities addObject:selectedActivity];
+            [self.userActivities sortUsingSelector:@selector(compare:)];
+            [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+        }
+    }
 }
 
 /*

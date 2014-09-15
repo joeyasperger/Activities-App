@@ -17,17 +17,26 @@ application = webapp2.WSGIApplication([
 ], debug=True)
 
 def addTestUsers(cursor):
-    addUser(cursor, 'Joey', 'Asperger', 'joeyasperger@gmail.com')
-    addUser(cursor, 'Luke', 'Asperger', 'lukeasperger@gmail.com')
-    addUser(cursor, 'Alex', 'Pinon', 'alexpinon@gmail.com')
-    addUser(cursor, 'Jake', 'Zelek', 'jakezelek@gmail.com')
-    addUser(cursor, 'JP', 'Olinski', 'jpolinski@gmail.com')
-    addUser(cursor, 'Katie', 'Wardlaw', 'katiewardlaw@gmail.com')
-    addUser(cursor, 'Rachel', 'Hoang', 'rachelhoang@gmail.com')
-    addUser(cursor, 'Chris', 'McWilliams', 'chrismcwilliams@gmail.com')
+    addUser(cursor, 'Joey', 'Asperger')
+    addUser(cursor, 'Luke', 'Asperger')
+    addUser(cursor, 'Alex', 'Pinon')
+    addUser(cursor, 'Jake', 'Zelek')
+    addUser(cursor, 'JP', 'Olinski')
+    addUser(cursor, 'Katie', 'Wardlaw')
+    addUser(cursor, 'Rachel', 'Hoang')
+    addUser(cursor, 'Chris', 'McWilliams')
+    addUser(cursor, 'Daniel', 'Ramos')
+    addUser(cursor, 'Pavan', 'Mehrotra')
+    addUser(cursor, 'Kevin', 'Moody')
+    addUser(cursor, 'John', 'Welsh')
+    addUser(cursor, 'Julia', 'Martins')
+    addUser(cursor, 'Kylie', 'Fischer')
+    addUser(cursor, 'Jasmine', 'Guillory')
+    addUser(cursor, 'Kaya', 'McRuer')
 
-def addUser(cursor, firstName, lastName, email):
+def addUser(cursor, firstName, lastName):
     username = firstName + ' ' + lastName
+    email = firstName.lower() + lastName.lower() + '@gmail.com'
     stmt = "INSERT INTO users (email, username, firstname, lastname) VALUES (%s, %s, %s, %s);"
     params = [email, username, firstName, lastName]
     cursor.execute(stmt, params)
@@ -51,11 +60,14 @@ def addActivities(cursor):
     outdoors = ['Hiking', 'Mountain Biking', 'Road Cycling', 'Whitewater Rafting', 
         'Rock Climbing', 'Surfing', 'Kayaking', 'Canoeing', 'Skiing', 'Snowboarding', 'Fishing', 'Beach']
     funAndGames = ['Laser Tag', 'Capture the Flag', 'Kart Racing', 'Minigolf']
-    spectatorSports = ['MLB Baseball', 'NCAA Football', 'NCAA Basketball', 'NBA Basketball', 'NFL Football', 'MLS Soccer']
+    spectatorSports = ['MLB Baseball', 'NCAA Football', 'NCAA Basketball', 'NBA Basketball', 'NFL Football', 'MLS Soccer', 'NHL Hockey', 'PGA Golf', 'NASCAR Racing']
+    leisure = ['Movie Theater']
     addActivitiesForCategory(cursor, 'sports', sports)
     addActivitiesForCategory(cursor, 'outdoors', outdoors)
     addActivitiesForCategory(cursor, 'Fun and Games', funAndGames)
     addActivitiesForCategory(cursor, 'Spectator Sports', spectatorSports)
+    addActivitiesForCategory(cursor, 'Leisure', leisure)
+
 
 def addInterests(cursor, userEmail, activities):
     userID = db.userIdFromEmail(cursor, userEmail)
@@ -98,6 +110,15 @@ def addTestFriends(cursor):
     addFriendsWithEmail(cursor, "joeyasperger@gmail.com", "jpolinski@gmail.com")
     addFriendsWithEmail(cursor, "joeyasperger@gmail.com", "katiewardlaw@gmail.com")
     addFriendsWithEmail(cursor, "joeyasperger@gmail.com", "rachelhoang@gmail.com")
+    addFriendsWithEmail(cursor, "joeyasperger@gmail.com", "danielramos@gmail.com")
+    addFriendsWithEmail(cursor, "joeyasperger@gmail.com", "pavanmehrotra@gmail.com")
+    addFriendsWithEmail(cursor, "joeyasperger@gmail.com", "kevinmoody@gmail.com")
+    addFriendsWithEmail(cursor, "joeyasperger@gmail.com", "johnwelsh@gmail.com")
+    addFriendsWithEmail(cursor, "joeyasperger@gmail.com", "juliamartins@gmail.com")
+    addFriendsWithEmail(cursor, "joeyasperger@gmail.com", "kyliefischer@gmail.com")
+    addFriendsWithEmail(cursor, "joeyasperger@gmail.com", "jasmineguillory@gmail.com")
+    addFriendsWithEmail(cursor, "joeyasperger@gmail.com", "kayamcruer@gmail.com")
+
 
 def addTestRecords():
     conn = db.get_connection()

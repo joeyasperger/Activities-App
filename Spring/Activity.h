@@ -15,4 +15,6 @@
 @property NSInteger categoryID;
 @property NSString *categoryName;
 
+//-(NSComparisonResult) compare:(Activity*)otherObject;
+
 @end

@@ -75,7 +75,6 @@
     [self performSegueWithIdentifier:@"ShowActivitiesForCategory" sender:nil];
 }
 
-
 -(void) downloadCompleted:(NSMutableArray *)array{
     // put all the unique category names into an self.categoryNames
     for (int i = 0; i < [array count]; i++){

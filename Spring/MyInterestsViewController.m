@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *editButton;
 @property BOOL inEditMode;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *addActivitiesButton;
+@property (copy) NSMutableArray *initialActivities;
 
 @end
 
@@ -63,6 +64,7 @@
             [self.addActivitiesButton.customView setAlpha:1.0];
         }];
         self.addActivitiesButton.enabled = YES;
+        self.initialActivities = self.activities;
     }else{
         [self.tableView setEditing:NO animated:YES];
         self.inEditMode = NO;
@@ -71,7 +73,13 @@
             [self.addActivitiesButton.customView setAlpha:0.0];
         }];
         self.addActivitiesButton.enabled = NO;
+        [self doneEditing];
     }
+}
+
+-(void) doneEditing{
+    //determine which activities were added
+    
 }
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -94,9 +102,23 @@
     return cell;
 }
 
-- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [self.activities removeObjectAtIndex:indexPath.row];
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    }
 }
+
+-(void) viewWillAppear:(BOOL)animated{
+    [self.tableView reloadData];
+}
+
+/*
+- (BOOL) canPerformUnwindSegueAction:(SEL)action fromViewController:(UIViewController *)fromViewController withSender:(id)sender{
+    [self.tableView reloadData];
+    return YES;
+}*/
 
 - (void)didReceiveMemoryWarning
 {

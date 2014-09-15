@@ -8,9 +8,9 @@
 
 #import "ServerInfo.h"
 
-// static NSString *host = @"http://192.168.1.134:8080";
+static NSString *host = @"http://192.168.1.134:8080";
 // static NSString *host = @"http://flash-surge-679.appspot.com";
-static NSString *host = @"http://10.0.1.117:8080";
+// static NSString *host = @"http://10.0.1.117:8080";
 
 @implementation ServerInfo
 

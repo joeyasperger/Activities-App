@@ -15,4 +15,8 @@
 @synthesize categoryID = _categoryID;
 @synthesize categoryName = _categoryName;
 
+- (NSComparisonResult)compare:(Activity*)otherObject{
+    return [self.name compare:otherObject.name];
+}
+
 @end
