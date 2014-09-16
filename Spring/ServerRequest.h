@@ -8,12 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-#define EDIT_INTERESTS_REQUEST 1
-
 @interface ServerRequest : NSObject
 
-@property NSInteger type;
-
-- (id) initWithType:(NSInteger)type;
+@property NSMutableData *responseData;
+- (id) initPostWithURL:(NSString*)url content:(NSString*)content;
 
 @end

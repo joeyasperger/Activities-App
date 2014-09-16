@@ -1,5 +1,5 @@
 //
-//  FirstViewController.m
+//  FeedViewController.m
 //  Spring
 //
 //  Created by Joseph Asperger on 9/6/14.

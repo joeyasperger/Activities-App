@@ -126,7 +126,8 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"AddActivities"]) {
-        CategoryViewController *destViewController = segue.destinationViewController;
+        UINavigationController *destNavController = segue.destinationViewController;
+        CategoryViewController *destViewController = [destNavController.viewControllers objectAtIndex:0];
         destViewController.userActivities = self.activities;
     }
 }

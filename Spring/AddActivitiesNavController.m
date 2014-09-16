@@ -1,18 +1,20 @@
 //
-//  AddActivitiesNavigationController.m
+//  AddActivitiesNavController.m
 //  Spring
 //
 //  Created by Joseph Asperger on 9/15/14.
 //
 //
 
-#import "AddActivitiesNavigationController.h"
+#import "AddActivitiesNavController.h"
+#import "UserProfile.h"
+#import "Activity.h"
 
-@interface AddActivitiesNavigationController ()
+@interface AddActivitiesNavController ()
 
 @end
 
-@implementation AddActivitiesNavigationController
+@implementation AddActivitiesNavController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -33,6 +35,16 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void) finishAddingActivities:(NSMutableArray*)activities{
+    if (activities.count > 0){
+        NSMutableString *postString = [NSMutableString stringWithFormat:@"userID=%ld",[UserProfile userID]];
+        for (Activity *activity in activities){
+            [postString appendString:[NSString stringWithFormat:@"&add=%ld", activity.activityID]];
+        }
+    }
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 /*

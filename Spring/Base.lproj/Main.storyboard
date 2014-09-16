@@ -544,7 +544,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Nqu-aY-WVZ">
                             <connections>
                                 <action selector="editPressed:" destination="DOv-3G-Chd" id="kbd-nM-wQV"/>
-                                <segue destination="rcW-d6-Eep" kind="push" id="h8L-N7-gtw"/>
+                                <segue destination="MjL-vh-V5Q" kind="modal" identifier="AddActivities" modalTransitionStyle="coverVertical" id="h8L-N7-gtw"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -578,7 +578,13 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Categories" id="PKN-ew-QJK"/>
+                    <navigationItem key="navigationItem" title="Categories" id="PKN-ew-QJK">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="1ok-GP-rdn">
+                            <connections>
+                                <action selector="donePressed:" destination="rcW-d6-Eep" id="irk-Ik-abt"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="anD-5q-YlU" id="dwI-IO-lU8"/>
                         <segue destination="XVH-h7-bsF" kind="push" identifier="ShowActivitiesForCategory" id="0Q0-RR-Xz6"/>
@@ -586,7 +592,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GQS-ZP-Ieb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1984" y="1632"/>
+            <point key="canvasLocation" x="2510" y="1632"/>
         </scene>
         <!--Activity View Controller - Activities-->
         <scene sceneID="5R8-Hd-awd">
@@ -608,11 +614,17 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Activities" id="4D5-bk-hk2"/>
+                    <navigationItem key="navigationItem" title="Activities" id="4D5-bk-hk2">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="TXk-xk-DSk">
+                            <connections>
+                                <action selector="donePressed:" destination="XVH-h7-bsF" id="3Pd-jf-RbH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1pZ-l5-Sue" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2571" y="1632"/>
+            <point key="canvasLocation" x="3097" y="1632"/>
         </scene>
         <!--Navigation Controller - My Interests-->
         <scene sceneID="uEX-MZ-yBm">
@@ -727,6 +739,24 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yqu-ei-rlY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1292" y="2392"/>
+        </scene>
+        <!--Add Activities Nav Controller-->
+        <scene sceneID="Qq7-Bb-XYM">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MjL-vh-V5Q" customClass="AddActivitiesNavController" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="DoY-Uy-0Rg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="rcW-d6-Eep" kind="relationship" relationship="rootViewController" id="h0G-mI-VW3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qPc-oR-FF9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1984" y="1632"/>
         </scene>
     </scenes>
     <resources>

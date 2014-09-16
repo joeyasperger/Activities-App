@@ -10,12 +10,14 @@
 #import "Activity.h"
 #import "ServerInfo.h"
 #import "ActivityViewController.h"
+#import "AddActivitiesNavController.h"
 
 @interface CategoryViewController ()
 
 @property NSMutableArray *activities;
 @property NSMutableArray *categoryNames;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property NSMutableArray *activitiesToAdd;
 
 @end
 
@@ -25,6 +27,7 @@
 @synthesize categoryNames = _categoryNames;
 @synthesize tableView =_tableView;
 @synthesize userActivities = _userActivities;
+@synthesize activitiesToAdd = _activitiesToAdd;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -42,6 +45,7 @@
     // Do any additional setup after loading the view.
     self.activities = [NSMutableArray array];
     self.categoryNames = [NSMutableArray array];
+    self.activitiesToAdd = [NSMutableArray array];
     TableDownloader *downloader = [[TableDownloader alloc] initWithURL:[ServerInfo allactivitesURL] type:ACTIVITY_DOWNLOADER saveFile:@"allactivities.plist"];
     downloader.delegate = self;
 }
@@ -50,6 +54,15 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)donePressed:(id)sender {
+    [(AddActivitiesNavController*)self.parentViewController finishAddingActivities:self.activitiesToAdd];
+}
+
+-(void) finishAddingActivities{
+    [self dismissViewControllerAnimated:YES completion:nil];
+    [(AddActivitiesNavController*)self.parentViewController finishAddingActivities:self.activitiesToAdd];
 }
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -118,6 +131,7 @@
         destViewController.activities = categoryActivities;
         destViewController.categoryName = categoryName;
         destViewController.userActivities = self.userActivities;
+        destViewController.activitiesToAdd = self.activitiesToAdd;
     }
 }
 

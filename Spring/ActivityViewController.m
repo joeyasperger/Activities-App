@@ -8,6 +8,8 @@
 
 #import "ActivityViewController.h"
 #import "Activity.h"
+#import "CategoryViewController.h"
+#import "AddActivitiesNavController.h"
 
 @interface ActivityViewController ()
 
@@ -17,6 +19,8 @@
 
 @synthesize activities = _activities;
 @synthesize userActivities = _userActivities;
+@synthesize activitiesToAdd = _activitiesToAdd;
+@synthesize categoryName = _categoryName;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -38,6 +42,10 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)donePressed:(id)sender {
+    [(AddActivitiesNavController*)self.parentViewController finishAddingActivities:self.activitiesToAdd];
 }
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -83,6 +91,7 @@
         Activity *selectedActivity = self.activities[indexPath.row];
         if (selectedActivity.activityID == activity.activityID){
             [self.userActivities addObject:selectedActivity];
+            [self.activitiesToAdd addObject:selectedActivity];
             [self.userActivities sortUsingSelector:@selector(compare:)];
             [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
             break;

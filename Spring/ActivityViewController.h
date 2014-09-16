@@ -13,5 +13,6 @@
 @property NSMutableArray *activities;
 @property NSMutableArray *userActivities;
 @property NSString *categoryName;
+@property NSMutableArray *activitiesToAdd;
 
 @end

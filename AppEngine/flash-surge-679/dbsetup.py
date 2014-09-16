@@ -59,7 +59,7 @@ def addActivities(cursor):
         'Wiffleball', 'Softball', 'Rugby', 'Kickball', 'Ultimate Frisbee', 'Golf', 'Volleyball', 'Tennis', 'Table Tennis']
     outdoors = ['Hiking', 'Mountain Biking', 'Road Cycling', 'Whitewater Rafting', 
         'Rock Climbing', 'Surfing', 'Kayaking', 'Canoeing', 'Skiing', 'Snowboarding', 'Fishing', 'Beach']
-    funAndGames = ['Laser Tag', 'Capture the Flag', 'Kart Racing', 'Minigolf']
+    funAndGames = ['Laser Tag', 'Capture the Flag', 'Kart Racing', 'Minigolf', 'Paintball', 'Arcade']
     spectatorSports = ['MLB Baseball', 'NCAA Football', 'NCAA Basketball', 'NBA Basketball', 'NFL Football', 'MLS Soccer', 'NHL Hockey', 'PGA Golf', 'NASCAR Racing']
     leisure = ['Movie Theater']
     addActivitiesForCategory(cursor, 'sports', sports)

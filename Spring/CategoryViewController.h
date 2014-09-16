@@ -14,4 +14,6 @@
 
 @property NSMutableArray *userActivities;
 
+-(void) finishAddingActivities;
+
 @end
