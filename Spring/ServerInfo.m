@@ -34,4 +34,8 @@ static NSString *host = @"http://192.168.1.134:8080";
     return [NSString stringWithFormat:@"%@/allactivities",host];
 }
 
++(NSString*) addInterestsURL{
+    return [NSString stringWithFormat:@"%@/addinterests", host];
+}
+
 @end

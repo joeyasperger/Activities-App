@@ -9,6 +9,8 @@
 #import "AddActivitiesNavController.h"
 #import "UserProfile.h"
 #import "Activity.h"
+#import "ServerInfo.h"
+#import "ServerRequest.h"
 
 @interface AddActivitiesNavController ()
 
@@ -43,6 +45,7 @@
         for (Activity *activity in activities){
             [postString appendString:[NSString stringWithFormat:@"&add=%ld", activity.activityID]];
         }
+        [[ServerRequest alloc] initPostWithURL:[ServerInfo addInterestsURL] content:postString];
     }
     [self dismissViewControllerAnimated:YES completion:nil];
 }
