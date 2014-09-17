@@ -16,5 +16,6 @@
 +(NSString*) loginURL:(NSString*)email password:(NSString*)password;
 +(NSString*) allactivitesURL;
 +(NSString*) addInterestsURL;
++(NSString*) deleteInterestsURL;
 
 @end

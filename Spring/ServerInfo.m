@@ -23,7 +23,7 @@ static NSString *host = @"http://192.168.1.134:8080";
 }
 
 +(NSString*) interestsURL:(NSInteger)userID{
-    return [NSString stringWithFormat:@"%@/listinterests?id=%ld", host, userID];
+    return [NSString stringWithFormat:@"%@/interests/show?id=%ld", host, userID];
 }
 
 +(NSString*) loginURL:(NSString *)email password:(NSString *)password{
@@ -35,7 +35,11 @@ static NSString *host = @"http://192.168.1.134:8080";
 }
 
 +(NSString*) addInterestsURL{
-    return [NSString stringWithFormat:@"%@/addinterests", host];
+    return [NSString stringWithFormat:@"%@/interests/add", host];
+}
+
++(NSString*) deleteInterestsURL{
+    return [NSString stringWithFormat:@"%@/interests/delete", host];
 }
 
 @end

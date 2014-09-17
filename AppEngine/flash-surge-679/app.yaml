@@ -9,17 +9,8 @@ handlers:
 - url: /
   script: default.application
 
-- url: /users
-  script: users.application
-
 - url: /dbsetup
   script: dbsetup.application
-
-- url: /showactivities
-  script: showactivities.application
-
-- url: /showinterests
-  script: showinterests.application
 
 - url: /allevents
   script: allevents.application
@@ -30,11 +21,14 @@ handlers:
 - url: /login
   script: login.application
 
-- url: /listinterests
-  script: listinterests.application
+- url: /interests/show
+  script: interests.application
+
+- url: /interests/add
+  script: interests.application
+  
+- url: /interests/delete
+  script: interests.application
 
 - url: /allactivities
   script: allactivities.application
-
-- url: /addinterests
-  script: addinterests.application

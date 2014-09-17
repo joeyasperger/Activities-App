@@ -11,6 +11,7 @@
 #import "UserProfile.h"
 #import "Activity.h"
 #import "CategoryViewController.h"
+#import "ServerRequest.h"
 
 @interface MyInterestsViewController ()
 
@@ -73,6 +74,13 @@
     [self.tableView setEditing:NO animated:YES];
     self.inEditMode = NO;
     [self.editButton setTitle:@"Edit"];
+    if (self.activitiesToDelete.count > 0){
+        NSMutableString *postString = [NSMutableString stringWithFormat:@"userID=%ld",[UserProfile userID]];
+        for (Activity *activity in self.activitiesToDelete){
+            [postString appendString:[NSString stringWithFormat:@"&delete=%ld", activity.activityID]];
+        }
+        [[ServerRequest alloc] initPostWithURL:[ServerInfo deleteInterestsURL] content:postString];
+    }
 }
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
