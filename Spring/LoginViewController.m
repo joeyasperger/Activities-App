@@ -9,6 +9,7 @@
 #import "LoginViewController.h"
 #import "ServerInfo.h"
 #import "UserProfile.h"
+#import <FacebookSDK/FacebookSDK.h>
 
 @interface LoginViewController ()
 @property (strong, nonatomic) IBOutlet UITextField *emailField;
@@ -100,8 +101,11 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
     self.errorLabel.text = @"";
+    
+    FBLoginView *loginView = [[FBLoginView alloc] init];
+    loginView.center = self.view.center;
+    [self.view addSubview:loginView];
 }
 
 - (void)didReceiveMemoryWarning

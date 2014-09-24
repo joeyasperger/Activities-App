@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="mcF-iG-emE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="mcF-iG-emE">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <deployment defaultVersion="1808" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
-        <!--Feed View Controller - First-->
+        <!--First-->
         <scene sceneID="W3I-pn-N6e">
             <objects>
                 <viewController title="First" id="CZ4-MO-1fc" customClass="FeedViewController" sceneMemberID="viewController">
@@ -238,7 +239,7 @@
             </objects>
             <point key="canvasLocation" x="-678" y="631"/>
         </scene>
-        <!--View Controller - Groups-->
+        <!--Groups-->
         <scene sceneID="tDN-Hh-e1x">
             <objects>
                 <viewController id="AL1-Ps-n59" sceneMemberID="viewController">
@@ -253,7 +254,7 @@
             </objects>
             <point key="canvasLocation" x="-734" y="2384"/>
         </scene>
-        <!--Profile View Controller - Profile-->
+        <!--Profile-->
         <scene sceneID="E8Z-20-Cky">
             <objects>
                 <viewController id="RKQ-HJ-Ua4" customClass="ProfileViewController" sceneMemberID="viewController">
@@ -290,7 +291,7 @@
             </objects>
             <point key="canvasLocation" x="1411" y="3081"/>
         </scene>
-        <!--View Controller - Settings-->
+        <!--Settings-->
         <scene sceneID="wo7-nU-2UZ">
             <objects>
                 <viewController id="NB6-au-78l" sceneMemberID="viewController">
@@ -305,7 +306,7 @@
             </objects>
             <point key="canvasLocation" x="1411" y="2375"/>
         </scene>
-        <!--View Controller - Notifications-->
+        <!--Notifications-->
         <scene sceneID="5Ty-ga-V0L">
             <objects>
                 <viewController id="qga-p9-Lsa" sceneMemberID="viewController">
@@ -320,7 +321,7 @@
             </objects>
             <point key="canvasLocation" x="1411" y="-1648"/>
         </scene>
-        <!--Create Event View Controller - Create Event-->
+        <!--Create Event-->
         <scene sceneID="FtG-lQ-Vvd">
             <objects>
                 <viewController id="RxF-UN-lHQ" customClass="CreateEventViewController" sceneMemberID="viewController">
@@ -356,27 +357,6 @@
                                         <date key="date" timeIntervalSinceReferenceDate="432151323.77955598">
                                             <!--2014-09-11 18:02:03 +0000-->
                                         </date>
-                                        <timeZone key="timeZone" name="America/Los_Angeles">
-                                            <data key="data">
-VFppZgAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAC5AAAABAAAABCepkign7sVkKCGKqChmveQ
-y4kaoNIj9HDSYSYQ1v50INiArZDa/tGg28CQENzes6DdqayQ3r6VoN+JjpDgnneg4WlwkOJ+WaDjSVKQ
-5F47oOUpNJDmR1gg5xJREOgnOiDo8jMQ6gccIOrSFRDr5v4g7LH3EO3G4CDukdkQ76/8oPBxuxDxj96g
-8n/BkPNvwKD0X6OQ9U+ioPY/hZD3L4Sg+CiiEPkPZqD6CIQQ+viDIPvoZhD82GUg/chIEP64RyD/qCoQ
-AJgpIAGIDBACeAsgA3EokARhJ6AFUQqQBkEJoAcw7JAHjUOgCRDOkAmtvyAK8LCQC+CvoAzZzRANwJGg
-DrmvEA+priAQmZEQEYmQIBJ5cxATaXIgFFlVEBVJVCAWOTcQFyk2IBgiU5AZCRggGgI1kBryNKAb4heQ
-HNIWoB3B+ZAesfigH6HbkCB2KyAhgb2QIlYNICNq2hAkNe8gJUq8ECYV0SAnKp4QJ/7toCkKgBAp3s+g
-KupiECu+saAs036QLZ6ToC6zYJAvfnWgMJNCkDFnkiAycySQM0d0IDRTBpA1J1YgNjLokDcHOCA4HAUQ
-OOcaIDn75xA6xvwgO9vJEDywGKA9u6sQPo/6oD+bjRBAb9ygQYSpkEJPvqBDZIuQRC+goEVEbZBF89Mg
-Ry2KEEfTtSBJDWwQSbOXIErtThBLnLOgTNZqkE18laBOtkyQT1x3oFCWLpBRPFmgUnYQkFMcO6BUVfKQ
-VPwdoFY11JBW5TogWB7xEFjFHCBZ/tMQWqT+IFvetRBchOAgXb6XEF5kwiBfnnkQYE3eoGGHlZBiLcCg
-Y2d3kGQNoqBlR1mQZe2EoGcnO5BnzWagaQcdkGmtSKBq5v+Qa5ZlIGzQHBBtdkcgbq/+EG9WKSBwj+AQ
-cTYLIHJvwhBzFe0gdE+kEHT/CaB2OMCQdt7roHgYopB4vs2gefiEkHqer6B72GaQfH6RoH24SJB+XnOg
-f5gqkAABAAECAwEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
-AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
-AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
-AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
-</data>
-                                        </timeZone>
                                     </datePicker>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3Bo-x5-QcP">
                                         <rect key="frame" x="13" y="354" width="79" height="21"/>
@@ -432,9 +412,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PZV-3A-dk4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2206" y="-178"/>
+            <point key="canvasLocation" x="2206" y="-16"/>
         </scene>
-        <!--Navigation Controller - Feed-->
+        <!--Feed-->
         <scene sceneID="MGq-RZ-I8V">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Zg2-OP-uDt" sceneMemberID="viewController">
@@ -453,7 +433,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             </objects>
             <point key="canvasLocation" x="698" y="-904"/>
         </scene>
-        <!--View Controller - My Events-->
+        <!--My Events-->
         <scene sceneID="qwN-jj-fIU">
             <objects>
                 <viewController id="g9i-ns-dko" sceneMemberID="viewController">
@@ -474,7 +454,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             </objects>
             <point key="canvasLocation" x="1411" y="-178"/>
         </scene>
-        <!--Friends View Controller - Friends-->
+        <!--Friends-->
         <scene sceneID="faa-eT-qg3">
             <objects>
                 <viewController id="n0A-Ry-yoQ" customClass="FriendsViewController" sceneMemberID="viewController">
@@ -496,7 +476,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             </objects>
             <point key="canvasLocation" x="1411" y="857"/>
         </scene>
-        <!--Navigation Controller - My Events-->
+        <!--My Events-->
         <scene sceneID="GNv-q5-Ojx">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9uA-oO-nP7" sceneMemberID="viewController">
@@ -515,7 +495,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             </objects>
             <point key="canvasLocation" x="698" y="-178"/>
         </scene>
-        <!--My Interests View Controller - My Interests-->
+        <!--My Interests-->
         <scene sceneID="1i0-VD-rDn">
             <objects>
                 <viewController id="DOv-3G-Chd" customClass="MyInterestsViewController" sceneMemberID="viewController">
@@ -558,7 +538,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             </objects>
             <point key="canvasLocation" x="1411" y="1646"/>
         </scene>
-        <!--Category View Controller - Categories-->
+        <!--Categories-->
         <scene sceneID="EQX-MI-VRH">
             <objects>
                 <viewController id="rcW-d6-Eep" customClass="CategoryViewController" sceneMemberID="viewController">
@@ -594,7 +574,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             </objects>
             <point key="canvasLocation" x="2510" y="1632"/>
         </scene>
-        <!--Activity View Controller - Activities-->
+        <!--Activities-->
         <scene sceneID="5R8-Hd-awd">
             <objects>
                 <viewController id="XVH-h7-bsF" customClass="ActivityViewController" sceneMemberID="viewController">
@@ -626,7 +606,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             </objects>
             <point key="canvasLocation" x="3097" y="1632"/>
         </scene>
-        <!--Navigation Controller - My Interests-->
+        <!--My Interests-->
         <scene sceneID="uEX-MZ-yBm">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="koC-vq-05J" sceneMemberID="viewController">
@@ -645,7 +625,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             </objects>
             <point key="canvasLocation" x="723" y="1646"/>
         </scene>
-        <!--Navigation Controller - Notifications-->
+        <!--Notifications-->
         <scene sceneID="8aU-Ju-4pa">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="v8N-48-K4s" sceneMemberID="viewController">
@@ -664,7 +644,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             </objects>
             <point key="canvasLocation" x="698" y="-1648"/>
         </scene>
-        <!--Navigation Controller - Friends-->
+        <!--Friends-->
         <scene sceneID="ysN-1B-wkY">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DOE-qP-zrK" sceneMemberID="viewController">
@@ -683,7 +663,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             </objects>
             <point key="canvasLocation" x="698" y="857"/>
         </scene>
-        <!--Navigation Controller - Settings-->
+        <!--Settings-->
         <scene sceneID="3VZ-uh-iJF">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3P8-EE-BOn" sceneMemberID="viewController">
@@ -702,7 +682,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             </objects>
             <point key="canvasLocation" x="690" y="2375"/>
         </scene>
-        <!--Navigation Controller - Profile-->
+        <!--Profile-->
         <scene sceneID="YpE-PB-2w9">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2ol-MF-dke" sceneMemberID="viewController">
@@ -721,7 +701,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             </objects>
             <point key="canvasLocation" x="690" y="3081"/>
         </scene>
-        <!--Navigation Controller - Groups-->
+        <!--Groups-->
         <scene sceneID="FNd-kx-HDU">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ETj-jk-hSg" sceneMemberID="viewController">
