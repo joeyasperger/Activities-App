@@ -9,7 +9,6 @@
 #import "LoginViewController.h"
 #import "ServerInfo.h"
 #import "UserProfile.h"
-#import <FacebookSDK/FacebookSDK.h>
 
 @interface LoginViewController ()
 @property (strong, nonatomic) IBOutlet UITextField *emailField;
@@ -17,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *errorLabel;
 @property NSMutableData *responseData;
 @property id sender;
+@property (weak, nonatomic) IBOutlet FBLoginView *facebookLoginView;
 
 @end
 
@@ -27,10 +27,19 @@
 @synthesize passwordField = _passwordField;
 @synthesize responseData = _responseData;
 @synthesize errorLabel = _errorLabel;
+@synthesize facebookLoginView = _facebookLoginView;
 
 - (IBAction)Login:(id)sender {
     self.sender = sender;
     [self sendLoginRequest];
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    self.errorLabel.text = @"";
+    self.facebookLoginView.readPermissions = @[@"public_profile", @"email", @"user_friends"];
 }
 
 -(void)sendLoginRequest{
@@ -88,6 +97,11 @@
     return YES;
 }
 
+
+- (void) loginViewFetchedUserInfo:(FBLoginView *)loginView user:(id<FBGraphUser>)user{
+    
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -95,17 +109,6 @@
         // Custom initialization
     }
     return self;
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    self.errorLabel.text = @"";
-    
-    FBLoginView *loginView = [[FBLoginView alloc] init];
-    loginView.center = self.view.center;
-    [self.view addSubview:loginView];
 }
 
 - (void)didReceiveMemoryWarning

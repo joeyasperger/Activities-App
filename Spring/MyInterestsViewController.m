@@ -89,17 +89,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *simpleTableIdentifier = @"InterestsTableCell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
-    
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:simpleTableIdentifier];
-    }
-    Activity *activity = self.activities[indexPath.row];
-    cell.textLabel.text = activity.name;
-    cell.detailTextLabel.text = activity.categoryName;
-    return cell;
+    return [Activity activitySubtitleCell:self.activities[indexPath.row] tableView:tableView];
 }
 
 

@@ -72,16 +72,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *simpleTableIdentifier = @"CategoryTableCell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
-    
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
-    }
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    cell.textLabel.text = (NSString*)self.categoryNames[indexPath.row];
-    return cell;
+    return [Activity categoryCell:self.categoryNames[indexPath.row] tableView:tableView];
 }
 
 - (void) tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -89,22 +80,8 @@
 }
 
 -(void) downloadCompleted:(NSMutableArray *)array{
-    // put all the unique category names into an self.categoryNames
-    for (int i = 0; i < [array count]; i++){
-        NSString *categoryName = ((Activity*)array[i]).categoryName;
-        BOOL alreadyExists = NO;
-        for (NSString *string in self.categoryNames){
-            if ([string isEqual:categoryName]){
-                alreadyExists = YES;
-            }
-        }
-        if (alreadyExists == NO){
-            [self.categoryNames addObject:categoryName];
-        }
-        
-        // also fill activities array
-        [self.activities addObject:array[i]];
-    }
+    self.categoryNames = [Activity uniqueCategoryNamesFromActivities:array];
+    self.activities = array;
     [self.tableView reloadData];
 }
 
@@ -119,15 +96,8 @@
     if ([segue.identifier isEqualToString:@"ShowActivitiesForCategory"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         ActivityViewController *destViewController = segue.destinationViewController;
-        
-        //get activities for selected category
-        NSMutableArray *categoryActivities = [NSMutableArray array];
         NSString *categoryName = [self.categoryNames objectAtIndex:indexPath.row];
-        for (Activity *activity in self.activities){
-            if ([categoryName isEqual:activity.categoryName]){
-                [categoryActivities addObject:activity];
-            }
-        }
+        NSMutableArray *categoryActivities = [Activity activitiesForCategory:categoryName activities:self.activities];
         destViewController.activities = categoryActivities;
         destViewController.categoryName = categoryName;
         destViewController.userActivities = self.userActivities;

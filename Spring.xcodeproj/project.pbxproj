@@ -189,18 +189,10 @@
 				5AA3CB9219BBC9F200D07D51 /* AppDelegate.h */,
 				5AA3CB9319BBC9F200D07D51 /* AppDelegate.m */,
 				5AA3CB9519BBC9F200D07D51 /* Main.storyboard */,
-				5A92AEC119C24C90001C52F7 /* MyInterestsViewController.h */,
-				5A92AEC219C24C90001C52F7 /* MyInterestsViewController.m */,
-				5A693E8419C3A884005C5377 /* CategoryViewController.h */,
-				5A693E8519C3A884005C5377 /* CategoryViewController.m */,
-				5A693E8719C4A54E005C5377 /* ActivityViewController.h */,
-				5A693E8819C4A54E005C5377 /* ActivityViewController.m */,
-				5A693E8D19C7B286005C5377 /* AddActivitiesNavController.h */,
-				5A693E8E19C7B286005C5377 /* AddActivitiesNavController.m */,
-				5A92AEC719C257D4001C52F7 /* TableDownloader.h */,
-				5A92AEC819C257D4001C52F7 /* TableDownloader.m */,
-				5A92AEBE19C21E74001C52F7 /* CreateEventViewController.h */,
-				5A92AEBF19C21E74001C52F7 /* CreateEventViewController.m */,
+				5AACDDFD19D37B730085DBBC /* Base Objects */,
+				5AACDDFE19D37BA80085DBBC /* Server Communication */,
+				5AACDDFC19D339170085DBBC /* My Interests Tab */,
+				5AACDDFF19D37C9C0085DBBC /* Create Event */,
 				5A92AEBB19BFE899001C52F7 /* ProfileViewController.h */,
 				5A92AEBC19BFE899001C52F7 /* ProfileViewController.m */,
 				5A92AEB219BFA486001C52F7 /* FriendsViewController.h */,
@@ -215,16 +207,6 @@
 				5AA3CBBC19BBF01F00D07D51 /* EventTableViewCell.m */,
 				5AA3CB9819BBC9F200D07D51 /* FeedViewController.h */,
 				5AA3CB9919BBC9F200D07D51 /* FeedViewController.m */,
-				5AF94FB119BE395F0043E062 /* ServerInfo.h */,
-				5AF94FB219BE395F0043E062 /* ServerInfo.m */,
-				5A693E8A19C7793A005C5377 /* ServerRequest.h */,
-				5A693E8B19C7793A005C5377 /* ServerRequest.m */,
-				5A92AEC419C251A1001C52F7 /* Activity.h */,
-				5A92AEC519C251A1001C52F7 /* Activity.m */,
-				5A92AEB519BFA548001C52F7 /* Friend.h */,
-				5A92AEB619BFA548001C52F7 /* Friend.m */,
-				5AA3CBC119BC13DA00D07D51 /* Event.h */,
-				5AA3CBC219BC13DA00D07D51 /* Event.m */,
 				5AA3CB9B19BBC9F200D07D51 /* MoreViewController.h */,
 				5AA3CB9C19BBC9F200D07D51 /* MoreViewController.m */,
 				5AA3CB9E19BBC9F200D07D51 /* Images.xcassets */,
@@ -282,6 +264,56 @@
 				5AACDC4919D24B480085DBBC /* README.txt */,
 			);
 			path = FBAudienceNetwork;
+			sourceTree = "<group>";
+		};
+		5AACDDFC19D339170085DBBC /* My Interests Tab */ = {
+			isa = PBXGroup;
+			children = (
+				5A693E8D19C7B286005C5377 /* AddActivitiesNavController.h */,
+				5A693E8E19C7B286005C5377 /* AddActivitiesNavController.m */,
+				5A92AEC119C24C90001C52F7 /* MyInterestsViewController.h */,
+				5A92AEC219C24C90001C52F7 /* MyInterestsViewController.m */,
+				5A693E8419C3A884005C5377 /* CategoryViewController.h */,
+				5A693E8519C3A884005C5377 /* CategoryViewController.m */,
+				5A693E8719C4A54E005C5377 /* ActivityViewController.h */,
+				5A693E8819C4A54E005C5377 /* ActivityViewController.m */,
+			);
+			name = "My Interests Tab";
+			sourceTree = "<group>";
+		};
+		5AACDDFD19D37B730085DBBC /* Base Objects */ = {
+			isa = PBXGroup;
+			children = (
+				5A92AEC419C251A1001C52F7 /* Activity.h */,
+				5A92AEC519C251A1001C52F7 /* Activity.m */,
+				5A92AEB519BFA548001C52F7 /* Friend.h */,
+				5A92AEB619BFA548001C52F7 /* Friend.m */,
+				5AA3CBC119BC13DA00D07D51 /* Event.h */,
+				5AA3CBC219BC13DA00D07D51 /* Event.m */,
+			);
+			name = "Base Objects";
+			sourceTree = "<group>";
+		};
+		5AACDDFE19D37BA80085DBBC /* Server Communication */ = {
+			isa = PBXGroup;
+			children = (
+				5A92AEC719C257D4001C52F7 /* TableDownloader.h */,
+				5A92AEC819C257D4001C52F7 /* TableDownloader.m */,
+				5AF94FB119BE395F0043E062 /* ServerInfo.h */,
+				5AF94FB219BE395F0043E062 /* ServerInfo.m */,
+				5A693E8A19C7793A005C5377 /* ServerRequest.h */,
+				5A693E8B19C7793A005C5377 /* ServerRequest.m */,
+			);
+			name = "Server Communication";
+			sourceTree = "<group>";
+		};
+		5AACDDFF19D37C9C0085DBBC /* Create Event */ = {
+			isa = PBXGroup;
+			children = (
+				5A92AEBE19C21E74001C52F7 /* CreateEventViewController.h */,
+				5A92AEBF19C21E74001C52F7 /* CreateEventViewController.m */,
+			);
+			name = "Create Event";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

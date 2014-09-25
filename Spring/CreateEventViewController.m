@@ -38,7 +38,7 @@
     
     [self.scrollView setScrollEnabled:YES];
     [self.scrollView setContentSize:CGSizeMake(320, 1000)];
-    self.recipientOptions = @[@"Anyone", @"Friends Only", @"Select Group", @"Select Friends"];
+    self.recipientOptions = @[@"Anyone", @"Friends Only", @"Group", @"Invite Only"];
 }
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
