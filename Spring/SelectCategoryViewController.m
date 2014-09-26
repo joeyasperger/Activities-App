@@ -9,6 +9,7 @@
 #import "SelectCategoryViewController.h"
 #import "ServerInfo.h"
 #import "Activity.h"
+#import "SelectActivitiyViewController.h"
 
 @interface SelectCategoryViewController ()
 
@@ -48,21 +49,35 @@
     return [Activity categoryCell:self.categoryNames[indexPath.row] tableView:tableView];
 }
 
+- (void) tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [self performSegueWithIdentifier:@"SelectEventActivity" sender:nil];
+}
+
 -(void) downloadCompleted:(NSMutableArray *)array{
     self.categoryNames = [Activity uniqueCategoryNamesFromActivities:array];
     self.activities = array;
     [self.tableView reloadData];
 }
 
+- (BOOL) canPerformUnwindSegueAction:(SEL)action fromViewController:(UIViewController *)fromViewController withSender:(id)sender{
+    return NO;
+}
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"SelectEventActivity"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        SelectActivitiyViewController *destViewController = segue.destinationViewController;
+        NSString *categoryName = [self.categoryNames objectAtIndex:indexPath.row];
+        NSMutableArray *categoryActivities = [Activity activitiesForCategory:categoryName activities:self.activities];
+        destViewController.activities = categoryActivities;
+        destViewController.categoryName = categoryName;
+    }
 }
-*/
+
 
 @end

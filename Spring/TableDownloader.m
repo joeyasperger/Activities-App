@@ -44,7 +44,7 @@
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
-    NSLog(@"didReceiveResponse");
+    //NSLog(@"didReceiveResponse");
     [self.responseData setLength:0];
 }
 
@@ -58,11 +58,11 @@
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
-    NSLog(@"connectionDidFinishLoading");
-    NSLog(@"Succeeded! Received %ld bytes of data",(long)[self.responseData length]);
+    //NSLog(@"connectionDidFinishLoading");
+    //NSLog(@"Succeeded! Received %ld bytes of data",(long)[self.responseData length]);
     
     NSString* pliststr = [[NSString alloc] initWithData:self.responseData encoding:NSUTF8StringEncoding];
-    NSLog(@"%@", pliststr);
+    //NSLog(@"%@", pliststr);
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
     NSString *pathString = [documentsDirectory stringByAppendingPathComponent:self.filename];

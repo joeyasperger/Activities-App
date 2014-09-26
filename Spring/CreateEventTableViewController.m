@@ -7,12 +7,16 @@
 //
 
 #import "CreateEventTableViewController.h"
+#import "SelectActivitiyViewController.h"
+#import "Activity.h"
 
 @interface CreateEventTableViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *eventNameField;
 @property (weak, nonatomic) IBOutlet UILabel *activityTypeLabel;
 @property (weak, nonatomic) IBOutlet UITextView *descriptionTextView;
+@property Activity *activity;
+@property (weak, nonatomic) IBOutlet UILabel *activityLabel;
 
 @end
 
@@ -42,6 +46,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction) unwindFromSelectActivity: (UIStoryboardSegue*) segue{
+    SelectActivitiyViewController *source = [segue sourceViewController];
+    self.activity = source.selectedActivity;
+    self.activityLabel.text = self.activity.name;
+}
+
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     [textField resignFirstResponder];
@@ -49,80 +59,21 @@
 }
 
 - (void) tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    switch (indexPath.row){
-        case 1:
-            [self performSegueWithIdentifier:@"SelectEventActivity" sender:nil];
-            break;
-        case 2:
-            [self performSegueWithIdentifier:@"SelectEventLocation" sender:nil];
-            break;
-        case 3:
-            [self performSegueWithIdentifier:@"SelectEventTime" sender:nil];
-            break;
-        case 4:
-            [self performSegueWithIdentifier:@"SelectEventPrivacy" sender:nil];
-            break;
+    NSLog(@"%ld",indexPath.row);
+    if (indexPath.section == 0 && indexPath.row == 1){
+        [self performSegueWithIdentifier:@"SelectEventCategory" sender:nil];
+    }
+    else if (indexPath.section == 1 && indexPath.row == 0){
+        [self performSegueWithIdentifier:@"SelectEventLocation" sender:nil];
+    }
+    else if (indexPath.section == 1 && indexPath.row == 1){
+        [self performSegueWithIdentifier:@"SelectEventTime" sender:nil];
+    }
+    else if (indexPath.section == 1 && indexPath.row == 2){
+        [self performSegueWithIdentifier:@"SelectEventPrivacy" sender:nil];
     }
 }
 
-/*
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
-}*/
-
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
-}
-*/
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 /*
 #pragma mark - Navigation

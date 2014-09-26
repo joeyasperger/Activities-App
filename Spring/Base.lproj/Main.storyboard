@@ -492,10 +492,11 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Create Event" id="ywm-8s-hpa"/>
                     <connections>
+                        <outlet property="activityLabel" destination="ndj-lj-Ee1" id="neM-77-1C4"/>
                         <outlet property="activityTypeLabel" destination="ndj-lj-Ee1" id="ajj-n8-cVe"/>
                         <outlet property="descriptionTextView" destination="Btb-1P-prt" id="YcX-ON-vpq"/>
                         <outlet property="eventNameField" destination="WYM-JT-6Fr" id="WFT-I6-2XQ"/>
-                        <segue destination="DgO-BZ-p8o" kind="push" identifier="SelectEventActivity" id="L5L-Ch-Uqa"/>
+                        <segue destination="DgO-BZ-p8o" kind="push" identifier="SelectEventCategory" id="L5L-Ch-Uqa"/>
                         <segue destination="wai-PA-Nkc" kind="push" identifier="SelectEventLocation" id="4US-UW-KqA"/>
                         <segue destination="hOc-Kf-F5p" kind="push" identifier="SelectEventTime" id="vda-Rp-88V"/>
                         <segue destination="Kq2-4s-3LU" kind="push" identifier="SelectEventPrivacy" id="knH-Ec-Dfg"/>
@@ -527,7 +528,7 @@
         <!--Time-->
         <scene sceneID="gEG-Ka-S5K">
             <objects>
-                <viewController id="hOc-Kf-F5p" sceneMemberID="viewController">
+                <viewController id="hOc-Kf-F5p" customClass="SelectTimeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="d60-NM-08Z"/>
                         <viewControllerLayoutGuide type="bottom" id="GLa-mW-o9N"/>
@@ -588,11 +589,45 @@
                     <navigationItem key="navigationItem" title="Categories" id="ePc-eo-N2N"/>
                     <connections>
                         <outlet property="tableView" destination="iPh-Si-wFP" id="Urk-at-Ego"/>
+                        <segue destination="jkJ-DZ-FM7" kind="push" identifier="SelectEventActivity" id="0Dq-ud-a2r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1sC-L1-hwL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3648" y="-865"/>
+        </scene>
+        <!--Select Activitiy View Controller-->
+        <scene sceneID="RQR-Oa-S9y">
+            <objects>
+                <viewController id="jkJ-DZ-FM7" customClass="SelectActivitiyViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xam-ZE-pRv"/>
+                        <viewControllerLayoutGuide type="bottom" id="TYS-kq-wwz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TsF-l1-aIs">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="fqI-oL-WeA">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="jkJ-DZ-FM7" id="lLp-dV-jNn"/>
+                                    <outlet property="delegate" destination="jkJ-DZ-FM7" id="QeH-g3-pQd"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="WC3-DL-bEn"/>
+                    <connections>
+                        <segue destination="Ugt-EA-o8C" kind="unwind" identifier="UnwindFromSelectActivity" unwindAction="unwindFromSelectActivity:" id="wgi-OV-RIV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U8S-FB-MEB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Ugt-EA-o8C" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="4247" y="-865"/>
         </scene>
         <!--Friends-->
         <scene sceneID="faa-eT-qg3">

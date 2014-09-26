@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Activity.h"
 
 @interface SelectActivitiyViewController : UIViewController
+
+@property NSMutableArray *activities;
+@property NSString *categoryName;
+@property Activity *selectedActivity;
 
 @end

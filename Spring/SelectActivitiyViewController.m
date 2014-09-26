@@ -7,12 +7,17 @@
 //
 
 #import "SelectActivitiyViewController.h"
+#import "Activity.h"
 
 @interface SelectActivitiyViewController ()
 
 @end
 
 @implementation SelectActivitiyViewController
+
+@synthesize categoryName = _categoryName;
+@synthesize activities =_activities;
+@synthesize selectedActivity = _selectedActivity;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -22,6 +27,32 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return [self.activities count];
+    
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *simpleTableIdentifier = @"AddActivityTableCell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+    }
+    Activity *activity = self.activities[indexPath.row];
+    cell.textLabel.text = activity.name;
+
+    return cell;
+}
+
+-(void) tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    Activity *selectedActivity = self.activities[indexPath.row];
+    self.selectedActivity = selectedActivity;
+    [self performSegueWithIdentifier:@"UnwindFromSelectActivity" sender:self];
 }
 
 /*

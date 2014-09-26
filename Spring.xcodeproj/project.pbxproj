@@ -10,6 +10,7 @@
 		5A336A1419D4EF280062EC98 /* CreateEventTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A336A1319D4EF280062EC98 /* CreateEventTableViewController.m */; };
 		5A336A1719D512D90062EC98 /* SelectCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A336A1619D512D90062EC98 /* SelectCategoryViewController.m */; };
 		5A336A1A19D516790062EC98 /* SelectActivitiyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A336A1919D516790062EC98 /* SelectActivitiyViewController.m */; };
+		5A336A1D19D52C2B0062EC98 /* SelectTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A336A1C19D52C2B0062EC98 /* SelectTimeViewController.m */; };
 		5A693E8619C3A884005C5377 /* CategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A693E8519C3A884005C5377 /* CategoryViewController.m */; };
 		5A693E8919C4A54E005C5377 /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A693E8819C4A54E005C5377 /* ActivityViewController.m */; };
 		5A693E8C19C7793A005C5377 /* ServerRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A693E8B19C7793A005C5377 /* ServerRequest.m */; };
@@ -64,6 +65,8 @@
 		5A336A1619D512D90062EC98 /* SelectCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectCategoryViewController.m; sourceTree = "<group>"; };
 		5A336A1819D516790062EC98 /* SelectActivitiyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectActivitiyViewController.h; sourceTree = "<group>"; };
 		5A336A1919D516790062EC98 /* SelectActivitiyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectActivitiyViewController.m; sourceTree = "<group>"; };
+		5A336A1B19D52C2B0062EC98 /* SelectTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectTimeViewController.h; sourceTree = "<group>"; };
+		5A336A1C19D52C2B0062EC98 /* SelectTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectTimeViewController.m; sourceTree = "<group>"; };
 		5A693E8419C3A884005C5377 /* CategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryViewController.h; sourceTree = "<group>"; };
 		5A693E8519C3A884005C5377 /* CategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryViewController.m; sourceTree = "<group>"; };
 		5A693E8719C4A54E005C5377 /* ActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityViewController.h; sourceTree = "<group>"; };
@@ -322,6 +325,8 @@
 				5A336A1619D512D90062EC98 /* SelectCategoryViewController.m */,
 				5A336A1819D516790062EC98 /* SelectActivitiyViewController.h */,
 				5A336A1919D516790062EC98 /* SelectActivitiyViewController.m */,
+				5A336A1B19D52C2B0062EC98 /* SelectTimeViewController.h */,
+				5A336A1C19D52C2B0062EC98 /* SelectTimeViewController.m */,
 			);
 			name = "Create Event";
 			sourceTree = "<group>";
@@ -430,6 +435,7 @@
 				5AA3CBC019BC126000D07D51 /* EventDetailViewController.m in Sources */,
 				5A92AEC919C257D4001C52F7 /* TableDownloader.m in Sources */,
 				5AA3CB9D19BBC9F200D07D51 /* MoreViewController.m in Sources */,
+				5A336A1D19D52C2B0062EC98 /* SelectTimeViewController.m in Sources */,
 				5A693E8F19C7B286005C5377 /* AddActivitiesNavController.m in Sources */,
 				5A92AEC619C251A1001C52F7 /* Activity.m in Sources */,
 				5A693E8619C3A884005C5377 /* CategoryViewController.m in Sources */,
