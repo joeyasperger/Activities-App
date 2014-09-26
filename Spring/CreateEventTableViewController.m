@@ -36,6 +36,10 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+- (IBAction)cancel:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 -(void) hideKeyboard{
     [self.descriptionTextView resignFirstResponder];
     [self.eventNameField resignFirstResponder];

@@ -490,7 +490,14 @@
                             <outlet property="delegate" destination="YwJ-b5-M9Z" id="iWF-RI-gUd"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Create Event" id="ywm-8s-hpa"/>
+                    <navigationItem key="navigationItem" title="Create Event" id="ywm-8s-hpa">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Bz0-iQ-VfP">
+                            <connections>
+                                <action selector="cancel:" destination="YwJ-b5-M9Z" id="DI6-q6-wtH"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="3WO-XN-4YE"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="activityLabel" destination="ndj-lj-Ee1" id="neM-77-1C4"/>
                         <outlet property="activityTypeLabel" destination="ndj-lj-Ee1" id="ajj-n8-cVe"/>
