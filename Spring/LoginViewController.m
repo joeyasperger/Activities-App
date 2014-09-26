@@ -98,6 +98,13 @@
 }
 
 
+
+- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    [self.emailField resignFirstResponder];
+    [self.passwordField resignFirstResponder];
+}
+
+
 - (void) loginViewFetchedUserInfo:(FBLoginView *)loginView user:(id<FBGraphUser>)user{
     
 }
