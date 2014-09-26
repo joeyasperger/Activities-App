@@ -10,18 +10,51 @@
 
 @interface SelectTimeViewController ()
 
+@property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+
 @end
 
 @implementation SelectTimeViewController
 
+@synthesize datePicker = _datePicker;
+@synthesize dateLabel = _dateLabel;
+@synthesize delegate = _delegate;
+@synthesize date = _date;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    if (self.date != nil){
+        [self.datePicker setDate:self.date];
+    }
+    [self setDateLabelText];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)dateChanged:(id)sender {
+    self.date = self.datePicker.date;
+    [self setDateLabelText];
+}
+
+- (IBAction)done:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void) setDateLabelText{
+    NSDate *date = self.datePicker.date;
+    NSDateFormatter *dateFormatter = [NSDateFormatter new];
+    [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+    [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
+    self.dateLabel.text = [dateFormatter stringFromDate:date];
+}
+
+-(void) viewDidDisappear:(BOOL)animated{
+    [self.delegate recieveDate:self.datePicker.date];
 }
 
 /*

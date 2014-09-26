@@ -387,7 +387,7 @@
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Event Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WYM-JT-6Fr">
                                                     <rect key="frame" x="16" y="8" width="304" height="35"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                                                     <connections>
                                                         <outlet property="delegate" destination="YwJ-b5-M9Z" id="eyL-2x-laB"/>
                                                     </connections>
@@ -444,6 +444,12 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="niG-rW-F9q">
+                                                    <rect key="frame" x="75" y="15" width="204" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -496,22 +502,26 @@
                                 <action selector="cancel:" destination="YwJ-b5-M9Z" id="DI6-q6-wtH"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="3WO-XN-4YE"/>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="3WO-XN-4YE">
+                            <connections>
+                                <action selector="done:" destination="YwJ-b5-M9Z" id="yFs-oi-XIO"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="activityLabel" destination="ndj-lj-Ee1" id="neM-77-1C4"/>
-                        <outlet property="activityTypeLabel" destination="ndj-lj-Ee1" id="ajj-n8-cVe"/>
                         <outlet property="descriptionTextView" destination="Btb-1P-prt" id="YcX-ON-vpq"/>
                         <outlet property="eventNameField" destination="WYM-JT-6Fr" id="WFT-I6-2XQ"/>
+                        <outlet property="timeLabel" destination="niG-rW-F9q" id="oeJ-9X-UiB"/>
                         <segue destination="DgO-BZ-p8o" kind="push" identifier="SelectEventCategory" id="L5L-Ch-Uqa"/>
                         <segue destination="wai-PA-Nkc" kind="push" identifier="SelectEventLocation" id="4US-UW-KqA"/>
-                        <segue destination="hOc-Kf-F5p" kind="push" identifier="SelectEventTime" id="vda-Rp-88V"/>
                         <segue destination="Kq2-4s-3LU" kind="push" identifier="SelectEventPrivacy" id="knH-Ec-Dfg"/>
+                        <segue destination="CfG-kn-Gc3" kind="push" identifier="SelectEventTime" id="aDH-t4-W4j"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F4t-FN-xt1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2801" y="-178"/>
+            <point key="canvasLocation" x="2801" y="-180"/>
         </scene>
         <!--Privacy-->
         <scene sceneID="L8s-mq-ySR">
@@ -532,25 +542,6 @@
             </objects>
             <point key="canvasLocation" x="3648" y="1158"/>
         </scene>
-        <!--Time-->
-        <scene sceneID="gEG-Ka-S5K">
-            <objects>
-                <viewController id="hOc-Kf-F5p" customClass="SelectTimeViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="d60-NM-08Z"/>
-                        <viewControllerLayoutGuide type="bottom" id="GLa-mW-o9N"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="vNe-Xj-Hwm">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Time" id="iKl-Hu-Ozz"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="euF-eh-qlW" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3648" y="492"/>
-        </scene>
         <!--Location-->
         <scene sceneID="Pmu-W7-Ccn">
             <objects>
@@ -569,6 +560,76 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X8T-GN-l21" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3648" y="-183"/>
+        </scene>
+        <!--Time-->
+        <scene sceneID="IC6-CT-0bN">
+            <objects>
+                <tableViewController id="CfG-kn-Gc3" customClass="SelectTimeViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="80" id="mPs-TL-mma">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection id="Rmb-88-PbG">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="3ew-1V-ozs">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3ew-1V-ozs" id="FU8-6U-h3e">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pTI-Wz-lEx">
+                                                    <rect key="frame" x="8" y="15" width="304" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="nOO-3Q-mxi">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="163" id="crM-7s-OQa">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="crM-7s-OQa" id="1dM-U8-A43">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="5" translatesAutoresizingMaskIntoConstraints="NO" id="LPH-Hq-pai">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="162"/>
+                                                    <date key="date" timeIntervalSinceReferenceDate="433444614.28386199">
+                                                        <!--2014-09-26 17:16:54 +0000-->
+                                                    </date>
+                                                    <connections>
+                                                        <action selector="dateChanged:" destination="CfG-kn-Gc3" eventType="valueChanged" id="H50-19-1oD"/>
+                                                    </connections>
+                                                </datePicker>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="CfG-kn-Gc3" id="dsh-4K-22g"/>
+                            <outlet property="delegate" destination="CfG-kn-Gc3" id="79O-xb-J7r"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Time" id="ucp-EK-qjY">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="sWt-mW-evr">
+                            <connections>
+                                <action selector="done:" destination="CfG-kn-Gc3" id="bQB-33-X8D"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="dateLabel" destination="pTI-Wz-lEx" id="Dab-2u-9er"/>
+                        <outlet property="datePicker" destination="LPH-Hq-pai" id="yh4-27-6NV"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G64-Jl-m4H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3648" y="491"/>
         </scene>
         <!--Categories-->
         <scene sceneID="JsL-Gf-sAt">

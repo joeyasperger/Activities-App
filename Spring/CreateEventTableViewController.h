@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SelectTimeViewController.h"
 
-@interface CreateEventTableViewController : UITableViewController
+@interface CreateEventTableViewController : UITableViewController<DateTimeDelegate>
 
 @end

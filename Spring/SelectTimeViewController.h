@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SelectTimeViewController : UIViewController
+@protocol DateTimeDelegate
+
+- (void) recieveDate:(NSDate*)date;
+
+@end
+
+@interface SelectTimeViewController : UITableViewController
+
+@property id<DateTimeDelegate> delegate;
+@property NSDate *date;
 
 @end

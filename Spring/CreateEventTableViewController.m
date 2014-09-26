@@ -13,10 +13,12 @@
 @interface CreateEventTableViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *eventNameField;
-@property (weak, nonatomic) IBOutlet UILabel *activityTypeLabel;
 @property (weak, nonatomic) IBOutlet UITextView *descriptionTextView;
 @property Activity *activity;
 @property (weak, nonatomic) IBOutlet UILabel *activityLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+
+@property NSDate *eventDate;
 
 @end
 
@@ -38,6 +40,10 @@
 
 - (IBAction)cancel:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)done:(id)sender {
+    
 }
 
 -(void) hideKeyboard{
@@ -78,15 +84,30 @@
     }
 }
 
+- (void) recieveDate:(NSDate *)date{
+    NSDateFormatter *dateFormatter = [NSDateFormatter new];
+    [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+    [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
+    self.eventDate = date;
+    self.timeLabel.text = [dateFormatter stringFromDate:date];
+}
 
-/*
+
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"SelectEventTime"]){
+        SelectTimeViewController *destViewController = [segue destinationViewController];
+        destViewController.delegate = self;
+        if (self.eventDate != nil){
+            destViewController.date = self.eventDate;
+        }
+    }
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
+
 
 @end
