@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "SelectTimeViewController.h"
+#import "PrivacyPickerViewController.h"
 
-@interface CreateEventTableViewController : UITableViewController<DateTimeDelegate>
+@interface CreateEventTableViewController : UITableViewController<DateTimeDelegate,EventPrivacyDelegate>
 
 @end

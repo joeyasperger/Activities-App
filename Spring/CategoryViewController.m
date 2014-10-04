@@ -23,13 +23,6 @@
 
 @implementation CategoryViewController
 
-@synthesize activities = _activities;
-@synthesize categoryNames = _categoryNames;
-@synthesize tableView =_tableView;
-@synthesize userActivities = _userActivities;
-@synthesize activitiesToAdd = _activitiesToAdd;
-
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];

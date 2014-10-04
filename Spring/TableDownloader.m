@@ -22,13 +22,6 @@
 
 @implementation TableDownloader
 
-@synthesize responseData = _responseData;
-@synthesize urlString = _urlString;
-@synthesize filename = _filename;
-@synthesize type = _type;
-@synthesize delegate = _delegate;
-
-
 -(id) initWithURL:(NSString*)url type:(NSInteger) type saveFile:(NSString *)file{
     if (self = [super init]){
         self.urlString = url;

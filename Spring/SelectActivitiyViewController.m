@@ -15,10 +15,6 @@
 
 @implementation SelectActivitiyViewController
 
-@synthesize categoryName = _categoryName;
-@synthesize activities =_activities;
-@synthesize selectedActivity = _selectedActivity;
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.

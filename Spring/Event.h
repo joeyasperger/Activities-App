@@ -8,6 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+#define PRIVACY_ANYONE 0
+#define PRIVACY_FRIENDS 1
+#define PRIVACY_GROUP 2
+#define PRIVACY_INVITEONLY 3
+
 @interface Event : NSObject
 
 @property NSInteger ID;
@@ -16,5 +21,6 @@
 @property NSInteger numberInterested;
 @property NSString *message;
 @property NSString *activityName;
+@property NSInteger privacyType;
 
 @end

@@ -17,11 +17,6 @@
 
 @implementation ActivityViewController
 
-@synthesize activities = _activities;
-@synthesize userActivities = _userActivities;
-@synthesize activitiesToAdd = _activitiesToAdd;
-@synthesize categoryName = _categoryName;
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];

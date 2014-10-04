@@ -16,8 +16,6 @@
 
 @implementation MoreViewController
 
-@synthesize moreCells = _moreCells;
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];

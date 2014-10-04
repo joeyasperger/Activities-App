@@ -26,12 +26,6 @@
 
 @implementation MyInterestsViewController
 
-@synthesize editButton = _editButton;
-@synthesize activities = _activities;
-@synthesize inEditMode = _inEditMode;
-@synthesize addActivitiesButton = _addActivitiesButton;
-@synthesize activitiesToDelete = _activitiesToDelete;
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];

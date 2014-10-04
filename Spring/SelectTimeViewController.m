@@ -17,11 +17,6 @@
 
 @implementation SelectTimeViewController
 
-@synthesize datePicker = _datePicker;
-@synthesize dateLabel = _dateLabel;
-@synthesize delegate = _delegate;
-@synthesize date = _date;
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -53,7 +48,7 @@
     self.dateLabel.text = [dateFormatter stringFromDate:date];
 }
 
--(void) viewDidDisappear:(BOOL)animated{
+-(void) viewWillDisappear:(BOOL)animated{
     [self.delegate recieveDate:self.datePicker.date];
 }
 

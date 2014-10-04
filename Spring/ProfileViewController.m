@@ -16,9 +16,6 @@
 
 @implementation ProfileViewController
 
-
-@synthesize nameLabel = _nameLabel;
-
 - (IBAction)logOut:(id)sender {
     
 }

@@ -22,8 +22,6 @@
     NSMutableArray *events;
 }
 
-@synthesize responseData = _responseData;
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];

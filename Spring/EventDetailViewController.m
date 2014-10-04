@@ -20,13 +20,6 @@
 
 @implementation EventDetailViewController
 
-@synthesize userLabel = _userLabel;
-@synthesize activityLabel = _activityLabel;
-@synthesize messageLabel = _messageLabel;
-@synthesize peopleInterestedLabel = _peopleInterestedLabel;
-@synthesize eventTitleLabel = _eventTitleLabel;
-@synthesize event = _event;
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];

@@ -22,13 +22,6 @@
 
 @implementation LoginViewController
 
-@synthesize sender = _sender;
-@synthesize emailField = _emailField;
-@synthesize passwordField = _passwordField;
-@synthesize responseData = _responseData;
-@synthesize errorLabel = _errorLabel;
-@synthesize facebookLoginView = _facebookLoginView;
-
 - (IBAction)Login:(id)sender {
     self.sender = sender;
     [self sendLoginRequest];
@@ -39,6 +32,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.errorLabel.text = @"";
+    self.emailField.text = @"joeyasperger@gmail.com";  //just for faster testing
     self.facebookLoginView.readPermissions = @[@"public_profile", @"email", @"user_friends"];
 }
 

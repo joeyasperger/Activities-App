@@ -17,13 +17,10 @@
 @property NSMutableArray *categoryNames;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
+
 @end
 
 @implementation SelectCategoryViewController
-
-@synthesize activities = _activities;
-@synthesize categoryNames = _categoryNames;
-@synthesize tableView = _tableView;
 
 - (void)viewDidLoad {
     [super viewDidLoad];

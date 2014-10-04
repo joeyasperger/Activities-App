@@ -11,8 +11,6 @@
 
 @implementation ServerRequest
 
-@synthesize responseData = _responseData;
-
 -(id) initPostWithURL:(NSString *)url content:(NSString *)content{
     if (self = [super init]){
         NSData *postData = [content dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];

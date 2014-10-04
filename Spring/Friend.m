@@ -10,7 +10,4 @@
 
 @implementation Friend
 
-@synthesize name = _name;
-@synthesize userID = _userID;
-
 @end

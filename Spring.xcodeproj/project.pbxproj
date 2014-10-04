@@ -11,6 +11,8 @@
 		5A336A1719D512D90062EC98 /* SelectCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A336A1619D512D90062EC98 /* SelectCategoryViewController.m */; };
 		5A336A1A19D516790062EC98 /* SelectActivitiyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A336A1919D516790062EC98 /* SelectActivitiyViewController.m */; };
 		5A336A1D19D52C2B0062EC98 /* SelectTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A336A1C19D52C2B0062EC98 /* SelectTimeViewController.m */; };
+		5A397D9119DE3C7500D2EE9F /* PrivacyPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A397D9019DE3C7500D2EE9F /* PrivacyPickerViewController.m */; };
+		5A45195619D8B59700B7B346 /* PrivacyPickerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A45195519D8B59700B7B346 /* PrivacyPickerTableViewCell.m */; };
 		5A693E8619C3A884005C5377 /* CategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A693E8519C3A884005C5377 /* CategoryViewController.m */; };
 		5A693E8919C4A54E005C5377 /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A693E8819C4A54E005C5377 /* ActivityViewController.m */; };
 		5A693E8C19C7793A005C5377 /* ServerRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A693E8B19C7793A005C5377 /* ServerRequest.m */; };
@@ -67,6 +69,10 @@
 		5A336A1919D516790062EC98 /* SelectActivitiyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectActivitiyViewController.m; sourceTree = "<group>"; };
 		5A336A1B19D52C2B0062EC98 /* SelectTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectTimeViewController.h; sourceTree = "<group>"; };
 		5A336A1C19D52C2B0062EC98 /* SelectTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectTimeViewController.m; sourceTree = "<group>"; };
+		5A397D8F19DE3C7500D2EE9F /* PrivacyPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrivacyPickerViewController.h; sourceTree = "<group>"; };
+		5A397D9019DE3C7500D2EE9F /* PrivacyPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrivacyPickerViewController.m; sourceTree = "<group>"; };
+		5A45195419D8B59700B7B346 /* PrivacyPickerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrivacyPickerTableViewCell.h; sourceTree = "<group>"; };
+		5A45195519D8B59700B7B346 /* PrivacyPickerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrivacyPickerTableViewCell.m; sourceTree = "<group>"; };
 		5A693E8419C3A884005C5377 /* CategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryViewController.h; sourceTree = "<group>"; };
 		5A693E8519C3A884005C5377 /* CategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryViewController.m; sourceTree = "<group>"; };
 		5A693E8719C4A54E005C5377 /* ActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityViewController.h; sourceTree = "<group>"; };
@@ -158,6 +164,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A397D9219DE3C8B00D2EE9F /* Event Privacy */ = {
+			isa = PBXGroup;
+			children = (
+				5A397D8F19DE3C7500D2EE9F /* PrivacyPickerViewController.h */,
+				5A397D9019DE3C7500D2EE9F /* PrivacyPickerViewController.m */,
+				5A45195419D8B59700B7B346 /* PrivacyPickerTableViewCell.h */,
+				5A45195519D8B59700B7B346 /* PrivacyPickerTableViewCell.m */,
+			);
+			name = "Event Privacy";
+			sourceTree = "<group>";
+		};
+		5A397D9319DE3CA500D2EE9F /* Event Activity */ = {
+			isa = PBXGroup;
+			children = (
+				5A336A1519D512D90062EC98 /* SelectCategoryViewController.h */,
+				5A336A1619D512D90062EC98 /* SelectCategoryViewController.m */,
+				5A336A1819D516790062EC98 /* SelectActivitiyViewController.h */,
+				5A336A1919D516790062EC98 /* SelectActivitiyViewController.m */,
+			);
+			name = "Event Activity";
+			sourceTree = "<group>";
+		};
+		5A397D9419DE3CBD00D2EE9F /* Event Time */ = {
+			isa = PBXGroup;
+			children = (
+				5A336A1B19D52C2B0062EC98 /* SelectTimeViewController.h */,
+				5A336A1C19D52C2B0062EC98 /* SelectTimeViewController.m */,
+			);
+			name = "Event Time";
+			sourceTree = "<group>";
+		};
+		5A45195719D8BF5500B7B346 /* Event Display */ = {
+			isa = PBXGroup;
+			children = (
+				5AA3CBBE19BC126000D07D51 /* EventDetailViewController.h */,
+				5AA3CBBF19BC126000D07D51 /* EventDetailViewController.m */,
+				5AA3CBBB19BBF01F00D07D51 /* EventTableViewCell.h */,
+				5AA3CBBC19BBF01F00D07D51 /* EventTableViewCell.m */,
+			);
+			name = "Event Display";
+			sourceTree = "<group>";
+		};
 		5AA3CB7719BBC9F200D07D51 = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +250,7 @@
 				5AACDDFE19D37BA80085DBBC /* Server Communication */,
 				5AACDDFC19D339170085DBBC /* My Interests Tab */,
 				5AACDDFF19D37C9C0085DBBC /* Create Event */,
+				5A45195719D8BF5500B7B346 /* Event Display */,
 				5A92AEBB19BFE899001C52F7 /* ProfileViewController.h */,
 				5A92AEBC19BFE899001C52F7 /* ProfileViewController.m */,
 				5A92AEB219BFA486001C52F7 /* FriendsViewController.h */,
@@ -210,10 +259,6 @@
 				5A92AEAB19BEC8F8001C52F7 /* UserProfile.m */,
 				5A92AEAD19BF6B38001C52F7 /* LoginViewController.h */,
 				5A92AEAE19BF6B38001C52F7 /* LoginViewController.m */,
-				5AA3CBBE19BC126000D07D51 /* EventDetailViewController.h */,
-				5AA3CBBF19BC126000D07D51 /* EventDetailViewController.m */,
-				5AA3CBBB19BBF01F00D07D51 /* EventTableViewCell.h */,
-				5AA3CBBC19BBF01F00D07D51 /* EventTableViewCell.m */,
 				5AA3CB9819BBC9F200D07D51 /* FeedViewController.h */,
 				5AA3CB9919BBC9F200D07D51 /* FeedViewController.m */,
 				5AA3CB9B19BBC9F200D07D51 /* MoreViewController.h */,
@@ -321,12 +366,9 @@
 			children = (
 				5A336A1219D4EF280062EC98 /* CreateEventTableViewController.h */,
 				5A336A1319D4EF280062EC98 /* CreateEventTableViewController.m */,
-				5A336A1519D512D90062EC98 /* SelectCategoryViewController.h */,
-				5A336A1619D512D90062EC98 /* SelectCategoryViewController.m */,
-				5A336A1819D516790062EC98 /* SelectActivitiyViewController.h */,
-				5A336A1919D516790062EC98 /* SelectActivitiyViewController.m */,
-				5A336A1B19D52C2B0062EC98 /* SelectTimeViewController.h */,
-				5A336A1C19D52C2B0062EC98 /* SelectTimeViewController.m */,
+				5A397D9319DE3CA500D2EE9F /* Event Activity */,
+				5A397D9419DE3CBD00D2EE9F /* Event Time */,
+				5A397D9219DE3C8B00D2EE9F /* Event Privacy */,
 			);
 			name = "Create Event";
 			sourceTree = "<group>";
@@ -436,6 +478,7 @@
 				5A92AEC919C257D4001C52F7 /* TableDownloader.m in Sources */,
 				5AA3CB9D19BBC9F200D07D51 /* MoreViewController.m in Sources */,
 				5A336A1D19D52C2B0062EC98 /* SelectTimeViewController.m in Sources */,
+				5A45195619D8B59700B7B346 /* PrivacyPickerTableViewCell.m in Sources */,
 				5A693E8F19C7B286005C5377 /* AddActivitiesNavController.m in Sources */,
 				5A92AEC619C251A1001C52F7 /* Activity.m in Sources */,
 				5A693E8619C3A884005C5377 /* CategoryViewController.m in Sources */,
@@ -450,6 +493,7 @@
 				5AA3CB9A19BBC9F200D07D51 /* FeedViewController.m in Sources */,
 				5A92AEBD19BFE899001C52F7 /* ProfileViewController.m in Sources */,
 				5A693E8C19C7793A005C5377 /* ServerRequest.m in Sources */,
+				5A397D9119DE3C7500D2EE9F /* PrivacyPickerViewController.m in Sources */,
 				5A336A1719D512D90062EC98 /* SelectCategoryViewController.m in Sources */,
 				5AA3CB9019BBC9F200D07D51 /* main.m in Sources */,
 				5A92AEC319C24C90001C52F7 /* MyInterestsViewController.m in Sources */,

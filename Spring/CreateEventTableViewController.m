@@ -9,6 +9,7 @@
 #import "CreateEventTableViewController.h"
 #import "SelectActivitiyViewController.h"
 #import "Activity.h"
+#import "Event.h"
 
 @interface CreateEventTableViewController ()
 
@@ -17,8 +18,12 @@
 @property Activity *activity;
 @property (weak, nonatomic) IBOutlet UILabel *activityLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *privacyLabel;
+@property BOOL didSelectPrivacy;
 
 @property NSDate *eventDate;
+
+@property Event *event;
 
 @end
 
@@ -30,7 +35,7 @@
     UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)];
     [self.tableView addGestureRecognizer:gestureRecognizer];
     gestureRecognizer.cancelsTouchesInView = NO;
-    
+    self.event = [Event new];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -92,6 +97,25 @@
     self.timeLabel.text = [dateFormatter stringFromDate:date];
 }
 
+- (void) recievePrivacySettings:(NSInteger)privacyType{
+    self.event.privacyType = privacyType;
+    self.didSelectPrivacy = YES;
+    switch (privacyType) {
+        case PRIVACY_ANYONE:
+            self.privacyLabel.text = @"Anyone";
+            break;
+        case PRIVACY_FRIENDS:
+            self.privacyLabel.text = @"Friends";
+            break;
+        case PRIVACY_GROUP:
+            self.privacyLabel.text = @"Group";
+            break;
+        case PRIVACY_INVITEONLY:
+            self.privacyLabel.text = @"Invite Only";
+            break;
+    }
+}
+
 
 
 #pragma mark - Navigation
@@ -103,6 +127,13 @@
         destViewController.delegate = self;
         if (self.eventDate != nil){
             destViewController.date = self.eventDate;
+        }
+    }
+    if ([segue.identifier isEqualToString:@"SelectEventPrivacy"]){
+        PrivacyPickerViewController *destViewController = [segue destinationViewController];
+        destViewController.delegate = self;
+        if (self.didSelectPrivacy){
+            destViewController.initialSelection = self.event.privacyType;
         }
     }
     // Get the new view controller using [segue destinationViewController].
