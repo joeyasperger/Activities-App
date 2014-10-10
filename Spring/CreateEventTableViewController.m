@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *activityLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *privacyLabel;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *doneButton;
 @property BOOL didSelectPrivacy;
 
 @property NSDate *eventDate;
@@ -36,6 +37,10 @@
     [self.tableView addGestureRecognizer:gestureRecognizer];
     gestureRecognizer.cancelsTouchesInView = NO;
     self.event = [Event new];
+    self.doneButton.enabled = NO;
+    [self.eventNameField addTarget:self
+                  action:@selector(textFieldDidChange:)
+        forControlEvents:UIControlEventEditingChanged];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -43,12 +48,18 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+
+
 - (IBAction)cancel:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)done:(id)sender {
-    
+    NSDateFormatter *dateFormatter = [NSDateFormatter new];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
+    NSString *dateString = [dateFormatter stringFromDate:self.eventDate];
+    NSString *postBody = [NSString stringWithFormat:@"event=]
 }
 
 -(void) hideKeyboard{
@@ -63,8 +74,18 @@
 
 - (IBAction) unwindFromSelectActivity: (UIStoryboardSegue*) segue{
     SelectActivitiyViewController *source = [segue sourceViewController];
+    self.event.activity = source.selectedActivity;
     self.activity = source.selectedActivity;
     self.activityLabel.text = self.activity.name;
+}
+
+-(void) textFieldDidChange:(UITextField*)textField{
+    if (textField.text.length == 0){
+        self.doneButton.enabled = NO;
+    }
+    else{
+        self.doneButton.enabled = YES;
+    }
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -75,7 +96,7 @@
 
 - (void) tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"%ld",indexPath.row);
-    if (indexPath.section == 0 && indexPath.row == 1){
+    if (indexPath.section == 0 && indexPath.row == 1){ 
         [self performSegueWithIdentifier:@"SelectEventCategory" sender:nil];
     }
     else if (indexPath.section == 1 && indexPath.row == 0){

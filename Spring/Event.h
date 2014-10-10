@@ -13,8 +13,12 @@
 #define PRIVACY_GROUP 2
 #define PRIVACY_INVITEONLY 3
 
+@class Activity;
+
 @interface Event : NSObject
 
+
+@property Activity * activity;
 @property NSInteger ID;
 @property NSString *eventName;
 @property NSString *userName;
