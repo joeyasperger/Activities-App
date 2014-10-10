@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "TableDownloader.h"
+#import <Parse/Parse.h>
 
 
-@interface CategoryViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, TableDownloaderDelegate>
+@interface CategoryViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
 
 @property NSMutableArray *userActivities;
 

@@ -7,7 +7,6 @@
 //
 
 #import "AddActivitiesNavController.h"
-#import "UserProfile.h"
 #import "Activity.h"
 #import "ServerInfo.h"
 #import "ServerRequest.h"
@@ -41,11 +40,17 @@
 
 -(void) finishAddingActivities:(NSMutableArray*)activities{
     if (activities.count > 0){
-        NSMutableString *postString = [NSMutableString stringWithFormat:@"userID=%ld",[UserProfile userID]];
+        /*NSMutableString *postString = [NSMutableString stringWithFormat:@"userID=%ld",[UserProfile userID]];
         for (Activity *activity in activities){
             [postString appendString:[NSString stringWithFormat:@"&add=%ld", activity.activityID]];
         }
-        [[ServerRequest alloc] initPostWithURL:[ServerInfo addInterestsURL] content:postString];
+        [[ServerRequest alloc] initPostWithURL:[ServerInfo addInterestsURL] content:postString];*/
+        PFUser *user = [PFUser currentUser];
+        PFRelation *relation = [user relationForKey:@"activities"];
+        for (Activity *activity in activities){
+            [relation addObject:activity.object];
+        }
+        [user saveInBackground];
     }
     [self dismissViewControllerAnimated:YES completion:nil];
 }

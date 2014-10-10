@@ -7,7 +7,6 @@
 //
 
 #import "ProfileViewController.h"
-#import "UserProfile.h"
 
 @interface ProfileViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
@@ -34,7 +33,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.nameLabel.text = [UserProfile userName];
+    self.nameLabel.text = [PFUser currentUser][@"displayName"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,7 +50,7 @@
 {
     
     if ([segue.identifier isEqualToString:@"LogoutSeque"]) {
-        [UserProfile logout];
+        [PFUser logOut];
     }
 }
 

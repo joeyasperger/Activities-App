@@ -78,9 +78,9 @@
     for (int i = 0; i < [plistActivities count]; i++){
         NSDictionary *activityDict = [plistActivities objectAtIndex:i];
         Activity *activity = [Activity new];
-        activity.activityID = [[activityDict valueForKey:@"activity_id"] integerValue];
+        //activity.activityID = [[activityDict valueForKey:@"activity_id"] integerValue];
         activity.name = [activityDict valueForKey:@"activity_name"];
-        activity.categoryID = [[activityDict valueForKey:@"category_id"] integerValue];
+        //activity.categoryID = [[activityDict valueForKey:@"category_id"] integerValue];
         activity.categoryName = [activityDict valueForKey:@"category_name"];
         [activities addObject:activity];
     }

@@ -66,7 +66,7 @@
     //check if it is one of the user's interests
     BOOL isInterest = NO;
     for (Activity *userActivity in self.userActivities){
-        if (userActivity.activityID == activity.activityID){
+        if ([userActivity.object.objectId isEqualToString:activity.object.objectId]){
             isInterest = YES;
         }
     }
@@ -75,6 +75,7 @@
         cell.textLabel.enabled = NO;
         cell.detailTextLabel.enabled = NO;
         cell.accessoryView = nil;
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
     }
     
     return cell;

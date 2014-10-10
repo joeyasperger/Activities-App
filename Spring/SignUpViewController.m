@@ -7,7 +7,6 @@
 //
 
 #import "SignUpViewController.h"
-#import "UserProfile.h"
 
 @interface SignUpViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *emailField;
@@ -33,8 +32,6 @@
         user[@"displayName"] = self.usernameField.text;
         [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (!error) {
-                [UserProfile setLoggedIn:YES];
-                [UserProfile setUser:user];
                 [self performSegueWithIdentifier:@"SignupSegue" sender:self];
             } else {
                 NSString *errorString = [error userInfo][@"error"];

@@ -17,7 +17,6 @@
 		5A693E8919C4A54E005C5377 /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A693E8819C4A54E005C5377 /* ActivityViewController.m */; };
 		5A693E8C19C7793A005C5377 /* ServerRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A693E8B19C7793A005C5377 /* ServerRequest.m */; };
 		5A693E8F19C7B286005C5377 /* AddActivitiesNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A693E8E19C7B286005C5377 /* AddActivitiesNavController.m */; };
-		5A92AEAC19BEC8F8001C52F7 /* UserProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A92AEAB19BEC8F8001C52F7 /* UserProfile.m */; };
 		5A92AEAF19BF6B38001C52F7 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A92AEAE19BF6B38001C52F7 /* LoginViewController.m */; };
 		5A92AEB419BFA486001C52F7 /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A92AEB319BFA486001C52F7 /* FriendsViewController.m */; };
 		5A92AEB719BFA548001C52F7 /* Friend.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A92AEB619BFA548001C52F7 /* Friend.m */; };
@@ -93,8 +92,6 @@
 		5A693E8B19C7793A005C5377 /* ServerRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerRequest.m; sourceTree = "<group>"; };
 		5A693E8D19C7B286005C5377 /* AddActivitiesNavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddActivitiesNavController.h; sourceTree = "<group>"; };
 		5A693E8E19C7B286005C5377 /* AddActivitiesNavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddActivitiesNavController.m; sourceTree = "<group>"; };
-		5A92AEAA19BEC8F8001C52F7 /* UserProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfile.h; sourceTree = "<group>"; };
-		5A92AEAB19BEC8F8001C52F7 /* UserProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfile.m; sourceTree = "<group>"; };
 		5A92AEAD19BF6B38001C52F7 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		5A92AEAE19BF6B38001C52F7 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		5A92AEB219BFA486001C52F7 /* FriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsViewController.h; sourceTree = "<group>"; };
@@ -304,8 +301,6 @@
 				5A92AEBC19BFE899001C52F7 /* ProfileViewController.m */,
 				5A92AEB219BFA486001C52F7 /* FriendsViewController.h */,
 				5A92AEB319BFA486001C52F7 /* FriendsViewController.m */,
-				5A92AEAA19BEC8F8001C52F7 /* UserProfile.h */,
-				5A92AEAB19BEC8F8001C52F7 /* UserProfile.m */,
 				5AA3CB9819BBC9F200D07D51 /* FeedViewController.h */,
 				5AA3CB9919BBC9F200D07D51 /* FeedViewController.m */,
 				5AA3CB9B19BBC9F200D07D51 /* MoreViewController.h */,
@@ -539,7 +534,6 @@
 				5A693E8F19C7B286005C5377 /* AddActivitiesNavController.m in Sources */,
 				5A92AEC619C251A1001C52F7 /* Activity.m in Sources */,
 				5A693E8619C3A884005C5377 /* CategoryViewController.m in Sources */,
-				5A92AEAC19BEC8F8001C52F7 /* UserProfile.m in Sources */,
 				5A336A1A19D516790062EC98 /* SelectActivitiyViewController.m in Sources */,
 				5A92AEB719BFA548001C52F7 /* Friend.m in Sources */,
 				5AF94FB319BE395F0043E062 /* ServerInfo.m in Sources */,

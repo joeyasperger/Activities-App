@@ -8,13 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
 @interface Activity : NSObject
 
 @property NSString *name;
-@property NSInteger activityID;
-@property NSInteger categoryID;
+@property NSString *activityID;
 @property NSString *categoryName;
+@property PFObject *object;
 
 /* returns a table cell for an activity that displays the name of the activity and
  * the category name as a subtitle

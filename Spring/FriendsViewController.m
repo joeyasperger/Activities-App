@@ -9,7 +9,6 @@
 #import "FriendsViewController.h"
 #import "Friend.h"
 #import "ServerInfo.h"
-#import "UserProfile.h"
 
 @interface FriendsViewController ()
 
@@ -35,8 +34,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.friends = [NSMutableArray new];
-    TableDownloader *downloader = [[TableDownloader alloc] initWithURL:[ServerInfo friendsURL:[UserProfile userID]] type:FRIEND_DOWNLOADER saveFile:@"myfriends.plist"];
-    downloader.delegate = self;
+    /*TableDownloader *downloader = [[TableDownloader alloc] initWithURL:[ServerInfo friendsURL:[UserProfile userID]] type:FRIEND_DOWNLOADER saveFile:@"myfriends.plist"];
+    downloader.delegate = self;*/
 }
 
 - (void)didReceiveMemoryWarning

@@ -7,7 +7,6 @@
 //
 
 #import "LoginViewController.h"
-#import "UserProfile.h"
 
 @interface LoginViewController ()
 @property (strong, nonatomic) IBOutlet UITextField *emailField;
@@ -38,14 +37,11 @@
 -(void)sendLoginRequest{
     [PFUser logInWithUsernameInBackground:self.emailField.text password:self.passwordField.text block:^(PFUser *user, NSError *error) {
         if (user) {
-            [UserProfile setLoggedIn:YES];
-            [UserProfile setUser:user];
             [self performSegueWithIdentifier:@"LoginSegue" sender:self.sender];
         } else {
             NSString *errorString = [error userInfo][@"error"];
             self.errorLabel.text = errorString;
         }
-        
     }];
 }
 

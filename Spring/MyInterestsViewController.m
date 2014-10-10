@@ -8,7 +8,6 @@
 
 #import "MyInterestsViewController.h"
 #import "ServerInfo.h"
-#import "UserProfile.h"
 #import "Activity.h"
 #import "CategoryViewController.h"
 #import "ServerRequest.h"
@@ -40,8 +39,25 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.activities = [NSMutableArray array];
-    TableDownloader *downloader = [[TableDownloader alloc] initWithURL:[ServerInfo interestsURL:[UserProfile userID]] type:ACTIVITY_DOWNLOADER saveFile:@"myinterests.plist"];
-    downloader.delegate = self;
+    /*TableDownloader *downloader = [[TableDownloader alloc] initWithURL:[ServerInfo interestsURL:[UserProfile userID]] type:ACTIVITY_DOWNLOADER saveFile:@"myinterests.plist"];
+    downloader.delegate = self;*/
+    PFUser *user = [PFUser currentUser];
+    PFRelation *relation = [user relationForKey:@"activities"];
+    [[relation query] findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (error) {
+            // There was an error
+        } else {
+            for (PFObject *object in objects){
+                Activity *activity = [Activity new];
+                activity.name = object[@"name"];
+                activity.categoryName = object[@"categoryName"];
+                activity.activityID = object[@"objectID"];
+                activity.object = object;
+                [self.activities addObject:activity];
+            }
+            [self.tableView reloadData];
+        }
+    }];
 }
 
 -(void) downloadCompleted:(NSMutableArray *)array{
@@ -69,11 +85,11 @@
     self.inEditMode = NO;
     [self.editButton setTitle:@"Edit"];
     if (self.activitiesToDelete.count > 0){
-        NSMutableString *postString = [NSMutableString stringWithFormat:@"userID=%ld",[UserProfile userID]];
+        /*NSMutableString *postString = [NSMutableString stringWithFormat:@"userID=%ld",[UserProfile userID]];
         for (Activity *activity in self.activitiesToDelete){
             [postString appendString:[NSString stringWithFormat:@"&delete=%ld", activity.activityID]];
         }
-        [[ServerRequest alloc] initPostWithURL:[ServerInfo deleteInterestsURL] content:postString];
+        [[ServerRequest alloc] initPostWithURL:[ServerInfo deleteInterestsURL] content:postString];*/
     }
 }
 

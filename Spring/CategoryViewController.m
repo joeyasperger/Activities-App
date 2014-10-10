@@ -39,8 +39,25 @@
     self.activities = [NSMutableArray array];
     self.categoryNames = [NSMutableArray array];
     self.activitiesToAdd = [NSMutableArray array];
-    TableDownloader *downloader = [[TableDownloader alloc] initWithURL:[ServerInfo allactivitesURL] type:ACTIVITY_DOWNLOADER saveFile:@"allactivities.plist"];
-    downloader.delegate = self;
+    PFQuery *query = [PFQuery queryWithClassName:@"Activity"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            for (PFObject *object in objects) {
+                Activity *activity = [Activity new];
+                activity.name = object[@"name"];
+                activity.categoryName = object[@"categoryName"];
+                activity.activityID = object[@"objectid"];
+                activity.object = object;
+                [self.activities addObject:activity];
+                self.categoryNames = [Activity uniqueCategoryNamesFromActivities:self.activities];
+                [self.tableView reloadData];
+            }
+        } else {
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+    //TableDownloader *downloader = [[TableDownloader alloc] initWithURL:[ServerInfo allactivitesURL] type:ACTIVITY_DOWNLOADER saveFile:@"allactivities.plist"];
+    //downloader.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning
