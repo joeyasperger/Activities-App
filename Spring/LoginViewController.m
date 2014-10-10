@@ -7,7 +7,6 @@
 //
 
 #import "LoginViewController.h"
-#import "ServerInfo.h"
 #import "UserProfile.h"
 
 @interface LoginViewController ()
@@ -37,48 +36,17 @@
 }
 
 -(void)sendLoginRequest{
-    self.responseData = [NSMutableData data];
-    NSURLRequest *request = [NSURLRequest requestWithURL:
-                             [NSURL URLWithString:[ServerInfo loginURL:self.emailField.text password:self.passwordField.text]]];
-    [[NSURLConnection alloc] initWithRequest:request delegate:self];
-}
-
-- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
-    NSLog(@"didReceiveResponse");
-    [self.responseData setLength:0];
-}
-
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
-    [self.responseData appendData:data];
-}
-
-- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
-    NSLog(@"didFailWithError");
-    NSLog(@"Connection failed: %@", [error description]);
-}
-
-- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
-    NSLog(@"connectionDidFinishLoading");
-    NSLog(@"Succeeded! Received %ld bytes of data",(long)[self.responseData length]);
-    NSString* pliststr = [[NSString alloc] initWithData:self.responseData encoding:NSUTF8StringEncoding];
-    NSLog(@"%@", pliststr);
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSString *pathString = [documentsDirectory stringByAppendingPathComponent:@"userinfo.plist"];
-    
-    [pliststr writeToFile:pathString atomically:YES encoding:NSUTF8StringEncoding error:nil];
-    
-    NSDictionary *userplist = [NSDictionary dictionaryWithContentsOfFile:pathString];
-    if ([[userplist valueForKey:@"error"]  isEqual: @"none"]){
-        [UserProfile setLoggedIn:YES];
-        [UserProfile setEmail:[userplist valueForKey:@"email"]];
-        [UserProfile setID:[[userplist valueForKey:@"id"] integerValue]];
-        [UserProfile setName:[userplist valueForKey:@"username"]];
-        [self performSegueWithIdentifier:@"LoginSegue" sender:self.sender];
-    }
-    else{
-        self.errorLabel.text = [userplist valueForKey:@"error"];
-    }
+    [PFUser logInWithUsernameInBackground:self.emailField.text password:self.passwordField.text block:^(PFUser *user, NSError *error) {
+        if (user) {
+            [UserProfile setLoggedIn:YES];
+            [UserProfile setUser:user];
+            [self performSegueWithIdentifier:@"LoginSegue" sender:self.sender];
+        } else {
+            NSString *errorString = [error userInfo][@"error"];
+            self.errorLabel.text = errorString;
+        }
+        
+    }];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
@@ -90,8 +58,6 @@
     }
     return YES;
 }
-
-
 
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     [self.emailField resignFirstResponder];

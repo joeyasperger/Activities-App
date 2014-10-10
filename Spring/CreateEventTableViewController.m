@@ -59,7 +59,6 @@
     [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
     NSString *dateString = [dateFormatter stringFromDate:self.eventDate];
-    NSString *postBody = [NSString stringWithFormat:@"event=]
 }
 
 -(void) hideKeyboard{

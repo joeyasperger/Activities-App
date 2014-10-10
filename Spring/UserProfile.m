@@ -13,6 +13,8 @@ static NSInteger userID;
 static BOOL loggedIn;
 static NSString* name;
 
+static PFUser *user;
+
 @implementation UserProfile
 
 +(BOOL) loggedIn{
@@ -29,6 +31,14 @@ static NSString* name;
 
 +(NSInteger) userID{
     return userID;
+}
+
++(PFUser*) user{
+    return user;
+}
+
++(void) setUser:(PFUser*)userObject{
+    user = userObject;
 }
 
 +(void) setEmail:(NSString *)userEmail{
