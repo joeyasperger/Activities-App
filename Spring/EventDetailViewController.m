@@ -34,9 +34,9 @@
     [super viewDidLoad];
     self.userLabel.text = self.event.userName;
     self.activityLabel.text = [NSString stringWithFormat:@"Type: %@", self.event.activityName];
-    self.messageLabel.text = self.event.message;
+    self.messageLabel.text = self.event.description;
     self.peopleInterestedLabel.text = [NSString stringWithFormat:@"%ld people interested", (long)self.event.numberInterested];
-    self.eventTitleLabel.title = self.event.eventName;
+    self.eventTitleLabel.title = self.event.name;
     // Do any additional setup after loading the view.
 }
 

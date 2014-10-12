@@ -39,8 +39,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.activities = [NSMutableArray array];
-    /*TableDownloader *downloader = [[TableDownloader alloc] initWithURL:[ServerInfo interestsURL:[UserProfile userID]] type:ACTIVITY_DOWNLOADER saveFile:@"myinterests.plist"];
-    downloader.delegate = self;*/
     PFUser *user = [PFUser currentUser];
     PFRelation *relation = [user relationForKey:@"activities"];
     [[relation query] findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
@@ -85,11 +83,12 @@
     self.inEditMode = NO;
     [self.editButton setTitle:@"Edit"];
     if (self.activitiesToDelete.count > 0){
-        /*NSMutableString *postString = [NSMutableString stringWithFormat:@"userID=%ld",[UserProfile userID]];
+        PFUser *currentUser = [PFUser currentUser];
+        PFRelation *relation = [currentUser relationForKey:@"activities"];
         for (Activity *activity in self.activitiesToDelete){
-            [postString appendString:[NSString stringWithFormat:@"&delete=%ld", activity.activityID]];
+            [relation removeObject:activity.object];
         }
-        [[ServerRequest alloc] initPostWithURL:[ServerInfo deleteInterestsURL] content:postString];*/
+        [currentUser saveInBackground];
     }
 }
 

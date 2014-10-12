@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
 @interface FeedViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
-
-@property (nonatomic, strong) NSMutableData *responseData;
 
 @end

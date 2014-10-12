@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "SelectTimeViewController.h"
 #import "PrivacyPickerViewController.h"
+#import <Parse/Parse.h>
 
 @interface CreateEventTableViewController : UITableViewController<DateTimeDelegate,EventPrivacyDelegate>
 

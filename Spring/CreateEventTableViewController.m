@@ -59,6 +59,27 @@
     [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
     NSString *dateString = [dateFormatter stringFromDate:self.eventDate];
+    PFObject *event = [PFObject objectWithClassName:@"Event"];
+    event[@"name"] = self.eventNameField.text;
+    event[@"creator"] = [PFUser currentUser];
+    if (self.activity){
+        event[@"activity"] = self.activity.object;
+    }
+    if (self.eventDate){
+        event[@"time"] = self.eventDate;
+    }
+    if (self.descriptionTextView.text.length > 0){
+        event[@"description"] = self.descriptionTextView.text;
+    }
+    [event saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (!error){
+            // succeeded
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }else{
+            
+        }
+    }];
+    
 }
 
 -(void) hideKeyboard{

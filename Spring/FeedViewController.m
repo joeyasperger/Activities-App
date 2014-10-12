@@ -14,12 +14,12 @@
 
 @interface FeedViewController ()
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
-
+@property NSMutableArray *events;
 @end
 
 @implementation FeedViewController
 {
-    NSMutableArray *events;
+
 }
 
 - (void)viewDidLoad
@@ -27,56 +27,33 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    self.responseData = [NSMutableData data];
+    /*self.responseData = [NSMutableData data];
     NSURLRequest *request = [NSURLRequest requestWithURL:
                              [NSURL URLWithString:[ServerInfo alleventsURL]]];
-    [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    [[NSURLConnection alloc] initWithRequest:request delegate:self];*/
     
-    events = [NSMutableArray new];
-    //[self loadTestEvents];
+    self.events = [NSMutableArray new];
+    PFQuery *query = [PFQuery queryWithClassName:@"Event"];
+    [query includeKey:@"creator"];
+    [query includeKey:@"activity"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            for (PFObject *object in objects) {
+                Event *event = [Event new];
+                event.name = object[@"name"];
+                event.object = object;
+                PFUser *user = object[@"creator"];
+                event.userName = user[@"displayName"];
+                event.eventID = object[@"objectid"];
+                [self.events addObject:event];
+                [self.tableView reloadData];
+            }
+        } else {
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
 }
 
-- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
-    NSLog(@"didReceiveResponse");
-    [self.responseData setLength:0];
-}
-
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
-    [self.responseData appendData:data];
-}
-
-- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
-    NSLog(@"didFailWithError");
-    NSLog(@"Connection failed: %@", [error description]);
-}
-
-- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
-    NSLog(@"connectionDidFinishLoading");
-    NSLog(@"Succeeded! Received %ld bytes of data",(long)[self.responseData length]);
-    
-    NSString* pliststr = [[NSString alloc] initWithData:self.responseData encoding:NSUTF8StringEncoding];
-    NSLog(@"%@", pliststr);
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSString *pathString = [documentsDirectory stringByAppendingPathComponent:@"myFile"];
-    
-    [pliststr writeToFile:pathString atomically:YES encoding:NSUTF8StringEncoding error:nil];
-    
-    NSArray *plistEvents = [NSArray arrayWithContentsOfFile:pathString];
-    for (int i = 0; i < [plistEvents count]; i++){
-        NSDictionary *eventDict = [plistEvents objectAtIndex:i];
-        Event *newEvent = [Event new];
-        newEvent.ID = [[eventDict valueForKey:@"ID"] integerValue];
-        newEvent.userName = [eventDict valueForKey:@"username"];
-        newEvent.activityName = [eventDict valueForKey:@"activity"];
-        newEvent.eventName = [eventDict valueForKey:@"eventName"];
-        newEvent.message = [eventDict valueForKey:@"description"];
-        newEvent.numberInterested = [[eventDict valueForKey:@"numberInterested"] integerValue];
-        [events addObject:newEvent];
-    }
-    [self.tableView reloadData];
-    
-}
 
 - (void)didReceiveMemoryWarning
 {
@@ -85,7 +62,7 @@
 }
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return [events count];
+    return [self.events count];
     
 }
 
@@ -99,8 +76,8 @@
     long row = [indexPath row];
     
     //cell.textLabel.text = [events objectAtIndex:indexPath.row];
-    cell.userLabel.text = ((Event*)events[row]).userName;
-    cell.messageLabel.text = ((Event*)events[row]).message;
+    cell.userLabel.text = ((Event*)self.events[row]).userName;
+    cell.nameLabel.text = ((Event*)self.events[row]).name;
     
     return cell;
 }
@@ -108,7 +85,7 @@
     if ([segue.identifier isEqualToString:@"ShowEventDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         EventDetailViewController *destViewController = segue.destinationViewController;
-        destViewController.event = [events objectAtIndex:indexPath.row];
+        destViewController.event = [self.events objectAtIndex:indexPath.row];
     }
 }
 

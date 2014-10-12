@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Parse/Parse.h>
 
 #define PRIVACY_ANYONE 0
 #define PRIVACY_FRIENDS 1
@@ -19,12 +20,13 @@
 
 
 @property Activity * activity;
-@property NSInteger ID;
-@property NSString *eventName;
+@property NSString *eventID;
+@property NSString *name;
 @property NSString *userName;
 @property NSInteger numberInterested;
-@property NSString *message;
+@property NSString *description;
 @property NSString *activityName;
 @property NSInteger privacyType;
+@property PFObject *object;
 
 @end
