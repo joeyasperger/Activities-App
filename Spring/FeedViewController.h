@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 
-@interface FeedViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
+@interface FeedViewController : PFQueryTableViewController
 
 @end

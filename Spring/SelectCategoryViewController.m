@@ -7,7 +7,6 @@
 //
 
 #import "SelectCategoryViewController.h"
-#import "ServerInfo.h"
 #import "Activity.h"
 #import "SelectActivitiyViewController.h"
 
@@ -66,12 +65,6 @@
 
 - (void) tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [self performSegueWithIdentifier:@"SelectEventActivity" sender:nil];
-}
-
--(void) downloadCompleted:(NSMutableArray *)array{
-    self.categoryNames = [Activity uniqueCategoryNamesFromActivities:array];
-    self.activities = array;
-    [self.tableView reloadData];
 }
 
 - (BOOL) canPerformUnwindSegueAction:(SEL)action fromViewController:(UIViewController *)fromViewController withSender:(id)sender{

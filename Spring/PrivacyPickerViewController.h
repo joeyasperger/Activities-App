@@ -10,7 +10,7 @@
 
 @protocol EventPrivacyDelegate
 
-- (void) recievePrivacySettings:(NSInteger) privacyType;
+- (void) recievePrivacySettings:(NSString*) privacyType;
 
 @end
 

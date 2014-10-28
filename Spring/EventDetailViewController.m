@@ -7,12 +7,11 @@
 //
 
 #import "EventDetailViewController.h"
-#import "Event.h"
 
 @interface EventDetailViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *userLabel;
 @property (weak, nonatomic) IBOutlet UILabel *activityLabel;
-@property (weak, nonatomic) IBOutlet UILabel *messageLabel;
+@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *peopleInterestedLabel;
 @property (weak, nonatomic) IBOutlet UINavigationItem *eventTitleLabel;
 
@@ -32,11 +31,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.userLabel.text = self.event.userName;
-    self.activityLabel.text = [NSString stringWithFormat:@"Type: %@", self.event.activityName];
-    self.messageLabel.text = self.event.description;
-    self.peopleInterestedLabel.text = [NSString stringWithFormat:@"%ld people interested", (long)self.event.numberInterested];
-    self.eventTitleLabel.title = self.event.name;
+    PFUser *creator = self.event[@"creator"];
+    PFObject *activity = self.event[@"activity"];
+    self.userLabel.text = creator[@"displayName"];
+    self.activityLabel.text = [NSString stringWithFormat:@"Type: %@", activity[@"name"]];
+    self.descriptionLabel.text = self.event[@"description"];
+    //self.peopleInterestedLabel.text = [NSString stringWithFormat:@"%ld people interested", (long)self.event.numberInterested];
+    self.eventTitleLabel.title = self.event[@"name"];
     // Do any additional setup after loading the view.
 }
 

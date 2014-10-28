@@ -7,10 +7,8 @@
 //
 
 #import "MyInterestsViewController.h"
-#import "ServerInfo.h"
 #import "Activity.h"
 #import "CategoryViewController.h"
-#import "ServerRequest.h"
 
 @interface MyInterestsViewController ()
 
@@ -56,11 +54,6 @@
             [self.tableView reloadData];
         }
     }];
-}
-
--(void) downloadCompleted:(NSMutableArray *)array{
-    self.activities = array;
-    [self.tableView reloadData];
 }
 
 - (IBAction)editPressed:(id)sender {

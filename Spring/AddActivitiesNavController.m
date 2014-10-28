@@ -8,8 +8,6 @@
 
 #import "AddActivitiesNavController.h"
 #import "Activity.h"
-#import "ServerInfo.h"
-#import "ServerRequest.h"
 
 @interface AddActivitiesNavController ()
 

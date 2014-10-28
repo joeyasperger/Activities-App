@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TableDownloader.h"
 #import <Parse/Parse.h>
 
-@interface MyInterestsViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, TableDownloaderDelegate>
+@interface MyInterestsViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
 
 @end

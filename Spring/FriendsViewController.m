@@ -8,7 +8,6 @@
 
 #import "FriendsViewController.h"
 #import "Friend.h"
-#import "ServerInfo.h"
 
 @interface FriendsViewController ()
 
@@ -42,50 +41,6 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-/*
-- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
-    NSLog(@"didReceiveResponse");
-    [self.responseData setLength:0];
-}
-
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
-    [self.responseData appendData:data];
-}
-
-- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
-    NSLog(@"didFailWithError");
-    NSLog(@"Connection failed: %@", [error description]);
-}
-
-- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
-    NSLog(@"connectionDidFinishLoading");
-    NSLog(@"Succeeded! Received %ld bytes of data",(long)[self.responseData length]);
-    
-    NSString* pliststr = [[NSString alloc] initWithData:self.responseData encoding:NSUTF8StringEncoding];
-    NSLog(@"%@", pliststr);
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSString *pathString = [documentsDirectory stringByAppendingPathComponent:@"friends.plist"];
-    
-    [pliststr writeToFile:pathString atomically:YES encoding:NSUTF8StringEncoding error:nil];
-    
-    NSArray *plistFriends = [NSArray arrayWithContentsOfFile:pathString];
-    for (int i = 0; i < [plistFriends count]; i++){
-        NSDictionary *friendDict = [plistFriends objectAtIndex:i];
-        Friend *newFriend = [Friend new];
-        newFriend.userID = [[friendDict valueForKey:@"userID"] integerValue];
-        newFriend.name = [friendDict valueForKey:@"username"];
-        
-        [self.friends addObject:newFriend];
-    }
-    [self.tableView reloadData];
-    
-}*/
-
--(void) downloadCompleted:(NSMutableArray *)array{
-    self.friends = array;
-    [self.tableView reloadData];
 }
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{

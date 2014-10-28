@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TableDownloader.h"
 
-@interface SelectCategoryViewController : UIViewController<UITableViewDataSource,UITextFieldDelegate,TableDownloaderDelegate>
+@interface SelectCategoryViewController : UIViewController<UITableViewDataSource,UITextFieldDelegate>
 
 @end

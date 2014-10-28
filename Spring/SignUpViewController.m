@@ -24,6 +24,10 @@
     [self signupUser];
 }
 
+- (IBAction)cancel:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 -(void) signupUser{
     if ([self fieldsValid]){
         PFUser *user = [PFUser user];

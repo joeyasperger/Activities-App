@@ -8,7 +8,6 @@
 
 #import "CategoryViewController.h"
 #import "Activity.h"
-#import "ServerInfo.h"
 #import "ActivityViewController.h"
 #import "AddActivitiesNavController.h"
 
@@ -88,13 +87,6 @@
 - (void) tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [self performSegueWithIdentifier:@"ShowActivitiesForCategory" sender:nil];
 }
-
--(void) downloadCompleted:(NSMutableArray *)array{
-    self.categoryNames = [Activity uniqueCategoryNamesFromActivities:array];
-    self.activities = array;
-    [self.tableView reloadData];
-}
-
 
 #pragma mark - Navigation
 

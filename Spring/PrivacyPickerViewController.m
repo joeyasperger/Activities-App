@@ -88,7 +88,7 @@
 }
 
 -(void) viewWillDisappear:(BOOL)animated{
-    [self.delegate recievePrivacySettings:[self.pickerView selectedRowInComponent:0]];
+    [self.delegate recievePrivacySettings:(NSString*)self.pickerData[[self.pickerView selectedRowInComponent:0]]];
 }
 
 /*

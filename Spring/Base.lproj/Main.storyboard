@@ -9,10 +9,11 @@
         <scene sceneID="W3I-pn-N6e">
             <objects>
                 <viewController title="First" id="CZ4-MO-1fc" customClass="FeedViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="100" sectionHeaderHeight="10" sectionFooterHeight="10" id="41Y-CW-rS6">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="100" sectionHeaderHeight="5" sectionFooterHeight="5" id="41Y-CW-rS6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="sectionIndexColor" red="0.0" green="0.65537958559999998" blue="0.048849961320000003" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EventCell" rowHeight="100" id="rgT-uH-okP" customClass="EventTableViewCell">
                                 <rect key="frame" x="0.0" y="119" width="320" height="100"/>
@@ -51,7 +52,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Feed" id="jaG-U2-gE0">
-                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="jXR-HB-uKO">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="jXR-HB-uKO">
                             <connections>
                                 <segue destination="FH8-cw-XCP" kind="modal" id="gBv-oe-8f5"/>
                             </connections>
@@ -93,11 +94,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Content of the message describing the event" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rzc-Uv-qOf">
-                                <rect key="frame" x="31" y="158" width="257" height="140"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="12 people interested" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f9Y-7g-YdC">
                                 <rect key="frame" x="31" y="364" width="228" height="43"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -106,14 +102,19 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="greybox" translatesAutoresizingMaskIntoConstraints="NO" id="cWI-J7-aFj">
                                 <rect key="frame" x="12" y="76" width="100" height="100"/>
                             </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event Description" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rzc-Uv-qOf">
+                                <rect key="frame" x="31" y="179" width="257" height="140"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="fiL-79-H0o"/>
                     <connections>
                         <outlet property="activityLabel" destination="R4U-wr-2xW" id="SuV-Lh-Zvl"/>
+                        <outlet property="descriptionLabel" destination="Rzc-Uv-qOf" id="mqB-J4-Xpf"/>
                         <outlet property="eventTitleLabel" destination="fiL-79-H0o" id="u8U-Ie-YdB"/>
-                        <outlet property="messageLabel" destination="Rzc-Uv-qOf" id="ZRJ-R8-hKH"/>
                         <outlet property="peopleInterestedLabel" destination="f9Y-7g-YdC" id="ZbN-hh-g4r"/>
                         <outlet property="userLabel" destination="gYe-Zm-nkY" id="nGM-45-gis"/>
                     </connections>
@@ -172,7 +173,7 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bGT-jd-xFv">
-                                <rect key="frame" x="106" y="378" width="109" height="30"/>
+                                <rect key="frame" x="155" y="378" width="109" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Sign Up">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -187,6 +188,16 @@
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kaq-kF-dwy">
+                                <rect key="frame" x="66" y="378" width="81" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancel:" destination="CHD-jJ-AJ3" eventType="touchUpInside" id="p9m-5E-Ayg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -237,18 +248,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wdQ-1U-pgK">
-                                <rect key="frame" x="82" y="242" width="52" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Login">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="Login:" destination="mcF-iG-emE" eventType="touchUpInside" id="PfM-Xm-gAo"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AC7-cx-xjR">
-                                <rect key="frame" x="168" y="242" width="79" height="30"/>
+                                <rect key="frame" x="74" y="240" width="79" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Sign Up">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -272,6 +273,16 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="53"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wdQ-1U-pgK">
+                                <rect key="frame" x="193" y="240" width="52" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Login:" destination="mcF-iG-emE" eventType="touchUpInside" id="PfM-Xm-gAo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -442,7 +453,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="My Events" id="wOv-FX-89i">
-                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="dJn-Mo-9x8">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="dJn-Mo-9x8">
                             <connections>
                                 <segue destination="FH8-cw-XCP" kind="modal" id="7pe-i7-yFT"/>
                             </connections>
@@ -1145,7 +1156,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="gBv-oe-8f5"/>
         <segue reference="rwr-hL-8Xz"/>
+        <segue reference="gBv-oe-8f5"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -9,7 +9,6 @@
 #import "CreateEventTableViewController.h"
 #import "SelectActivitiyViewController.h"
 #import "Activity.h"
-#import "Event.h"
 
 @interface CreateEventTableViewController ()
 
@@ -20,12 +19,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *privacyLabel;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *doneButton;
-@property BOOL didSelectPrivacy;
-
+@property NSString *privacyType;
 @property NSDate *eventDate;
-
-@property Event *event;
-
 @end
 
 @implementation CreateEventTableViewController
@@ -36,11 +31,15 @@
     UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)];
     [self.tableView addGestureRecognizer:gestureRecognizer];
     gestureRecognizer.cancelsTouchesInView = NO;
-    self.event = [Event new];
     self.doneButton.enabled = NO;
     [self.eventNameField addTarget:self
                   action:@selector(textFieldDidChange:)
         forControlEvents:UIControlEventEditingChanged];
+    self.privacyType = @"Anyone";
+    self.privacyLabel.text = self.privacyType;
+    NSDate* currentDate = [NSDate date];
+    self.eventDate = [self nextHourDate:currentDate];
+    [self updateDateLabel];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -55,10 +54,6 @@
 }
 
 - (IBAction)done:(id)sender {
-    NSDateFormatter *dateFormatter = [NSDateFormatter new];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-    [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
-    NSString *dateString = [dateFormatter stringFromDate:self.eventDate];
     PFObject *event = [PFObject objectWithClassName:@"Event"];
     event[@"name"] = self.eventNameField.text;
     event[@"creator"] = [PFUser currentUser];
@@ -94,7 +89,6 @@
 
 - (IBAction) unwindFromSelectActivity: (UIStoryboardSegue*) segue{
     SelectActivitiyViewController *source = [segue sourceViewController];
-    self.event.activity = source.selectedActivity;
     self.activity = source.selectedActivity;
     self.activityLabel.text = self.activity.name;
 }
@@ -130,31 +124,29 @@
     }
 }
 
-- (void) recieveDate:(NSDate *)date{
+/* rounds the time to the next hour */
+- (NSDate*) nextHourDate:(NSDate*)inDate{
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDateComponents *comps = [calendar components: NSEraCalendarUnit|NSYearCalendarUnit| NSMonthCalendarUnit|NSDayCalendarUnit|NSHourCalendarUnit fromDate: inDate];
+    [comps setHour: [comps hour]+1]; // Here you may also need to check if it's the last hour of the day
+    return [calendar dateFromComponents:comps];
+}
+
+- (void) updateDateLabel{
     NSDateFormatter *dateFormatter = [NSDateFormatter new];
     [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
     [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
-    self.eventDate = date;
-    self.timeLabel.text = [dateFormatter stringFromDate:date];
+    self.timeLabel.text = [dateFormatter stringFromDate:self.eventDate];
 }
 
-- (void) recievePrivacySettings:(NSInteger)privacyType{
-    self.event.privacyType = privacyType;
-    self.didSelectPrivacy = YES;
-    switch (privacyType) {
-        case PRIVACY_ANYONE:
-            self.privacyLabel.text = @"Anyone";
-            break;
-        case PRIVACY_FRIENDS:
-            self.privacyLabel.text = @"Friends";
-            break;
-        case PRIVACY_GROUP:
-            self.privacyLabel.text = @"Group";
-            break;
-        case PRIVACY_INVITEONLY:
-            self.privacyLabel.text = @"Invite Only";
-            break;
-    }
+- (void) recieveDate:(NSDate *)date{
+    self.eventDate = date;
+    [self updateDateLabel];
+}
+
+- (void) recievePrivacySettings:(NSString*)privacyType{
+    self.privacyType = privacyType;
+    self.privacyLabel.text = self.privacyType;
 }
 
 
@@ -166,16 +158,12 @@
     if ([segue.identifier isEqualToString:@"SelectEventTime"]){
         SelectTimeViewController *destViewController = [segue destinationViewController];
         destViewController.delegate = self;
-        if (self.eventDate != nil){
-            destViewController.date = self.eventDate;
-        }
+        destViewController.date = self.eventDate;
     }
     if ([segue.identifier isEqualToString:@"SelectEventPrivacy"]){
         PrivacyPickerViewController *destViewController = [segue destinationViewController];
         destViewController.delegate = self;
-        if (self.didSelectPrivacy){
-            destViewController.initialSelection = self.event.privacyType;
-        }
+        destViewController.initialSelection = self.privacyType;
     }
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.

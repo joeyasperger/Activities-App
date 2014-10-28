@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-@class Event;
+#import <Parse/Parse.h>
 
 @interface EventDetailViewController : UIViewController
 
-@property Event *event;
+@property PFObject *event;
 
 @end
