@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="mcF-iG-emE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="mcF-iG-emE">
     <dependencies>
-        <deployment defaultVersion="1808" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
         <!--First-->
@@ -358,7 +358,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="greybox" translatesAutoresizingMaskIntoConstraints="NO" id="BAU-MB-wns">
                                 <rect key="frame" x="8" y="82" width="130" height="130"/>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Joey Asperger" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gSq-B5-WvP">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="User Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gSq-B5-WvP">
                                 <rect key="frame" x="146" y="96" width="154" height="31"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
@@ -375,12 +375,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="nameLabel" destination="gSq-B5-WvP" id="mcR-89-nE5"/>
+                        <outlet property="logoutButton" destination="96h-gW-zSV" id="bXU-9o-6oz"/>
+                        <outlet property="nameLabel" destination="gSq-B5-WvP" id="6hc-NA-GUB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b67-zY-CPg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1411" y="3081"/>
+            <point key="canvasLocation" x="2510" y="857"/>
         </scene>
         <!--Settings-->
         <scene sceneID="wo7-nU-2UZ">
@@ -846,7 +847,13 @@
                             <outlet property="delegate" destination="n0A-Ry-yoQ" id="U4x-6p-DHh"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Friends" id="qTy-Yf-klL"/>
+                    <navigationItem key="navigationItem" title="Friends" id="qTy-Yf-klL">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="VGO-Yu-n2l">
+                            <connections>
+                                <segue destination="nGR-xM-1I3" kind="push" id="3Ce-JH-fMF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="uLD-2N-eMl" id="Gfc-U6-Wyb"/>
                     </connections>
@@ -854,6 +861,47 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ka6-XO-etI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1411" y="857"/>
+        </scene>
+        <!--Add Friends-->
+        <scene sceneID="ABn-sx-ZfC">
+            <objects>
+                <viewController id="nGR-xM-1I3" customClass="AddFriendsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QeX-ME-qRg"/>
+                        <viewControllerLayoutGuide type="bottom" id="JKt-xZ-dDR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gfv-i0-iSm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Search for friends" translatesAutoresizingMaskIntoConstraints="NO" id="2md-hl-mjV">
+                                <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="nGR-xM-1I3" id="vho-ky-j2g"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="8hA-b3-y5O">
+                                <rect key="frame" x="0.0" y="108" width="320" height="411"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="nGR-xM-1I3" id="JVl-hp-uiV"/>
+                                    <outlet property="delegate" destination="nGR-xM-1I3" id="c3v-KF-EDg"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Friends" id="kbp-f2-MjT"/>
+                    <connections>
+                        <outlet property="searchBar" destination="2md-hl-mjV" id="aV1-4D-ZmF"/>
+                        <outlet property="tableView" destination="8hA-b3-y5O" id="T9X-Oh-Dml"/>
+                        <segue destination="RKQ-HJ-Ua4" kind="push" identifier="showProfile" id="ytB-6v-chK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z3Z-Zi-kI2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1985" y="858"/>
         </scene>
         <!--My Events-->
         <scene sceneID="GNv-q5-Ojx">
@@ -1156,7 +1204,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="rwr-hL-8Xz"/>
         <segue reference="gBv-oe-8f5"/>
+        <segue reference="KJ9-33-cdY"/>
+        <segue reference="ytB-6v-chK"/>
     </inferredMetricsTieBreakers>
 </document>

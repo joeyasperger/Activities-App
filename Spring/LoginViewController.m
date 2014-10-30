@@ -37,12 +37,18 @@
 -(void)sendLoginRequest{
     [PFUser logInWithUsernameInBackground:self.emailField.text password:self.passwordField.text block:^(PFUser *user, NSError *error) {
         if (user) {
+            NSLog(@"success");
             [self performSegueWithIdentifier:@"LoginSegue" sender:self.sender];
+
         } else {
             NSString *errorString = [error userInfo][@"error"];
             self.errorLabel.text = errorString;
         }
     }];
+}
+
+-(void) transitionAfterLogin{
+    [self performSegueWithIdentifier:@"LoginSegue" sender:self.sender];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
@@ -92,6 +98,7 @@
 */
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    NSLog(@"Preparing for segue");
     if ([segue.identifier isEqualToString:@"LoginSegue"]) {
         
     }

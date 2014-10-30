@@ -11,4 +11,9 @@
 
 @interface ProfileViewController : UIViewController
 
+@property BOOL isCurrentUser;
+@property PFUser *user;
+
+- (void) loadData;
+
 @end

@@ -10,6 +10,7 @@
 
 @interface ProfileViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *logoutButton;
 
 @end
 
@@ -33,7 +34,20 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.nameLabel.text = [PFUser currentUser][@"displayName"];
+    if (self.user == nil){
+        self.isCurrentUser = YES;
+        self.user = [PFUser currentUser];
+    }
+    [self loadData];
+}
+
+-(void) loadData{
+    self.nameLabel.text = self.user[@"displayName"];
+    if (!self.isCurrentUser){
+        self.logoutButton.enabled = NO;
+        self.logoutButton.title = @"";
+        self.navigationItem.title = self.user[@"displayName"];
+    }
 }
 
 - (void)didReceiveMemoryWarning

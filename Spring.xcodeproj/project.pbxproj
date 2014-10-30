@@ -38,6 +38,7 @@
 		5AA3CBB219BBC9F200D07D51 /* SpringTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA3CBB119BBC9F200D07D51 /* SpringTests.m */; };
 		5AA3CBBD19BBF01F00D07D51 /* EventTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA3CBBC19BBF01F00D07D51 /* EventTableViewCell.m */; };
 		5AA3CBC019BC126000D07D51 /* EventDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA3CBBF19BC126000D07D51 /* EventDetailViewController.m */; };
+		5AA4CB4C19FF7F2100E38978 /* AddFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA4CB4B19FF7F2100E38978 /* AddFriendsViewController.m */; };
 		5AACDD4619D24B4A0085DBBC /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AACDC4619D24B480085DBBC /* FacebookSDK.framework */; };
 		5AACDD4719D24B4A0085DBBC /* FBAudienceNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AACDC4819D24B480085DBBC /* FBAudienceNetwork.framework */; };
 		5AACDD5F19D24B4A0085DBBC /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 5AACDC7319D24B490085DBBC /* LICENSE */; };
@@ -120,6 +121,8 @@
 		5AA3CBBC19BBF01F00D07D51 /* EventTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventTableViewCell.m; sourceTree = "<group>"; };
 		5AA3CBBE19BC126000D07D51 /* EventDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventDetailViewController.h; sourceTree = "<group>"; };
 		5AA3CBBF19BC126000D07D51 /* EventDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventDetailViewController.m; sourceTree = "<group>"; };
+		5AA4CB4A19FF7F2100E38978 /* AddFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddFriendsViewController.h; path = ../AddFriendsViewController.h; sourceTree = "<group>"; };
+		5AA4CB4B19FF7F2100E38978 /* AddFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddFriendsViewController.m; path = ../AddFriendsViewController.m; sourceTree = "<group>"; };
 		5AACDC4619D24B480085DBBC /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		5AACDC4819D24B480085DBBC /* FBAudienceNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBAudienceNetwork.framework; sourceTree = "<group>"; };
 		5AACDC4919D24B480085DBBC /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
@@ -283,8 +286,7 @@
 				5AADF9F719E7A7B300D2BCD2 /* Login and Sign Up */,
 				5A92AEBB19BFE899001C52F7 /* ProfileViewController.h */,
 				5A92AEBC19BFE899001C52F7 /* ProfileViewController.m */,
-				5A92AEB219BFA486001C52F7 /* FriendsViewController.h */,
-				5A92AEB319BFA486001C52F7 /* FriendsViewController.m */,
+				5AA4CB4919FF7EBF00E38978 /* Friends */,
 				5AA3CB9819BBC9F200D07D51 /* FeedViewController.h */,
 				5AA3CB9919BBC9F200D07D51 /* FeedViewController.m */,
 				5AA3CB9E19BBC9F200D07D51 /* Images.xcassets */,
@@ -320,6 +322,17 @@
 				5AA3CBAE19BBC9F200D07D51 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5AA4CB4919FF7EBF00E38978 /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				5A92AEB219BFA486001C52F7 /* FriendsViewController.h */,
+				5A92AEB319BFA486001C52F7 /* FriendsViewController.m */,
+				5AA4CB4A19FF7F2100E38978 /* AddFriendsViewController.h */,
+				5AA4CB4B19FF7F2100E38978 /* AddFriendsViewController.m */,
+			);
+			name = Friends;
 			sourceTree = "<group>";
 		};
 		5AACDC4419D24B480085DBBC /* FacebookSDK */ = {
@@ -505,6 +518,7 @@
 				5A336A1419D4EF280062EC98 /* CreateEventTableViewController.m in Sources */,
 				5AA3CB9419BBC9F200D07D51 /* AppDelegate.m in Sources */,
 				5A92AEB419BFA486001C52F7 /* FriendsViewController.m in Sources */,
+				5AA4CB4C19FF7F2100E38978 /* AddFriendsViewController.m in Sources */,
 				5AA3CB9A19BBC9F200D07D51 /* FeedViewController.m in Sources */,
 				5A92AEBD19BFE899001C52F7 /* ProfileViewController.m in Sources */,
 				5A397D9119DE3C7500D2EE9F /* PrivacyPickerViewController.m in Sources */,
