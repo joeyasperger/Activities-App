@@ -1,0 +1,14 @@
+{
+    "applications": {
+        "Spring": {
+            "applicationId": "NFoT6y4RCSzdhXX0g9UKULkoDc33RmkRdiVyQxgi", 
+            "masterKey": "QYizzhwl49S0jbMrWT3rX4zaI0CLCnRly95b9fYI"
+        }, 
+        "_default": {
+            "link": "Spring"
+        }
+    }, 
+    "global": {
+        "parseVersion": "1.3.1"
+    }
+}

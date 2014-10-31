@@ -68,6 +68,7 @@
     }
     
     PFObject *user = self.users[indexPath.row];
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     cell.textLabel.text = user[@"displayName"];
     cell.imageView.image = [UIImage imageNamed:@"greybox.jpg"];
     

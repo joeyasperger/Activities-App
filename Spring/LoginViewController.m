@@ -7,6 +7,7 @@
 //
 
 #import "LoginViewController.h"
+#import "CurrentUserRelations.h"
 
 @interface LoginViewController ()
 @property (strong, nonatomic) IBOutlet UITextField *emailField;
@@ -38,6 +39,7 @@
     [PFUser logInWithUsernameInBackground:self.emailField.text password:self.passwordField.text block:^(PFUser *user, NSError *error) {
         if (user) {
             NSLog(@"success");
+            [CurrentUserRelations downloadRelations];
             [self performSegueWithIdentifier:@"LoginSegue" sender:self.sender];
 
         } else {

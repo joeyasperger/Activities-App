@@ -55,6 +55,8 @@
 		5AADF9F519E79D6F00D2BCD2 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AADF9F219E79D6F00D2BCD2 /* StoreKit.framework */; };
 		5AADF9F619E79D6F00D2BCD2 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AADF9F319E79D6F00D2BCD2 /* SystemConfiguration.framework */; };
 		5AADF9FA19E7A7E900D2BCD2 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AADF9F919E7A7E900D2BCD2 /* SignUpViewController.m */; };
+		5AE10DB11A0410300040BA63 /* RequestsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE10DB01A0410300040BA63 /* RequestsViewController.m */; };
+		5AE10DB41A0444D30040BA63 /* CurrentUserRelations.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE10DB31A0444D30040BA63 /* CurrentUserRelations.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -145,6 +147,10 @@
 		5AADF9F319E79D6F00D2BCD2 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		5AADF9F819E7A7E900D2BCD2 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		5AADF9F919E7A7E900D2BCD2 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		5AE10DAF1A0410300040BA63 /* RequestsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestsViewController.h; sourceTree = "<group>"; };
+		5AE10DB01A0410300040BA63 /* RequestsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestsViewController.m; sourceTree = "<group>"; };
+		5AE10DB21A0444D30040BA63 /* CurrentUserRelations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentUserRelations.h; sourceTree = "<group>"; };
+		5AE10DB31A0444D30040BA63 /* CurrentUserRelations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentUserRelations.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -331,6 +337,8 @@
 				5A92AEB319BFA486001C52F7 /* FriendsViewController.m */,
 				5AA4CB4A19FF7F2100E38978 /* AddFriendsViewController.h */,
 				5AA4CB4B19FF7F2100E38978 /* AddFriendsViewController.m */,
+				5AE10DAF1A0410300040BA63 /* RequestsViewController.h */,
+				5AE10DB01A0410300040BA63 /* RequestsViewController.m */,
 			);
 			name = Friends;
 			sourceTree = "<group>";
@@ -378,6 +386,8 @@
 				5A92AEC519C251A1001C52F7 /* Activity.m */,
 				5A92AEB519BFA548001C52F7 /* Friend.h */,
 				5A92AEB619BFA548001C52F7 /* Friend.m */,
+				5AE10DB21A0444D30040BA63 /* CurrentUserRelations.h */,
+				5AE10DB31A0444D30040BA63 /* CurrentUserRelations.m */,
 			);
 			name = "Base Objects";
 			sourceTree = "<group>";
@@ -518,8 +528,10 @@
 				5A336A1419D4EF280062EC98 /* CreateEventTableViewController.m in Sources */,
 				5AA3CB9419BBC9F200D07D51 /* AppDelegate.m in Sources */,
 				5A92AEB419BFA486001C52F7 /* FriendsViewController.m in Sources */,
+				5AE10DB41A0444D30040BA63 /* CurrentUserRelations.m in Sources */,
 				5AA4CB4C19FF7F2100E38978 /* AddFriendsViewController.m in Sources */,
 				5AA3CB9A19BBC9F200D07D51 /* FeedViewController.m in Sources */,
+				5AE10DB11A0410300040BA63 /* RequestsViewController.m in Sources */,
 				5A92AEBD19BFE899001C52F7 /* ProfileViewController.m in Sources */,
 				5A397D9119DE3C7500D2EE9F /* PrivacyPickerViewController.m in Sources */,
 				5A336A1719D512D90062EC98 /* SelectCategoryViewController.m in Sources */,

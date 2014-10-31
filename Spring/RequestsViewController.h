@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
-@interface RequestsViewController : UIViewController
+@interface RequestsViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
 
 @end

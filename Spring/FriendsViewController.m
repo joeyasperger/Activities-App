@@ -7,11 +7,10 @@
 //
 
 #import "FriendsViewController.h"
-#import "Friend.h"
 
 @interface FriendsViewController ()
 
-@property NSMutableArray *friends;
+@property NSArray *friends;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 
@@ -33,8 +32,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.friends = [NSMutableArray new];
-    /*TableDownloader *downloader = [[TableDownloader alloc] initWithURL:[ServerInfo friendsURL:[UserProfile userID]] type:FRIEND_DOWNLOADER saveFile:@"myfriends.plist"];
-    downloader.delegate = self;*/
+    PFQuery *query = [[[PFUser currentUser] relationForKey:@"friends"] query];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error){
+            self.friends = objects;
+            [self.tableView reloadData];
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning
@@ -58,7 +62,8 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     
-    cell.textLabel.text = ((Friend*)self.friends[indexPath.row]).name;
+    PFUser *user = self.friends[indexPath.row];
+    cell.textLabel.text = user[@"displayName"];
     cell.imageView.image = [UIImage imageNamed:@"greybox.jpg"];
     
     return cell;
