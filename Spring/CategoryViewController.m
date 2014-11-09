@@ -55,8 +55,7 @@
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
     }];
-    //TableDownloader *downloader = [[TableDownloader alloc] initWithURL:[ServerInfo allactivitesURL] type:ACTIVITY_DOWNLOADER saveFile:@"allactivities.plist"];
-    //downloader.delegate = self;
+    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:0 green:222/256.0 blue:80/256.0 alpha:1.0]];
 }
 
 - (void) viewWillAppear:(BOOL)animated {

@@ -8,7 +8,6 @@
 
 #import "FeedViewController.h"
 #import "EventTableViewCell.h"
-#import "EventDetailViewController.h"
 #import "EventViewController.h"
 
 @interface FeedViewController ()

@@ -54,6 +54,7 @@
             [self.tableView reloadData];
         }
     }];
+    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:0 green:222/256.0 blue:80/256.0 alpha:1.0]];
 }
 
 - (IBAction)editPressed:(id)sender {

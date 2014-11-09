@@ -12,7 +12,7 @@
 @implementation EventViewController
 
 -(void) viewDidLoad{
-    
+    self.navigationItem.title = self.event[@"displayName"];
 }
 
 
@@ -51,6 +51,7 @@
         [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
         cell.timeLabel.text = [dateFormatter stringFromDate:date];
         cell.creatorNameLabel.text = creator[@"displayName"];
+        [cell.activityButton setTitle:activity[@"name"] forState:UIControlStateNormal];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }
