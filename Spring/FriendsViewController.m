@@ -7,6 +7,7 @@
 //
 
 #import "FriendsViewController.h"
+#import "ProfileViewController.h"
 
 @interface FriendsViewController ()
 
@@ -39,6 +40,12 @@
             [self.tableView reloadData];
         }
     }];
+    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:0 green:222/256.0 blue:80/256.0 alpha:1.0]];
+}
+
+- (void) viewWillAppear:(BOOL)animated {
+    [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:animated];
+    [super viewWillAppear:animated];
 }
 
 - (void)didReceiveMemoryWarning
@@ -61,7 +68,7 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
-    
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     PFUser *user = self.friends[indexPath.row];
     cell.textLabel.text = user[@"displayName"];
     cell.imageView.image = [UIImage imageNamed:@"greybox.jpg"];
@@ -69,15 +76,20 @@
     return cell;
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [self performSegueWithIdentifier:@"ShowProfile" sender:tableView];
 }
-*/
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"ShowProfile"]){
+        ProfileViewController * dest = [segue destinationViewController];
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        dest.user = self.friends[indexPath.row];
+        dest.isCurrentUser = FALSE;
+    }
+}
+
 
 @end

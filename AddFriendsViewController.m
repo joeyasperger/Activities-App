@@ -38,6 +38,11 @@
     
 }
 
+- (void) viewWillAppear:(BOOL)animated {
+    [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:animated];
+    [super viewWillAppear:animated];
+}
+
 - (void) searchBarSearchButtonClicked:(UISearchBar *)searchBar{
     NSString *searchString = searchBar.text;
     PFQuery *query = [PFQuery queryWithClassName:@"_User"];

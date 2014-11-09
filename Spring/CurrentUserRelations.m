@@ -19,9 +19,9 @@ static NSMutableArray *sentRequests;
 @implementation CurrentUserRelations
 
 + (void) downloadRelations{
-    friends = [NSMutableArray new];
-    recievedRequests = [NSMutableArray new];
-    sentRequests = [NSMutableArray new];
+    friends = [NSMutableArray array];
+    recievedRequests = [NSMutableArray array];
+    sentRequests = [NSMutableArray array];
     PFUser *user = [PFUser currentUser];
     PFQuery *friendQuery = [[user relationForKey:@"friends"] query];
     PFQuery *recievedQuery = [[user relationForKey:@"recievedRequests"] query];
@@ -48,6 +48,13 @@ static NSMutableArray *sentRequests;
         }
     }];
     hasDownloadedRelations = YES;
+}
+
++ (void) clearRelations{
+    hasDownloadedRelations = NO;
+    friends = nil;
+    recievedRequests = nil;
+    sentRequests = nil;
 }
 
 + (NSArray*) friends{

@@ -9,6 +9,7 @@
 #import "FeedViewController.h"
 #import "EventTableViewCell.h"
 #import "EventDetailViewController.h"
+#import "EventViewController.h"
 
 @interface FeedViewController ()
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
@@ -40,6 +41,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:0 green:222/256.0 blue:80/256.0 alpha:1.0]];
+    //[[UITabBar appearance] setSelectedImageTintColor:[UIColor colorWithRed:0 green:222/256.0 blue:80/256.0 alpha:1.0]];
 }
 
 
@@ -47,6 +50,22 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (PFObject*) objectAtIndexPath:(NSIndexPath *)indexPath{
+    return self.objects[indexPath.section];
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return self.objects.count;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 1;
+}
+
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [self performSegueWithIdentifier:@"ShowEvent" sender:nil];
 }
 
 - (PFQuery *)queryForTable
@@ -72,11 +91,13 @@
     return cell;
 }
 
+#pragma mark - navigation
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"ShowEventDetail"]) {
+    if ([segue.identifier isEqualToString:@"ShowEvent"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        EventDetailViewController *destViewController = segue.destinationViewController;
-        destViewController.event = [self.objects objectAtIndex:indexPath.row];
+        EventViewController *destViewController = segue.destinationViewController;
+        destViewController.event = [self.objects objectAtIndex:indexPath.section];
     }
 }
 

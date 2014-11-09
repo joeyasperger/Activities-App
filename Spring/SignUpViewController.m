@@ -7,6 +7,7 @@
 //
 
 #import "SignUpViewController.h"
+#import "CurrentUserRelations.h"
 
 @interface SignUpViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *emailField;
@@ -36,6 +37,7 @@
         user[@"displayName"] = self.usernameField.text;
         [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (!error) {
+                [CurrentUserRelations downloadRelations];
                 [self performSegueWithIdentifier:@"SignupSegue" sender:self];
             } else {
                 NSString *errorString = [error userInfo][@"error"];

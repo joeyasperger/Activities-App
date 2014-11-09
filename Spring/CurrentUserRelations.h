@@ -12,6 +12,7 @@
 @interface CurrentUserRelations : NSObject
 
 + (void) downloadRelations;
++ (void) clearRelations;
 + (NSArray*) friends;
 + (NSArray*) recievedRequests;
 + (NSArray*) sentRequests;
