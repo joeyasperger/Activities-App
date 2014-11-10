@@ -24,6 +24,7 @@
 		5A92AEC619C251A1001C52F7 /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A92AEC519C251A1001C52F7 /* Activity.m */; };
 		5A9A11B61A0F1CB700540AEE /* EventHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A9A11B51A0F1CB700540AEE /* EventHeaderCell.m */; };
 		5A9A11B91A0F213700540AEE /* EventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A9A11B81A0F213700540AEE /* EventViewController.m */; };
+		5A9A11C01A0F70EA00540AEE /* EventInterestCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A9A11BF1A0F70EA00540AEE /* EventInterestCell.m */; };
 		5AA3CB8419BBC9F200D07D51 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA3CB8319BBC9F200D07D51 /* Foundation.framework */; };
 		5AA3CB8619BBC9F200D07D51 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA3CB8519BBC9F200D07D51 /* CoreGraphics.framework */; };
 		5AA3CB8819BBC9F200D07D51 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA3CB8719BBC9F200D07D51 /* UIKit.framework */; };
@@ -56,6 +57,8 @@
 		5AADF9F519E79D6F00D2BCD2 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AADF9F219E79D6F00D2BCD2 /* StoreKit.framework */; };
 		5AADF9F619E79D6F00D2BCD2 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AADF9F319E79D6F00D2BCD2 /* SystemConfiguration.framework */; };
 		5AADF9FA19E7A7E900D2BCD2 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AADF9F919E7A7E900D2BCD2 /* SignUpViewController.m */; };
+		5AC5501D1A1043680084411F /* EventPostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC5501C1A1043680084411F /* EventPostCell.m */; };
+		5AC550201A1058EE0084411F /* EventWritePostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC5501F1A1058EE0084411F /* EventWritePostCell.m */; };
 		5AE10DB11A0410300040BA63 /* RequestsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE10DB01A0410300040BA63 /* RequestsViewController.m */; };
 		5AE10DB41A0444D30040BA63 /* CurrentUserRelations.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE10DB31A0444D30040BA63 /* CurrentUserRelations.m */; };
 /* End PBXBuildFile section */
@@ -105,6 +108,8 @@
 		5A9A11B51A0F1CB700540AEE /* EventHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventHeaderCell.m; sourceTree = "<group>"; };
 		5A9A11B71A0F213700540AEE /* EventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventViewController.h; sourceTree = "<group>"; };
 		5A9A11B81A0F213700540AEE /* EventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventViewController.m; sourceTree = "<group>"; };
+		5A9A11BE1A0F70EA00540AEE /* EventInterestCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventInterestCell.h; sourceTree = "<group>"; };
+		5A9A11BF1A0F70EA00540AEE /* EventInterestCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventInterestCell.m; sourceTree = "<group>"; };
 		5AA3CB8019BBC9F200D07D51 /* Spring.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spring.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AA3CB8319BBC9F200D07D51 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5AA3CB8519BBC9F200D07D51 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -150,6 +155,10 @@
 		5AADF9F319E79D6F00D2BCD2 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		5AADF9F819E7A7E900D2BCD2 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		5AADF9F919E7A7E900D2BCD2 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		5AC5501B1A1043680084411F /* EventPostCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventPostCell.h; path = ../EventPostCell.h; sourceTree = "<group>"; };
+		5AC5501C1A1043680084411F /* EventPostCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventPostCell.m; path = ../EventPostCell.m; sourceTree = "<group>"; };
+		5AC5501E1A1058EE0084411F /* EventWritePostCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventWritePostCell.h; sourceTree = "<group>"; };
+		5AC5501F1A1058EE0084411F /* EventWritePostCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventWritePostCell.m; sourceTree = "<group>"; };
 		5AE10DAF1A0410300040BA63 /* RequestsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestsViewController.h; sourceTree = "<group>"; };
 		5AE10DB01A0410300040BA63 /* RequestsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestsViewController.m; sourceTree = "<group>"; };
 		5AE10DB21A0444D30040BA63 /* CurrentUserRelations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentUserRelations.h; sourceTree = "<group>"; };
@@ -232,8 +241,14 @@
 				5A9A11B81A0F213700540AEE /* EventViewController.m */,
 				5AA3CBBB19BBF01F00D07D51 /* EventTableViewCell.h */,
 				5AA3CBBC19BBF01F00D07D51 /* EventTableViewCell.m */,
+				5AC5501B1A1043680084411F /* EventPostCell.h */,
+				5AC5501C1A1043680084411F /* EventPostCell.m */,
+				5AC5501E1A1058EE0084411F /* EventWritePostCell.h */,
+				5AC5501F1A1058EE0084411F /* EventWritePostCell.m */,
 				5A9A11B41A0F1CB700540AEE /* EventHeaderCell.h */,
 				5A9A11B51A0F1CB700540AEE /* EventHeaderCell.m */,
+				5A9A11BE1A0F70EA00540AEE /* EventInterestCell.h */,
+				5A9A11BF1A0F70EA00540AEE /* EventInterestCell.m */,
 			);
 			name = "Event Display";
 			sourceTree = "<group>";
@@ -526,6 +541,7 @@
 				5A9A11B91A0F213700540AEE /* EventViewController.m in Sources */,
 				5A693E8F19C7B286005C5377 /* AddActivitiesNavController.m in Sources */,
 				5A92AEC619C251A1001C52F7 /* Activity.m in Sources */,
+				5AC5501D1A1043680084411F /* EventPostCell.m in Sources */,
 				5A693E8619C3A884005C5377 /* CategoryViewController.m in Sources */,
 				5A336A1A19D516790062EC98 /* SelectActivitiyViewController.m in Sources */,
 				5A92AEB719BFA548001C52F7 /* Friend.m in Sources */,
@@ -541,6 +557,8 @@
 				5A9A11B61A0F1CB700540AEE /* EventHeaderCell.m in Sources */,
 				5A397D9119DE3C7500D2EE9F /* PrivacyPickerViewController.m in Sources */,
 				5A336A1719D512D90062EC98 /* SelectCategoryViewController.m in Sources */,
+				5AC550201A1058EE0084411F /* EventWritePostCell.m in Sources */,
+				5A9A11C01A0F70EA00540AEE /* EventInterestCell.m in Sources */,
 				5AA3CB9019BBC9F200D07D51 /* main.m in Sources */,
 				5A92AEC319C24C90001C52F7 /* MyInterestsViewController.m in Sources */,
 				5AA3CBBD19BBF01F00D07D51 /* EventTableViewCell.m in Sources */,

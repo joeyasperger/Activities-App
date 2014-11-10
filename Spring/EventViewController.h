@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 
-@interface EventViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@interface EventViewController : UITableViewController
 
 @property PFObject *event;
 
