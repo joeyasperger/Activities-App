@@ -10,6 +10,10 @@
 #import "EventHeaderCell.h"
 #import "EventInterestCell.h"
 #import "EventWritePostCell.h"
+#import "EventPostCell.h"
+
+#define WRITE_POST_SECTION 2
+#define DISPLAY_POSTS_SECTION_START 3
 
 @interface EventViewController ()
 
@@ -17,6 +21,8 @@
 @property UIButton *joinButton;
 @property UITextField *postField;
 @property BOOL isWritingPost;
+@property NSArray *posts;
+@property BOOL didLoadPosts;
 
 @end
 
@@ -24,8 +30,24 @@
 
 -(void) viewDidLoad{
     self.navigationItem.title = self.event[@"displayName"];
+    //UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)];
+    //[self.tableView addGestureRecognizer:gestureRecognizer];
+    [self loadPosts];
 }
 
+- (void) loadPosts{
+    PFQuery *postsQuery = [PFQuery queryWithClassName:@"EventPost"];
+    [postsQuery whereKey:@"event" equalTo:self.event];
+    [postsQuery includeKey:@"user"];
+    [postsQuery orderByDescending:@"createdAt"];
+    [postsQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error){
+            self.posts = objects;
+            self.didLoadPosts = YES;
+            [self.tableView reloadData];
+        }
+    }];
+}
 
 -(void) joinButtonPressed{
     [self.joinButton setImage:[UIImage imageNamed:@"Checkmark"] forState:UIControlStateNormal];
@@ -34,7 +56,7 @@
 }
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.section == 2){
+    if (indexPath.section == WRITE_POST_SECTION){
         if (!self.isWritingPost){
             self.isWritingPost = YES;
             [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
@@ -42,37 +64,9 @@
     }
 }
 
-/*-(BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
-    return YES; }
-
-
-- (BOOL)textFieldShouldEndEditing:(UITextField *)textField {
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
-    
-    [self.view endEditing:YES];
-    return YES; }
-
-
-- (void)keyboardWillShow:(NSNotification *)notification
-{
-    //Assign new frame to your view
-    NSDictionary *info = [notification userInfo];
-    CGRect endRect = [info[UIKeyboardFrameEndUserInfoKey] CGRectValue];
-    CGRect beginRect = [info[UIKeyboardFrameBeginUserInfoKey] CGRectValue];
-    NSInteger animationCurve = [info[UIKeyboardAnimationCurveUserInfoKey] integerValue];
-    NSNumber *animationDuration = info[UIKeyboardAnimationDurationUserInfoKey];
-    [UIView beginAnimations:nil context:nil];
-    [UIView setAnimationDuration:[animationDuration doubleValue]];
-    CGRect oldFrame = self.tableView.frame;
-    CGRect newFrame = CGRectMake(oldFrame.origin.x, oldFrame.origin.y-endRect.size.height, oldFrame.size.width, oldFrame.size.height-endRect.size.height);
-    [UIView setAnimationCurve:animationCurve];
-    CGSize contentsize = self.tableView.contentSize;
-    //[self.view setFrame:CGRectMake(0,-110,320,460)]; //here taken -20 for example i.e. your view will be scrolled to -20. change its value according to your requirement.
-    [self.view setFrame:newFrame];
-    [UIView commitAnimations];
-    
-}*/
+-(void) hideKeyboard{
+    [self.postField resignFirstResponder];
+}
 
 -(void)keyboardWillHide:(NSNotification *)notification
 {
@@ -80,11 +74,18 @@
 }
 
 - (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView{
-    return 3;
+    if (!self.didLoadPosts){
+        return 3;
+    }
+    else{
+        return 3 + [self.posts count];
+    }
+    
 }
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 1;
+
 }
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -94,12 +95,15 @@
     else if (indexPath.section == 1){
         return 44;
     }
-    else{
+    else if (indexPath.section == WRITE_POST_SECTION){
         if (self.isWritingPost){
             return 70;
         }else{
             return 44;
         }
+    }
+    else{
+        return 60;
     }
 }
 
@@ -135,10 +139,11 @@
         [self.joinButton addTarget:self action:@selector(joinButtonPressed) forControlEvents:UIControlEventTouchUpInside];
         return cell;
     }
-    else if (indexPath.section == 2){
+    else if (indexPath.section == WRITE_POST_SECTION){
         if (!self.isWritingPost){
             static NSString *simpleTableIdentifier = @"EventPostButtonCell";
             UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier forIndexPath:indexPath];
+            cell.selectionStyle = UITableViewCellSelectionStyleDefault;
             return cell;
         }
         else{
@@ -149,9 +154,49 @@
             return cell;
         }
     }
+    else if (indexPath.section >= DISPLAY_POSTS_SECTION_START){
+        EventPostCell *cell = [tableView dequeueReusableCellWithIdentifier:@"EventPostCell" forIndexPath:indexPath];
+        PFObject *post = self.posts[indexPath.section - DISPLAY_POSTS_SECTION_START];
+        cell.postLabel.text = post[@"content"];
+        return cell;
+    }
     else{
         return nil;
     }
+}
+
+-(NSString*) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    if (section >= DISPLAY_POSTS_SECTION_START){
+        PFObject *post = self.posts[section - DISPLAY_POSTS_SECTION_START];
+        PFUser *user = post[@"user"];
+        return user[@"displayName"];
+        return nil;
+    }
+    else{
+        return nil;
+    }
+}
+
+-(void) textFieldDidChange:(UITextField*)textField{
+
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    PFObject *eventPost = [PFObject objectWithClassName:@"EventPost"];
+    eventPost[@"user"] = [PFUser currentUser];
+    eventPost[@"event"] = self.event;
+    eventPost[@"content"] = textField.text;
+    self.isWritingPost = NO;
+    [textField resignFirstResponder];
+    [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:WRITE_POST_SECTION]] withRowAnimation:UITableViewRowAnimationAutomatic];
+    [eventPost saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded){
+            [self loadPosts];
+        }
+    }];
+    [textField setText:@""];
+    return NO;
 }
 
 

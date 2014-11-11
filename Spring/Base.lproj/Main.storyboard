@@ -181,12 +181,35 @@
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" placeholder="Write something to post" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V13-FQ-1Tt">
                                             <rect key="frame" x="22" y="11" width="284" height="53"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
+                                            <textInputTraits key="textInputTraits" returnKeyType="send"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="pIQ-d5-ZwO" id="aVC-vU-OcF"/>
+                                            </connections>
                                         </textField>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="postField" destination="V13-FQ-1Tt" id="zFf-p9-SGa"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EventPostCell" rowHeight="61" id="KLc-CD-Xyu" customClass="EventPostCell">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KLc-CD-Xyu" id="nty-KX-sFd">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="greybox" translatesAutoresizingMaskIntoConstraints="NO" id="zCA-ZV-idM">
+                                            <rect key="frame" x="27" y="5" width="49" height="49"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UWC-cQ-yhI">
+                                            <rect key="frame" x="92" y="7" width="208" height="47"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="postLabel" destination="UWC-cQ-yhI" id="h4n-Xg-2p4"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -199,7 +222,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NMQ-op-QYX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1862" y="-908"/>
+            <point key="canvasLocation" x="1862" y="-913"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="aRc-ef-Hnl">

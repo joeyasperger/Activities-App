@@ -10,4 +10,6 @@
 
 @interface EventPostCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *postLabel;
+
 @end
