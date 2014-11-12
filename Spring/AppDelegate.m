@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import <FacebookSDK/FacebookSDK.h>
 #import <Parse/Parse.h>
+#import <GoogleMaps/GoogleMaps.h>
 
 @implementation AppDelegate
 
@@ -19,6 +20,7 @@
     [Parse setApplicationId:@"NFoT6y4RCSzdhXX0g9UKULkoDc33RmkRdiVyQxgi"
                   clientKey:@"EPD6ec0asJ5jG7pYCUrmFS0HJ5yCZjLfCbkzsBol"];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    [GMSServices provideAPIKey:@"AIzaSyCO_rN2SS0LWSfcV0oIK5drUCP62rMzJs4"];
     return YES;
 }
 							

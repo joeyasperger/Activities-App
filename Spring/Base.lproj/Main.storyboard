@@ -492,7 +492,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="greybox" translatesAutoresizingMaskIntoConstraints="NO" id="BAU-MB-wns">
-                                <rect key="frame" x="8" y="82" width="130" height="130"/>
+                                <rect key="frame" x="8" y="82" width="100" height="100"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="User Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gSq-B5-WvP">
                                 <rect key="frame" x="146" y="96" width="154" height="31"/>
@@ -827,7 +827,7 @@
         <!--Location-->
         <scene sceneID="Pmu-W7-Ccn">
             <objects>
-                <viewController id="wai-PA-Nkc" sceneMemberID="viewController">
+                <viewController id="wai-PA-Nkc" customClass="SelectEventLocationViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vlt-UH-EoV"/>
                         <viewControllerLayoutGuide type="bottom" id="lA4-8s-9zm"/>
@@ -835,9 +835,18 @@
                     <view key="view" contentMode="scaleToFill" id="O6B-IV-vLj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Search For Location" translatesAutoresizingMaskIntoConstraints="NO" id="vRc-BD-ljh">
+                                <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Location" id="zLy-pv-eTi"/>
+                    <connections>
+                        <outlet property="searchBar" destination="vRc-BD-ljh" id="rom-kq-lb2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X8T-GN-l21" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
