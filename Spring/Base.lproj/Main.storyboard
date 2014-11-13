@@ -839,6 +839,9 @@
                             <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Search For Location" translatesAutoresizingMaskIntoConstraints="NO" id="vRc-BD-ljh">
                                 <rect key="frame" x="0.0" y="64" width="320" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="wai-PA-Nkc" id="ren-3r-4vu"/>
+                                </connections>
                             </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
