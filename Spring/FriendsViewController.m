@@ -12,7 +12,9 @@
 @interface FriendsViewController ()
 
 @property NSArray *friends;
+@property NSMutableArray *filteredFriends;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 
 @end
@@ -31,8 +33,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    self.friends = [NSMutableArray new];
+    // initialize arrays
+    self.friends = [NSMutableArray array];
+    self.filteredFriends = [NSMutableArray array];
+    // start query for friends
     PFQuery *query = [[[PFUser currentUser] relationForKey:@"friends"] query];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error){
@@ -40,12 +44,25 @@
             [self.tableView reloadData];
         }
     }];
+    // set UI color
     [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:0 green:222/256.0 blue:80/256.0 alpha:1.0]];
 }
 
 - (void) viewWillAppear:(BOOL)animated {
     [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:animated];
     [super viewWillAppear:animated];
+}
+
+-(void) searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
+    
+    [self filterResultsForString:searchText];
+}
+
+- (void) filterResultsForString:(NSString*) searchText{
+    // filter names based on the text in the searchbar and put in self.filteredFriends
+    [self.filteredFriends removeAllObjects];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"displayName contains[c] %@", searchText];
+    self.filteredFriends = [NSMutableArray arrayWithArray:[self.friends filteredArrayUsingPredicate:predicate]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -55,12 +72,23 @@
 }
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return [self.friends count];
+    if (tableView == self.searchDisplayController.searchResultsTableView){
+        return self.filteredFriends.count;
+    }else{
+        return self.friends.count;
+    }
     
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    PFUser *user;
+    if (tableView == self.searchDisplayController.searchResultsTableView){
+        user = self.filteredFriends[indexPath.row];
+    }else{
+        user = self.friends[indexPath.row];
+    }
+    
     static NSString *simpleTableIdentifier = @"FriendTableCell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
@@ -69,7 +97,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    PFUser *user = self.friends[indexPath.row];
+    
     cell.textLabel.text = user[@"displayName"];
     cell.imageView.image = [UIImage imageNamed:@"greybox.jpg"];
     
@@ -84,9 +112,14 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"ShowProfile"]){
+        UITableView *senderTableView = sender;
         ProfileViewController * dest = [segue destinationViewController];
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        dest.user = self.friends[indexPath.row];
+        NSIndexPath *indexPath = [senderTableView indexPathForSelectedRow];
+        if (senderTableView == self.tableView){
+            dest.user = self.friends[indexPath.row];
+        }else{
+            dest.user = self.filteredFriends[indexPath.row];
+        }
         dest.isCurrentUser = FALSE;
     }
 }
