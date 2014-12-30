@@ -12,11 +12,12 @@
 		5A336A1A19D516790062EC98 /* SelectActivitiyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A336A1919D516790062EC98 /* SelectActivitiyViewController.m */; };
 		5A336A1D19D52C2B0062EC98 /* SelectTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A336A1C19D52C2B0062EC98 /* SelectTimeViewController.m */; };
 		5A397D9119DE3C7500D2EE9F /* PrivacyPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A397D9019DE3C7500D2EE9F /* PrivacyPickerViewController.m */; };
+		5A44C2751A53404800FBB2FC /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44C2741A53404800FBB2FC /* FeedViewController.swift */; };
+		5A44C2771A535DB600FBB2FC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44C2761A535DB600FBB2FC /* LoginViewController.swift */; };
 		5A45195619D8B59700B7B346 /* PrivacyPickerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A45195519D8B59700B7B346 /* PrivacyPickerTableViewCell.m */; };
 		5A693E8619C3A884005C5377 /* CategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A693E8519C3A884005C5377 /* CategoryViewController.m */; };
 		5A693E8919C4A54E005C5377 /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A693E8819C4A54E005C5377 /* ActivityViewController.m */; };
 		5A693E8F19C7B286005C5377 /* AddActivitiesNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A693E8E19C7B286005C5377 /* AddActivitiesNavController.m */; };
-		5A92AEAF19BF6B38001C52F7 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A92AEAE19BF6B38001C52F7 /* LoginViewController.m */; };
 		5A92AEB419BFA486001C52F7 /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A92AEB319BFA486001C52F7 /* FriendsViewController.m */; };
 		5A92AEB719BFA548001C52F7 /* Friend.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A92AEB619BFA548001C52F7 /* Friend.m */; };
 		5A92AEBD19BFE899001C52F7 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A92AEBC19BFE899001C52F7 /* ProfileViewController.m */; };
@@ -96,6 +97,9 @@
 		5A336A1C19D52C2B0062EC98 /* SelectTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectTimeViewController.m; sourceTree = "<group>"; };
 		5A397D8F19DE3C7500D2EE9F /* PrivacyPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrivacyPickerViewController.h; sourceTree = "<group>"; };
 		5A397D9019DE3C7500D2EE9F /* PrivacyPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrivacyPickerViewController.m; sourceTree = "<group>"; };
+		5A44C2731A53404800FBB2FC /* Spring-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Spring-Bridging-Header.h"; sourceTree = "<group>"; };
+		5A44C2741A53404800FBB2FC /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		5A44C2761A535DB600FBB2FC /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5A45195419D8B59700B7B346 /* PrivacyPickerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrivacyPickerTableViewCell.h; sourceTree = "<group>"; };
 		5A45195519D8B59700B7B346 /* PrivacyPickerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrivacyPickerTableViewCell.m; sourceTree = "<group>"; };
 		5A693E8419C3A884005C5377 /* CategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryViewController.h; sourceTree = "<group>"; };
@@ -104,8 +108,6 @@
 		5A693E8819C4A54E005C5377 /* ActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityViewController.m; sourceTree = "<group>"; };
 		5A693E8D19C7B286005C5377 /* AddActivitiesNavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddActivitiesNavController.h; sourceTree = "<group>"; };
 		5A693E8E19C7B286005C5377 /* AddActivitiesNavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddActivitiesNavController.m; sourceTree = "<group>"; };
-		5A92AEAD19BF6B38001C52F7 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
-		5A92AEAE19BF6B38001C52F7 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		5A92AEB219BFA486001C52F7 /* FriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsViewController.h; sourceTree = "<group>"; };
 		5A92AEB319BFA486001C52F7 /* FriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsViewController.m; sourceTree = "<group>"; };
 		5A92AEB519BFA548001C52F7 /* Friend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Friend.h; sourceTree = "<group>"; };
@@ -363,8 +365,10 @@
 				5AA4CB4919FF7EBF00E38978 /* Friends */,
 				5AA3CB9819BBC9F200D07D51 /* FeedViewController.h */,
 				5AA3CB9919BBC9F200D07D51 /* FeedViewController.m */,
+				5A44C2741A53404800FBB2FC /* FeedViewController.swift */,
 				5AA3CB9E19BBC9F200D07D51 /* Images.xcassets */,
 				5AA3CB8A19BBC9F200D07D51 /* Supporting Files */,
+				5A44C2731A53404800FBB2FC /* Spring-Bridging-Header.h */,
 			);
 			path = Spring;
 			sourceTree = "<group>";
@@ -478,8 +482,7 @@
 			children = (
 				5AADF9F819E7A7E900D2BCD2 /* SignUpViewController.h */,
 				5AADF9F919E7A7E900D2BCD2 /* SignUpViewController.m */,
-				5A92AEAD19BF6B38001C52F7 /* LoginViewController.h */,
-				5A92AEAE19BF6B38001C52F7 /* LoginViewController.m */,
+				5A44C2761A535DB600FBB2FC /* LoginViewController.swift */,
 			);
 			name = "Login and Sign Up";
 			sourceTree = "<group>";
@@ -604,10 +607,10 @@
 				5A693E8619C3A884005C5377 /* CategoryViewController.m in Sources */,
 				5A336A1A19D516790062EC98 /* SelectActivitiyViewController.m in Sources */,
 				5A92AEB719BFA548001C52F7 /* Friend.m in Sources */,
-				5A92AEAF19BF6B38001C52F7 /* LoginViewController.m in Sources */,
 				5A336A1419D4EF280062EC98 /* CreateEventTableViewController.m in Sources */,
 				5AA3CB9419BBC9F200D07D51 /* AppDelegate.m in Sources */,
 				5A92AEB419BFA486001C52F7 /* FriendsViewController.m in Sources */,
+				5A44C2771A535DB600FBB2FC /* LoginViewController.swift in Sources */,
 				5AE10DB41A0444D30040BA63 /* CurrentUserRelations.m in Sources */,
 				5AA4CB4C19FF7F2100E38978 /* AddFriendsViewController.m in Sources */,
 				5AA3CB9A19BBC9F200D07D51 /* FeedViewController.m in Sources */,
@@ -617,6 +620,7 @@
 				5A397D9119DE3C7500D2EE9F /* PrivacyPickerViewController.m in Sources */,
 				5A336A1719D512D90062EC98 /* SelectCategoryViewController.m in Sources */,
 				5AC550391A1344970084411F /* SelectEventLocationViewController.m in Sources */,
+				5A44C2751A53404800FBB2FC /* FeedViewController.swift in Sources */,
 				5AC550201A1058EE0084411F /* EventWritePostCell.m in Sources */,
 				5A9A11C01A0F70EA00540AEE /* EventInterestCell.m in Sources */,
 				5AA3CB9019BBC9F200D07D51 /* main.m in Sources */,
@@ -750,6 +754,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -761,8 +766,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Spring/Spring-Prefix.pch";
 				INFOPLIST_FILE = "Spring/Spring-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Spring/Spring-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -772,6 +780,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -783,8 +792,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Spring/Spring-Prefix.pch";
 				INFOPLIST_FILE = "Spring/Spring-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Spring/Spring-Bridging-Header.h";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

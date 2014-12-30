@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="mcF-iG-emE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="mcF-iG-emE">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
@@ -319,7 +319,7 @@
         <!--Login View Controller-->
         <scene sceneID="OhT-VR-Vo6">
             <objects>
-                <viewController id="mcF-iG-emE" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController id="mcF-iG-emE" customClass="LoginViewController" customModule="Spring" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wKX-f4-fuc"/>
                         <viewControllerLayoutGuide type="bottom" id="vgm-Ca-G3U"/>
@@ -381,17 +381,19 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="Login:" destination="mcF-iG-emE" eventType="touchUpInside" id="PfM-Xm-gAo"/>
+                                    <action selector="login:" destination="mcF-iG-emE" eventType="touchUpInside" id="oe0-jB-K9A"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="emailField" destination="TG6-HI-7dR" id="WxL-8n-elx"/>
-                        <outlet property="errorLabel" destination="9mb-cH-SSt" id="8Yh-Ji-R9g"/>
-                        <outlet property="facebookLoginView" destination="2hd-Wo-Dli" id="89c-St-azs"/>
-                        <outlet property="passwordField" destination="nkw-VV-EGI" id="BfL-3w-ZNy"/>
+                        <outlet property="emailField" destination="TG6-HI-7dR" id="40C-aU-SO0"/>
+                        <outlet property="errorLabel" destination="9mb-cH-SSt" id="cv9-0V-xKZ"/>
+                        <outlet property="facebookLoginView" destination="2hd-Wo-Dli" id="OCx-KH-flA"/>
+                        <outlet property="loginButton" destination="wdQ-1U-pgK" id="ZkZ-ec-aRE"/>
+                        <outlet property="passwordField" destination="nkw-VV-EGI" id="Y7x-uK-OLF"/>
+                        <outlet property="signupButton" destination="AC7-cx-xjR" id="aIZ-dW-fAW"/>
                         <segue destination="8YX-ce-x5E" kind="modal" identifier="LoginSegue" modalTransitionStyle="coverVertical" id="KJ9-33-cdY"/>
                     </connections>
                 </viewController>
