@@ -7,10 +7,8 @@
 //
 
 #import "EventViewController.h"
-#import "EventHeaderCell.h"
-#import "EventInterestCell.h"
-#import "EventWritePostCell.h"
 #import "EventPostCell.h"
+#import "Spring-Swift.h"
 
 #define WRITE_POST_SECTION 2
 #define DISPLAY_POSTS_SECTION_START 3

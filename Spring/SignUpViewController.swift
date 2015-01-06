@@ -66,6 +66,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
+        //move to next text field when user taps next
         if (textField == emailField){
             usernameField.becomeFirstResponder()
         }
@@ -83,6 +84,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        // hide keyboard if user taps outside of text fields
         emailField.resignFirstResponder()
         usernameField.resignFirstResponder()
         passwordField.resignFirstResponder()

@@ -75,7 +75,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EventHeaderCell" rowHeight="163" id="omr-cF-BA3" customClass="EventHeaderCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EventHeaderCell" rowHeight="163" id="omr-cF-BA3" customClass="EventHeaderCell" customModule="Spring" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="omr-cF-BA3" id="KLv-8k-BwJ">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -128,13 +128,13 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="activityButton" destination="ken-6i-gAo" id="tb7-Qo-arD"/>
-                                    <outlet property="creatorNameLabel" destination="C2I-8D-7aY" id="8Ib-i3-AIf"/>
-                                    <outlet property="nameLabel" destination="hR3-lw-XRB" id="YcY-SY-d3y"/>
-                                    <outlet property="timeLabel" destination="teg-Cd-w3e" id="ri8-UD-LQR"/>
+                                    <outlet property="activityButton" destination="ken-6i-gAo" id="cem-O9-Uif"/>
+                                    <outlet property="creatorNameLabel" destination="C2I-8D-7aY" id="rTX-bx-tQL"/>
+                                    <outlet property="nameLabel" destination="hR3-lw-XRB" id="UQi-J2-Xeb"/>
+                                    <outlet property="timeLabel" destination="teg-Cd-w3e" id="bPm-d8-Wep"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EventInterestCell" id="mJJ-0X-B3M" customClass="EventInterestCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EventInterestCell" id="mJJ-0X-B3M" customClass="EventInterestCell" customModule="Spring" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mJJ-0X-B3M" id="Wd7-dn-VQ5">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -155,8 +155,8 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="interestLabel" destination="0DT-tM-IH3" id="Jpm-90-n4q"/>
-                                    <outlet property="joinButton" destination="uUM-zS-KJ9" id="MKU-ku-08O"/>
+                                    <outlet property="interestLabel" destination="0DT-tM-IH3" id="86Q-oR-FqQ"/>
+                                    <outlet property="joinButton" destination="uUM-zS-KJ9" id="9vR-qc-f5a"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EventPostButtonCell" id="CLH-Wa-knd">
@@ -173,7 +173,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EventWritePostCell" rowHeight="70" id="xX7-rO-fMq" customClass="EventWritePostCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EventWritePostCell" rowHeight="70" id="xX7-rO-fMq" customClass="EventWritePostCell" customModule="Spring" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xX7-rO-fMq" id="v6b-cm-aDY">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -189,7 +189,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="postField" destination="V13-FQ-1Tt" id="zFf-p9-SGa"/>
+                                    <outlet property="postField" destination="V13-FQ-1Tt" id="TMk-4p-u6c"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EventPostCell" rowHeight="61" id="KLc-CD-Xyu" customClass="EventPostCell">
