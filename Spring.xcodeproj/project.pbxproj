@@ -14,6 +14,7 @@
 		5A397D9119DE3C7500D2EE9F /* PrivacyPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A397D9019DE3C7500D2EE9F /* PrivacyPickerViewController.m */; };
 		5A44C2751A53404800FBB2FC /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44C2741A53404800FBB2FC /* FeedViewController.swift */; };
 		5A44C2771A535DB600FBB2FC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44C2761A535DB600FBB2FC /* LoginViewController.swift */; };
+		5A44C27B1A5B67AA00FBB2FC /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44C27A1A5B67AA00FBB2FC /* SignUpViewController.swift */; };
 		5A45195619D8B59700B7B346 /* PrivacyPickerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A45195519D8B59700B7B346 /* PrivacyPickerTableViewCell.m */; };
 		5A693E8619C3A884005C5377 /* CategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A693E8519C3A884005C5377 /* CategoryViewController.m */; };
 		5A693E8919C4A54E005C5377 /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A693E8819C4A54E005C5377 /* ActivityViewController.m */; };
@@ -55,7 +56,6 @@
 		5AADF9F419E79D6F00D2BCD2 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AADF9F119E79D6F00D2BCD2 /* Security.framework */; };
 		5AADF9F519E79D6F00D2BCD2 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AADF9F219E79D6F00D2BCD2 /* StoreKit.framework */; };
 		5AADF9F619E79D6F00D2BCD2 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AADF9F319E79D6F00D2BCD2 /* SystemConfiguration.framework */; };
-		5AADF9FA19E7A7E900D2BCD2 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AADF9F919E7A7E900D2BCD2 /* SignUpViewController.m */; };
 		5AC5501D1A1043680084411F /* EventPostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC5501C1A1043680084411F /* EventPostCell.m */; };
 		5AC550201A1058EE0084411F /* EventWritePostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC5501F1A1058EE0084411F /* EventWritePostCell.m */; };
 		5AC550231A1342190084411F /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AC550221A1342190084411F /* GoogleMaps.framework */; };
@@ -100,6 +100,7 @@
 		5A44C2731A53404800FBB2FC /* Spring-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Spring-Bridging-Header.h"; sourceTree = "<group>"; };
 		5A44C2741A53404800FBB2FC /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		5A44C2761A535DB600FBB2FC /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		5A44C27A1A5B67AA00FBB2FC /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		5A45195419D8B59700B7B346 /* PrivacyPickerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrivacyPickerTableViewCell.h; sourceTree = "<group>"; };
 		5A45195519D8B59700B7B346 /* PrivacyPickerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrivacyPickerTableViewCell.m; sourceTree = "<group>"; };
 		5A693E8419C3A884005C5377 /* CategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryViewController.h; sourceTree = "<group>"; };
@@ -167,8 +168,6 @@
 		5AADF9F119E79D6F00D2BCD2 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		5AADF9F219E79D6F00D2BCD2 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		5AADF9F319E79D6F00D2BCD2 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		5AADF9F819E7A7E900D2BCD2 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
-		5AADF9F919E7A7E900D2BCD2 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		5AC5501B1A1043680084411F /* EventPostCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventPostCell.h; path = ../EventPostCell.h; sourceTree = "<group>"; };
 		5AC5501C1A1043680084411F /* EventPostCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventPostCell.m; path = ../EventPostCell.m; sourceTree = "<group>"; };
 		5AC5501E1A1058EE0084411F /* EventWritePostCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventWritePostCell.h; sourceTree = "<group>"; };
@@ -480,8 +479,7 @@
 		5AADF9F719E7A7B300D2BCD2 /* Login and Sign Up */ = {
 			isa = PBXGroup;
 			children = (
-				5AADF9F819E7A7E900D2BCD2 /* SignUpViewController.h */,
-				5AADF9F919E7A7E900D2BCD2 /* SignUpViewController.m */,
+				5A44C27A1A5B67AA00FBB2FC /* SignUpViewController.swift */,
 				5A44C2761A535DB600FBB2FC /* LoginViewController.swift */,
 			);
 			name = "Login and Sign Up";
@@ -614,6 +612,7 @@
 				5AE10DB41A0444D30040BA63 /* CurrentUserRelations.m in Sources */,
 				5AA4CB4C19FF7F2100E38978 /* AddFriendsViewController.m in Sources */,
 				5AA3CB9A19BBC9F200D07D51 /* FeedViewController.m in Sources */,
+				5A44C27B1A5B67AA00FBB2FC /* SignUpViewController.swift in Sources */,
 				5AE10DB11A0410300040BA63 /* RequestsViewController.m in Sources */,
 				5A92AEBD19BFE899001C52F7 /* ProfileViewController.m in Sources */,
 				5A9A11B61A0F1CB700540AEE /* EventHeaderCell.m in Sources */,
@@ -627,7 +626,6 @@
 				5A92AEC319C24C90001C52F7 /* MyInterestsViewController.m in Sources */,
 				5AA3CBBD19BBF01F00D07D51 /* EventTableViewCell.m in Sources */,
 				5A693E8919C4A54E005C5377 /* ActivityViewController.m in Sources */,
-				5AADF9FA19E7A7E900D2BCD2 /* SignUpViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

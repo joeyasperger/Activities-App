@@ -227,7 +227,7 @@
         <!--Sign Up View Controller-->
         <scene sceneID="aRc-ef-Hnl">
             <objects>
-                <viewController id="CHD-jJ-AJ3" customClass="SignUpViewController" sceneMemberID="viewController">
+                <viewController id="CHD-jJ-AJ3" customClass="SignUpViewController" customModule="Spring" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ihL-e5-Sr9"/>
                         <viewControllerLayoutGuide type="bottom" id="C3g-SA-mFu"/>
@@ -280,7 +280,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="signup:" destination="CHD-jJ-AJ3" eventType="touchUpInside" id="rDt-vG-hbD"/>
+                                    <action selector="signup:" destination="CHD-jJ-AJ3" eventType="touchUpInside" id="LT3-Mc-efj"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Passwords Do Not Match" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eGJ-09-7Eh">
@@ -296,7 +296,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="cancel:" destination="CHD-jJ-AJ3" eventType="touchUpInside" id="p9m-5E-Ayg"/>
+                                    <action selector="cancel:" destination="CHD-jJ-AJ3" eventType="touchUpInside" id="wAz-x2-feR"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -304,11 +304,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="Cw8-rW-FMY"/>
                     <connections>
-                        <outlet property="confirmPasswordField" destination="Iye-61-NGs" id="S9h-nZ-hx5"/>
-                        <outlet property="emailField" destination="i4x-P8-jLw" id="DX1-9Z-OgJ"/>
-                        <outlet property="errorLabel" destination="eGJ-09-7Eh" id="2rI-JY-aae"/>
-                        <outlet property="passwordField" destination="JbG-xU-Fm1" id="ttp-Tn-GMg"/>
-                        <outlet property="usernameField" destination="99k-Vh-Hd6" id="1N9-gv-rZ5"/>
+                        <outlet property="confirmPasswordField" destination="Iye-61-NGs" id="46j-9c-Ahc"/>
+                        <outlet property="emailField" destination="i4x-P8-jLw" id="pfm-Gm-Pwc"/>
+                        <outlet property="errorLabel" destination="eGJ-09-7Eh" id="HHB-Wu-K0r"/>
+                        <outlet property="passwordField" destination="JbG-xU-Fm1" id="v6L-G9-3Lg"/>
+                        <outlet property="usernameField" destination="99k-Vh-Hd6" id="tt7-bR-5wL"/>
                         <segue destination="8YX-ce-x5E" kind="modal" identifier="SignupSegue" id="rwr-hL-8Xz"/>
                     </connections>
                 </viewController>
@@ -1403,8 +1403,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="gBv-oe-8f5"/>
-        <segue reference="KJ9-33-cdY"/>
+        <segue reference="rwr-hL-8Xz"/>
         <segue reference="UOb-uX-ci9"/>
+        <segue reference="gBv-oe-8f5"/>
     </inferredMetricsTieBreakers>
 </document>
