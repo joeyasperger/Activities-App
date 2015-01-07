@@ -32,7 +32,6 @@
 		5AA3CB9019BBC9F200D07D51 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA3CB8F19BBC9F200D07D51 /* main.m */; };
 		5AA3CB9419BBC9F200D07D51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA3CB9319BBC9F200D07D51 /* AppDelegate.m */; };
 		5AA3CB9719BBC9F200D07D51 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AA3CB9519BBC9F200D07D51 /* Main.storyboard */; };
-		5AA3CB9A19BBC9F200D07D51 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA3CB9919BBC9F200D07D51 /* FeedViewController.m */; };
 		5AA3CB9F19BBC9F200D07D51 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AA3CB9E19BBC9F200D07D51 /* Images.xcassets */; };
 		5AA3CBA619BBC9F200D07D51 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA3CBA519BBC9F200D07D51 /* XCTest.framework */; };
 		5AA3CBA719BBC9F200D07D51 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA3CB8319BBC9F200D07D51 /* Foundation.framework */; };
@@ -132,8 +131,6 @@
 		5AA3CB9219BBC9F200D07D51 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5AA3CB9319BBC9F200D07D51 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		5AA3CB9619BBC9F200D07D51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		5AA3CB9819BBC9F200D07D51 /* FeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedViewController.h; sourceTree = "<group>"; };
-		5AA3CB9919BBC9F200D07D51 /* FeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedViewController.m; sourceTree = "<group>"; };
 		5AA3CB9E19BBC9F200D07D51 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5AA3CBA419BBC9F200D07D51 /* SpringTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpringTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AA3CBA519BBC9F200D07D51 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -356,8 +353,6 @@
 				5A92AEBB19BFE899001C52F7 /* ProfileViewController.h */,
 				5A92AEBC19BFE899001C52F7 /* ProfileViewController.m */,
 				5AA4CB4919FF7EBF00E38978 /* Friends */,
-				5AA3CB9819BBC9F200D07D51 /* FeedViewController.h */,
-				5AA3CB9919BBC9F200D07D51 /* FeedViewController.m */,
 				5A44C2741A53404800FBB2FC /* FeedViewController.swift */,
 				5AA3CB9E19BBC9F200D07D51 /* Images.xcassets */,
 				5AA3CB8A19BBC9F200D07D51 /* Supporting Files */,
@@ -606,7 +601,6 @@
 				5A44C2771A535DB600FBB2FC /* LoginViewController.swift in Sources */,
 				5AE10DB41A0444D30040BA63 /* CurrentUserRelations.m in Sources */,
 				5AA4CB4C19FF7F2100E38978 /* AddFriendsViewController.m in Sources */,
-				5AA3CB9A19BBC9F200D07D51 /* FeedViewController.m in Sources */,
 				5A44C27B1A5B67AA00FBB2FC /* SignUpViewController.swift in Sources */,
 				5AE10DB11A0410300040BA63 /* RequestsViewController.m in Sources */,
 				5A92AEBD19BFE899001C52F7 /* ProfileViewController.m in Sources */,

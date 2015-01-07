@@ -21,7 +21,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBLoginViewDel
         super.viewDidLoad()
         
         errorLabel.text = ""
-        emailField.text = "joeyasperger@gmail.com"
+        emailField.text = "joeyasperger@gmail.com" //just for faster testing
         facebookLoginView.readPermissions = ["public_profile", "email", "user_friends"]
     }
     

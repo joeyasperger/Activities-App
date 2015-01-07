@@ -5,3 +5,5 @@
 #import <Parse/Parse.h>
 #import <FacebookSDK/FacebookSDK.h>
 #import "CurrentUserRelations.h"
+#import "EventTableViewCell.h"
+#import "EventViewController.h"
