@@ -38,7 +38,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBLoginViewDel
         PFUser.logInWithUsernameInBackground(emailField.text, password: passwordField.text) { (user, error) -> Void in
             if ((user) != nil){
                 println("success")
-                CurrentUserRelations.downloadRelations()
+                CurrentUserRelations.downloadRelations() // need to fix
                 self.performSegueWithIdentifier("LoginSegue", sender: self)
             }
             else{
@@ -64,12 +64,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBLoginViewDel
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        //hide any keyboards if user touches out of text field
         emailField.resignFirstResponder()
         passwordField.resignFirstResponder()
     }
     
     func loginViewFetchedUserInfo(loginView: FBLoginView!, user: FBGraphUser!) {
-        
+        // TODO
     }
     
     // MARK: - Navigation

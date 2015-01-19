@@ -69,7 +69,7 @@
         <!--Event View Controller-->
         <scene sceneID="7WN-i5-3oZ">
             <objects>
-                <tableViewController id="pIQ-d5-ZwO" customClass="EventViewController" sceneMemberID="viewController">
+                <tableViewController id="pIQ-d5-ZwO" customClass="EventViewController" customModule="Spring" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="jgq-l7-0Wg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -192,24 +192,30 @@
                                     <outlet property="postField" destination="V13-FQ-1Tt" id="TMk-4p-u6c"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EventPostCell" rowHeight="61" id="KLc-CD-Xyu" customClass="EventPostCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EventPostCell" rowHeight="82" id="KLc-CD-Xyu" customClass="EventPostCell" customModule="Spring" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KLc-CD-Xyu" id="nty-KX-sFd">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="greybox" translatesAutoresizingMaskIntoConstraints="NO" id="zCA-ZV-idM">
-                                            <rect key="frame" x="27" y="5" width="49" height="49"/>
-                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UWC-cQ-yhI">
-                                            <rect key="frame" x="92" y="7" width="208" height="47"/>
+                                            <rect key="frame" x="92" y="24" width="208" height="50"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="greybox" translatesAutoresizingMaskIntoConstraints="NO" id="zCA-ZV-idM">
+                                            <rect key="frame" x="15" y="24" width="49" height="49"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Joey Asperger" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngz-Z6-iOL">
+                                            <rect key="frame" x="15" y="0.0" width="125" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="postLabel" destination="UWC-cQ-yhI" id="h4n-Xg-2p4"/>
+                                    <outlet property="postLabel" destination="UWC-cQ-yhI" id="Lw4-9r-DKi"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -222,7 +228,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NMQ-op-QYX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1862" y="-913"/>
+            <point key="canvasLocation" x="1862" y="-916"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="aRc-ef-Hnl">
