@@ -50,3 +50,33 @@ Parse.Cloud.define("friend", function(request, response){
         }
     });
 });
+
+Parse.Cloud.define("joinEvent", function(request, response){
+    var user = request.user;
+    var query = new Parse.Query("Event");
+
+    query.get(request.params.eventID, {
+        success: function(event) {
+            event.increment("numberInterested");
+            user.relation("eventsJoined").add(event);
+            var objectsToSave = [user, event];
+            Parse.Cloud.useMasterKey();
+            Parse.Object.saveAll(objectsToSave, {
+                success: function(objs) {
+                    // objects have been saved...
+                    console.log("succeeded");
+                    response.success("Success!");
+                },
+                error: function(error) { 
+                    // an error occurred...
+                    console.log(error.message);
+                    response.error(error.message);
+                }
+            });
+        },
+        error: function(error) {
+            console.log(error.message);
+            response.error(error.message);
+        }
+    });
+});

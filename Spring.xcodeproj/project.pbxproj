@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A1277151A6E36F6004AFDB4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1277141A6E36F6004AFDB4 /* User.swift */; };
 		5A336A1419D4EF280062EC98 /* CreateEventTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A336A1319D4EF280062EC98 /* CreateEventTableViewController.m */; };
 		5A336A1719D512D90062EC98 /* SelectCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A336A1619D512D90062EC98 /* SelectCategoryViewController.m */; };
 		5A336A1A19D516790062EC98 /* SelectActivitiyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A336A1919D516790062EC98 /* SelectActivitiyViewController.m */; };
@@ -69,6 +70,7 @@
 		5AE10DB11A0410300040BA63 /* RequestsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE10DB01A0410300040BA63 /* RequestsViewController.m */; };
 		5AE10DB41A0444D30040BA63 /* CurrentUserRelations.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE10DB31A0444D30040BA63 /* CurrentUserRelations.m */; };
 		5AE468811A6CCD650049BB7E /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE468801A6CCD650049BB7E /* EventViewController.swift */; };
+		5AE468831A6D0D3D0049BB7E /* free-wallpaper-19.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5AE468821A6D0D3D0049BB7E /* free-wallpaper-19.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +84,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5A1277141A6E36F6004AFDB4 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5A336A1219D4EF280062EC98 /* CreateEventTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateEventTableViewController.h; sourceTree = "<group>"; };
 		5A336A1319D4EF280062EC98 /* CreateEventTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateEventTableViewController.m; sourceTree = "<group>"; };
 		5A336A1519D512D90062EC98 /* SelectCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectCategoryViewController.h; sourceTree = "<group>"; };
@@ -174,6 +177,7 @@
 		5AE10DB21A0444D30040BA63 /* CurrentUserRelations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentUserRelations.h; sourceTree = "<group>"; };
 		5AE10DB31A0444D30040BA63 /* CurrentUserRelations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentUserRelations.m; sourceTree = "<group>"; };
 		5AE468801A6CCD650049BB7E /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
+		5AE468821A6D0D3D0049BB7E /* free-wallpaper-19.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "free-wallpaper-19.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -346,6 +350,7 @@
 		5AA3CB8A19BBC9F200D07D51 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5AE468821A6D0D3D0049BB7E /* free-wallpaper-19.jpg */,
 				5AA3CB8B19BBC9F200D07D51 /* Spring-Info.plist */,
 				5AA3CB8C19BBC9F200D07D51 /* InfoPlist.strings */,
 				5AA3CB8F19BBC9F200D07D51 /* main.m */,
@@ -430,6 +435,7 @@
 				5A92AEB619BFA548001C52F7 /* Friend.m */,
 				5AE10DB21A0444D30040BA63 /* CurrentUserRelations.h */,
 				5AE10DB31A0444D30040BA63 /* CurrentUserRelations.m */,
+				5A1277141A6E36F6004AFDB4 /* User.swift */,
 			);
 			name = "Base Objects";
 			sourceTree = "<group>";
@@ -558,6 +564,7 @@
 				5AA3CB8E19BBC9F200D07D51 /* InfoPlist.strings in Resources */,
 				5AA3CB9719BBC9F200D07D51 /* Main.storyboard in Resources */,
 				5AACDD5F19D24B4A0085DBBC /* LICENSE in Resources */,
+				5AE468831A6D0D3D0049BB7E /* free-wallpaper-19.jpg in Resources */,
 				5AC550251A1342470084411F /* GoogleMaps.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -577,6 +584,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A1277151A6E36F6004AFDB4 /* User.swift in Sources */,
 				5A336A1D19D52C2B0062EC98 /* SelectTimeViewController.m in Sources */,
 				5A45195619D8B59700B7B346 /* PrivacyPickerTableViewCell.m in Sources */,
 				5A693E8F19C7B286005C5377 /* AddActivitiesNavController.m in Sources */,

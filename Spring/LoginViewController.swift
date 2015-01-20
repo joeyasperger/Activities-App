@@ -39,6 +39,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBLoginViewDel
             if ((user) != nil){
                 println("success")
                 CurrentUserRelations.downloadRelations() // need to fix
+                User.loadEvents()
                 self.performSegueWithIdentifier("LoginSegue", sender: self)
             }
             else{

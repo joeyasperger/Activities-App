@@ -38,6 +38,7 @@
     self.filteredFriends = [NSMutableArray array];
     // start query for friends
     PFQuery *query = [[[PFUser currentUser] relationForKey:@"friends"] query];
+    [query orderByDescending:@"displayName"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error){
             self.friends = objects;

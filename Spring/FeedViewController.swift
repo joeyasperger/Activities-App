@@ -18,7 +18,15 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationController?.navigationBar.barTintColor = UIColor(red: 0, green: 222.0/256, blue: 80.0/256, alpha: 0)
+        //navigationController?.navigationBar.barTintColor = UIColor(red: 0, green: 222.0/256, blue: 80.0/256, alpha: 0)
+        
+        if let navBar = navigationController?.navigationBar{
+            setTransparentNavbar(navBar)
+        }
+        
+        tableView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
+        tableView.opaque = false
+        tableView.backgroundView = UIImageView(image: UIImage(named: "free-wallpaper-19.jpg"))
         
         var query = PFQuery(className:"Event")
         query.includeKey("creator")
@@ -35,6 +43,22 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
         }
 
+    }
+    
+    func setTransparentNavbar(navBar: UINavigationBar){
+        navBar.barTintColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.6)
+        navBar.shadowImage = UIImage()
+        navBar.translucent = true
+        
+        var rect = CGRectMake(0, 0, 1, 1)
+        UIGraphicsBeginImageContext(rect.size)
+        var context = UIGraphicsGetCurrentContext()
+        CGContextSetFillColorWithColor(context, UIColor(white: 1, alpha: 0.8).CGColor)
+        CGContextFillRect(context, rect)
+        var image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        navBar.setBackgroundImage(image, forBarMetrics: UIBarMetrics.Default)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -62,6 +86,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         var user: PFUser = event["creator"] as PFUser
         cell.userLabel.text = user["displayName"] as? String
         cell.nameLabel.text = event["name"] as? String
+        cell.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.8)
         return cell
     }
     

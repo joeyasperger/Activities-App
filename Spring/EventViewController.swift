@@ -27,14 +27,72 @@ class EventViewController: UITableViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if let navBar = navigationController?.navigationBar{
+            setTransparentNavbar(navBar)
+        }
+        
+        
+        tableView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
+        tableView.opaque = false
+        tableView.backgroundView = UIImageView(image: UIImage(named: "free-wallpaper-19.jpg"))
+        
         navigationItem.title = event["displayName"] as? String
         loadPosts()
     }
     
+    func setTransparentNavbar(navBar: UINavigationBar){
+        navBar.barTintColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.6)
+        navBar.shadowImage = UIImage()
+        navBar.translucent = true
+        
+        var rect = CGRectMake(0, 0, 1, 1)
+        UIGraphicsBeginImageContext(rect.size)
+        var context = UIGraphicsGetCurrentContext()
+        CGContextSetFillColorWithColor(context, UIColor(white: 1, alpha: 0.8).CGColor)
+        CGContextFillRect(context, rect)
+        var image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        navBar.setBackgroundImage(image, forBarMetrics: UIBarMetrics.Default)
+    }
+    
+    // sets join button to checkmark and sends request to server to join event
     func joinButtonPressed() {
+        setJoinButtonToCheckmark()
+        joinEvent()
+        User.addEventJoined(event.objectId)
+        if let numInterested = event["numberInterested"] as? Int{
+            event["numberInterested"] = numInterested + 1
+            tableView.reloadData()
+        } else{
+            event["numberInterested"] = 1
+        }
+    }
+    
+    // sets the join button UI to a checkmark and disables interaction. Does not send request to server
+    func setJoinButtonToCheckmark() {
         joinButton.setImage(UIImage(named: "Checkmark"), forState: UIControlState.Normal)
         joinButton.setTitle("Joined", forState: UIControlState.Normal)
         joinButton.userInteractionEnabled = false
+    }
+    
+    //sets the join button UI to say Creator and disables interaction
+    func setJoinButtonToCreator() {
+        joinButton.setImage(UIImage(), forState: UIControlState.Normal)
+        joinButton.setTitle("Creator", forState: UIControlState.Normal)
+        joinButton.userInteractionEnabled = false
+        
+    }
+    
+    func joinEvent() {
+        PFCloud.callFunctionInBackground("joinEvent", withParameters: ["eventID":event.objectId]) { (object, error) -> Void in
+            if (error != nil){
+                
+            }
+            else{
+                NSLog("Error joining event")
+            }
+        }
     }
     
     func loadPosts() {
@@ -42,6 +100,7 @@ class EventViewController: UITableViewController, UITextFieldDelegate {
         postsQuery.whereKey("event", equalTo: self.event)
         postsQuery.includeKey("user")
         postsQuery.orderByDescending("createdAt")
+        postsQuery.cachePolicy = kPFCachePolicyCacheThenNetwork
         postsQuery.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
             if (error == nil){
                 self.posts = objects
@@ -129,20 +188,39 @@ class EventViewController: UITableViewController, UITextFieldDelegate {
             cell.timeLabel.text = dateFormatter.stringFromDate(date)
             cell.creatorNameLabel.text = creator["displayName"] as? String
             cell.activityButton.setTitle(activity["name"] as? String, forState: UIControlState.Normal)
+            cell.nameLabel.text = event["name"] as? String
+            cell.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.8)
             return cell
         }
         else if (indexPath.section == interestSection){
             var cell = tableView.dequeueReusableCellWithIdentifier("EventInterestCell", forIndexPath: indexPath) as EventInterestCell
             joinButton = cell.joinButton
             interestLabel = cell.interestLabel
-            interestLabel.text = String(format:"%d People Interested", event["numberInterested"] as Int)
-            self.joinButton.addTarget(self, action: "joinButtonPressed", forControlEvents: UIControlEvents.TouchUpInside)
+            var numInterested = event["numberInterested"] as? Int
+            if numInterested == nil {numInterested = 0}
+            if (numInterested == 1){
+                interestLabel.text = "1 Person Interested"
+            }
+            else {
+                interestLabel.text = String(format:"%d People Interested", numInterested!)
+            }
+            if (contains(User.eventsCreated(), event.objectId)) {
+                setJoinButtonToCreator()
+            }
+            else if (contains(User.eventsJoined(), event.objectId)){
+                setJoinButtonToCheckmark()
+            }
+            else{
+                joinButton.addTarget(self, action: "joinButtonPressed", forControlEvents: UIControlEvents.TouchUpInside)
+            }
+            cell.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.8)
             return cell
         }
         else if (indexPath.section == writePostSection){
             if (!self.isWritingPost){
                 var cell = tableView.dequeueReusableCellWithIdentifier("EventPostButtonCell", forIndexPath: indexPath) as UITableViewCell
                 cell.selectionStyle = UITableViewCellSelectionStyle.Default
+                cell.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.8)
                 return cell
             }
             else{
@@ -150,6 +228,7 @@ class EventViewController: UITableViewController, UITextFieldDelegate {
                 postField = cell.postField
                 postField.delegate = self
                 postField.becomeFirstResponder()
+                cell.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.8)
                 return cell
             }
         }
@@ -157,6 +236,7 @@ class EventViewController: UITableViewController, UITextFieldDelegate {
             var cell = tableView.dequeueReusableCellWithIdentifier("EventPostCell", forIndexPath: indexPath) as EventPostCell
             var post = posts[indexPath.row] as PFObject
             cell.postLabel.text = post["content"] as? String
+            cell.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.8)
             return cell
         }
     }
