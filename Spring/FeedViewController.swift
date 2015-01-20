@@ -39,7 +39,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
                 self.tableView.reloadData()
             }
             else{
-                NSLog("Error: %@ %@", error, error.userInfo!)
+                NSLog("%@", error)
             }
         }
 
@@ -64,7 +64,8 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewWillAppear(animated: Bool) {
         if let selectedIndexPath = tableView.indexPathForSelectedRow()?{
             tableView.deselectRowAtIndexPath(selectedIndexPath, animated: true)
-        }        
+        }
+        super.viewWillAppear(animated)
     }
 
     override func didReceiveMemoryWarning() {

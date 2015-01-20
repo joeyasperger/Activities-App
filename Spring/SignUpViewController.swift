@@ -41,6 +41,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                     CurrentUserRelations.downloadRelations()
                     User.loadEvents()
                 self.performSegueWithIdentifier("SignupSegue", sender: self)
+                }else{
+                    NSLog("%@", error)
                 }
             })
         }
@@ -51,8 +53,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             errorLabel.text = "Email address missing"
             return false
         }
-        if (countElements(usernameField.text) < 4 || countElements(usernameField.text) > 20){
-            errorLabel.text = "Username must be 4 to 20 characters"
+        if (countElements(usernameField.text) > 20){
+            errorLabel.text = "Username must be less than 20 characters"
             return false
         }
         if (countElements(passwordField.text) < 8 || countElements(passwordField.text) > 20){

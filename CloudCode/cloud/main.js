@@ -34,7 +34,11 @@ Parse.Cloud.define("friend", function(request, response){
     var user2 = new Parse.User();
     user2.id = request.params.friendID;
     user1.relation("friends").add(user2);
+    user1.relation("sentRequests").remove(user2)
+    user1.relation("recievedRequests").remove(user2)
     user2.relation("friends").add(user1);
+    user2.relation("sentRequests").remove(user1)
+    user2.relation("recievedRequests").remove(user1)   
     var objectsToSave = [user1, user2]
     Parse.Cloud.useMasterKey();
     Parse.Object.saveAll(objectsToSave, {

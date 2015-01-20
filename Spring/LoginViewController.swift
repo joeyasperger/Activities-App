@@ -46,6 +46,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBLoginViewDel
                 if let errorString = error.userInfo?["error"] as? String {
                     self.errorLabel.text = errorString
                 }
+                NSLog("%@", error)
             }
         }
     }

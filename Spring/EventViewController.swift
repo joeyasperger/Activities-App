@@ -63,10 +63,10 @@ class EventViewController: UITableViewController, UITextFieldDelegate {
         User.addEventJoined(event.objectId)
         if let numInterested = event["numberInterested"] as? Int{
             event["numberInterested"] = numInterested + 1
-            tableView.reloadData()
         } else{
             event["numberInterested"] = 1
         }
+        tableView.reloadData()
     }
     
     // sets the join button UI to a checkmark and disables interaction. Does not send request to server
@@ -87,10 +87,10 @@ class EventViewController: UITableViewController, UITextFieldDelegate {
     func joinEvent() {
         PFCloud.callFunctionInBackground("joinEvent", withParameters: ["eventID":event.objectId]) { (object, error) -> Void in
             if (error != nil){
-                
+                NSLog("%@", error)
             }
             else{
-                NSLog("Error joining event")
+                
             }
         }
     }
@@ -106,6 +106,9 @@ class EventViewController: UITableViewController, UITextFieldDelegate {
                 self.posts = objects
                 self.didLoadPosts = true
                 self.tableView.reloadData()
+            }
+            else{
+                NSLog("%@", error)
             }
         }
     }
@@ -190,6 +193,7 @@ class EventViewController: UITableViewController, UITextFieldDelegate {
             cell.activityButton.setTitle(activity["name"] as? String, forState: UIControlState.Normal)
             cell.nameLabel.text = event["name"] as? String
             cell.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.8)
+            cell.selectionStyle = UITableViewCellSelectionStyle.None
             return cell
         }
         else if (indexPath.section == interestSection){
@@ -214,6 +218,7 @@ class EventViewController: UITableViewController, UITextFieldDelegate {
                 joinButton.addTarget(self, action: "joinButtonPressed", forControlEvents: UIControlEvents.TouchUpInside)
             }
             cell.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.8)
+            cell.selectionStyle = UITableViewCellSelectionStyle.None
             return cell
         }
         else if (indexPath.section == writePostSection){
@@ -237,6 +242,7 @@ class EventViewController: UITableViewController, UITextFieldDelegate {
             var post = posts[indexPath.row] as PFObject
             cell.postLabel.text = post["content"] as? String
             cell.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.8)
+            cell.selectionStyle = UITableViewCellSelectionStyle.None
             return cell
         }
     }
