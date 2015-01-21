@@ -38,8 +38,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             user["displayName"] = usernameField.text
             user.signUpInBackgroundWithBlock({ (succeeded, error) -> Void in
                 if (succeeded) {
-                    CurrentUserRelations.downloadRelations()
-                    User.loadEvents()
+                    User.loadAllRelations()
                 self.performSegueWithIdentifier("SignupSegue", sender: self)
                 }else{
                     NSLog("%@", error)

@@ -6,25 +6,35 @@
 //
 //
 
+/*
+  This class stores data on the relations of the current user so they can be easily accessed
+  without getting data from the server. It stores the id's of the events the current user has 
+  created or joined as well as id's of friends and friend requests of the current user
+
+  TODO: add functions to remove objects from the stored arrays, i.e. for when the current
+        user accepts a friend request so the friend must be removed from the request list
+  TODO: decompose the messy repeated calls to the server to fill the array
+*/
+
+
 import Foundation
 
 var events = []
 
-class User {
+@objc class User {
     
     private struct ClassVars {
         // using a struct to store class variables until apple implements them
         
         static var eventsJoined: [String] = []
         static var eventsCreated: [String] = []
-        static var eventsLoaded = false
         
         static var friends: [String] = []
-        static var sentRequests: [String] = []
-        static var recievedRequests: [String] = []
+        static var outgoingFriendRequests: [String] = []
+        static var incomingFriendRequests: [String] = []
     }
     
-    // download and store IDs of all events user created or joined for faster loading
+    // download and store IDs of all events user created or joined in arrays for faster loading
     class func loadEvents() {
         ClassVars.eventsJoined = []
         ClassVars.eventsCreated = []
@@ -56,13 +66,12 @@ class User {
                 }
             }
         }
-        ClassVars.eventsLoaded = true
     }
     
     class func loadFriendRelations(){
         ClassVars.friends = []
-        ClassVars.sentRequests = []
-        ClassVars.recievedRequests = []
+        ClassVars.outgoingFriendRequests = []
+        ClassVars.incomingFriendRequests = []
         var query = PFUser.currentUser().relationForKey("friends").query()
         query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
             if (error != nil){
@@ -85,7 +94,7 @@ class User {
             }
             else{
                 for object in objects as [PFObject] {
-                    self.ClassVars.sentRequests.append(object.objectId)
+                    self.ClassVars.outgoingFriendRequests.append(object.objectId)
                 }
             }
         }
@@ -98,11 +107,23 @@ class User {
             }
             else{
                 for object in objects as [PFObject] {
-                    self.ClassVars.recievedRequests.append(object.objectId)
+                    self.ClassVars.incomingFriendRequests.append(object.objectId)
                 }
             }
         }
-        
+    }
+    
+    class func loadAllRelations() {
+        loadEvents()
+        loadFriendRelations()
+    }
+    
+    class func clearRelations() {
+        ClassVars.friends = []
+        ClassVars.incomingFriendRequests = []
+        ClassVars.outgoingFriendRequests = []
+        ClassVars.eventsCreated = []
+        ClassVars.eventsJoined = []
     }
     
     class func eventsJoined() -> [String] {
@@ -113,11 +134,35 @@ class User {
         return ClassVars.eventsCreated
     }
     
-    class func addEventJoined(eventID: String){
+    class func friends() -> [String] {
+        return ClassVars.friends
+    }
+    
+    class func outgoingFriendRequests() -> [String] {
+        return ClassVars.outgoingFriendRequests
+    }
+    
+    class func incomingFriendRequests() -> [String] {
+        return ClassVars.incomingFriendRequests
+    }
+    
+    class func addEventJoined(eventID: String) {
         ClassVars.eventsJoined.append(eventID)
     }
     
-    class func addEventCreated(eventID: String){
+    class func addEventCreated(eventID: String) {
         ClassVars.eventsCreated.append(eventID)
+    }
+    
+    class func addFriend(friendID: String) {
+        ClassVars.friends.append(friendID)
+    }
+    
+    class func addOutgoingFriendRequest(userID: String) {
+        ClassVars.outgoingFriendRequests.append(userID)
+    }
+    
+    class func addIncomingFriendRequest(userID: String) {
+        ClassVars.incomingFriendRequests.append(userID)
     }
 }

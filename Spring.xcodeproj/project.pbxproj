@@ -68,7 +68,6 @@
 		5AC5503D1A13471A0084411F /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AC5503C1A13471A0084411F /* Accounts.framework */; };
 		5AC5503E1A13485B0084411F /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AACDC4619D24B480085DBBC /* FacebookSDK.framework */; };
 		5AE10DB11A0410300040BA63 /* RequestsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE10DB01A0410300040BA63 /* RequestsViewController.m */; };
-		5AE10DB41A0444D30040BA63 /* CurrentUserRelations.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE10DB31A0444D30040BA63 /* CurrentUserRelations.m */; };
 		5AE468811A6CCD650049BB7E /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE468801A6CCD650049BB7E /* EventViewController.swift */; };
 		5AE468831A6D0D3D0049BB7E /* free-wallpaper-19.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5AE468821A6D0D3D0049BB7E /* free-wallpaper-19.jpg */; };
 /* End PBXBuildFile section */
@@ -174,8 +173,6 @@
 		5AC5503C1A13471A0084411F /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		5AE10DAF1A0410300040BA63 /* RequestsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestsViewController.h; sourceTree = "<group>"; };
 		5AE10DB01A0410300040BA63 /* RequestsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestsViewController.m; sourceTree = "<group>"; };
-		5AE10DB21A0444D30040BA63 /* CurrentUserRelations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentUserRelations.h; sourceTree = "<group>"; };
-		5AE10DB31A0444D30040BA63 /* CurrentUserRelations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentUserRelations.m; sourceTree = "<group>"; };
 		5AE468801A6CCD650049BB7E /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		5AE468821A6D0D3D0049BB7E /* free-wallpaper-19.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "free-wallpaper-19.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -433,8 +430,6 @@
 				5A92AEC519C251A1001C52F7 /* Activity.m */,
 				5A92AEB519BFA548001C52F7 /* Friend.h */,
 				5A92AEB619BFA548001C52F7 /* Friend.m */,
-				5AE10DB21A0444D30040BA63 /* CurrentUserRelations.h */,
-				5AE10DB31A0444D30040BA63 /* CurrentUserRelations.m */,
 				5A1277141A6E36F6004AFDB4 /* User.swift */,
 			);
 			name = "Base Objects";
@@ -597,7 +592,6 @@
 				5AA3CB9419BBC9F200D07D51 /* AppDelegate.m in Sources */,
 				5A92AEB419BFA486001C52F7 /* FriendsViewController.m in Sources */,
 				5A44C2771A535DB600FBB2FC /* LoginViewController.swift in Sources */,
-				5AE10DB41A0444D30040BA63 /* CurrentUserRelations.m in Sources */,
 				5AA4CB4C19FF7F2100E38978 /* AddFriendsViewController.m in Sources */,
 				5A44C27B1A5B67AA00FBB2FC /* SignUpViewController.swift in Sources */,
 				5AE10DB11A0410300040BA63 /* RequestsViewController.m in Sources */,
@@ -739,6 +733,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/joeyasperger/Documents/FacebookSDK,
@@ -765,6 +760,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/joeyasperger/Documents/FacebookSDK,

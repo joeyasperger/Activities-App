@@ -7,7 +7,7 @@
 //
 
 #import "ProfileViewController.h"
-#import "CurrentUserRelations.h"
+#import "Spring-Swift.h"
 
 @interface ProfileViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
@@ -25,7 +25,7 @@
             if (!error) {
                 // this is where you handle the results and change the UI.
                 [self.addFriendButton setTitle:@"Request Sent" forState:UIControlStateNormal];
-                [CurrentUserRelations downloadRelations];
+                [User addOutgoingFriendRequest:self.user.objectId];
             }
             else{
                 NSLog(@"Error sending friend request");
@@ -38,7 +38,7 @@
             if (!error) {
                 // this is where you handle the results and change the UI.
                 [self.addFriendButton setTitle:@"Friends" forState:UIControlStateNormal];
-                [CurrentUserRelations downloadRelations];
+                [User addFriend:self.user.objectId];
             }
             else{
                 NSLog(@"Error sending friend request");
@@ -49,7 +49,7 @@
 }
 
 - (IBAction)logOut:(id)sender {
-    
+
 }
 
 
@@ -81,26 +81,24 @@
 // checks if the user profile to be displayed has any relation to the logged in user
 // and adjusts the interface accordingly
 - (BOOL) searchForRelations{
-    if ([CurrentUserRelations hasDownloadedRelations]){
-        for (NSString *userid in [CurrentUserRelations friends]){
-            if ([userid isEqualToString:self.user.objectId]){
-                [self.addFriendButton setTitle:@"Friends" forState:UIControlStateNormal];
-                self.addFriendButton.userInteractionEnabled = NO;
-                return YES;
-            }
+    for (NSString *userid in [User friends]){
+        if ([userid isEqualToString:self.user.objectId]){
+            [self.addFriendButton setTitle:@"Friends" forState:UIControlStateNormal];
+            self.addFriendButton.userInteractionEnabled = NO;
+            return YES;
         }
-        for (NSString *userid in [CurrentUserRelations recievedRequests]){
-            if ([userid isEqualToString:self.user.objectId]){
-                [self.addFriendButton setTitle:@"Accept Request" forState:UIControlStateNormal];
-                return YES;
-            }
+    }
+    for (NSString *userid in [User incomingFriendRequests]){
+        if ([userid isEqualToString:self.user.objectId]){
+            [self.addFriendButton setTitle:@"Accept Request" forState:UIControlStateNormal];
+            return YES;
         }
-        for (NSString *userid in [CurrentUserRelations sentRequests]){
-            if ([userid isEqualToString:self.user.objectId]){
-                [self.addFriendButton setTitle:@"Request Sent" forState:UIControlStateNormal];
-                self.addFriendButton.userInteractionEnabled = NO;
-                return YES;
-            }
+    }
+    for (NSString *userid in [User outgoingFriendRequests]){
+        if ([userid isEqualToString:self.user.objectId]){
+            [self.addFriendButton setTitle:@"Request Sent" forState:UIControlStateNormal];
+            self.addFriendButton.userInteractionEnabled = NO;
+            return YES;
         }
     }
     return NO;
@@ -135,7 +133,7 @@
     
     if ([segue.identifier isEqualToString:@"LogoutSeque"]) {
         [PFUser logOut];
-        [CurrentUserRelations clearRelations];
+        [User clearRelations];
     }
 }
 

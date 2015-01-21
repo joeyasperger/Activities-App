@@ -19,6 +19,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBLoginViewDel
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        var imageView = UIImageView(image: UIImage(named: "free-wallpaper-19.jpg")!)
+        imageView.frame.size = view.frame.size
+        view.addSubview(imageView)
+        view.sendSubviewToBack(imageView)
+        emailField.backgroundColor = UIColor(white: 1, alpha: 0.8)
+        passwordField.backgroundColor = UIColor(white: 1, alpha: 0.8)
+        
         
         errorLabel.text = ""
         emailField.text = "joeyasperger@gmail.com" //just for faster testing
@@ -38,8 +45,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBLoginViewDel
         PFUser.logInWithUsernameInBackground(emailField.text, password: passwordField.text) { (user, error) -> Void in
             if ((user) != nil){
                 println("success")
-                CurrentUserRelations.downloadRelations() // need to fix
-                User.loadEvents()
+                User.loadAllRelations()
                 self.performSegueWithIdentifier("LoginSegue", sender: self)
             }
             else{
