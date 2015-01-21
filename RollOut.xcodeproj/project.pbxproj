@@ -94,7 +94,7 @@
 		5A336A1C19D52C2B0062EC98 /* SelectTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectTimeViewController.m; sourceTree = "<group>"; };
 		5A397D8F19DE3C7500D2EE9F /* PrivacyPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrivacyPickerViewController.h; sourceTree = "<group>"; };
 		5A397D9019DE3C7500D2EE9F /* PrivacyPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrivacyPickerViewController.m; sourceTree = "<group>"; };
-		5A44C2731A53404800FBB2FC /* Spring-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Spring-Bridging-Header.h"; sourceTree = "<group>"; };
+		5A44C2731A53404800FBB2FC /* RollOut-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RollOut-Bridging-Header.h"; sourceTree = "<group>"; };
 		5A44C2741A53404800FBB2FC /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		5A44C2761A535DB600FBB2FC /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5A44C27A1A5B67AA00FBB2FC /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -116,19 +116,19 @@
 		5A92AEC219C24C90001C52F7 /* MyInterestsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyInterestsViewController.m; sourceTree = "<group>"; };
 		5A92AEC419C251A1001C52F7 /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activity.h; sourceTree = "<group>"; };
 		5A92AEC519C251A1001C52F7 /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
-		5AA3CB8019BBC9F200D07D51 /* Spring.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spring.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5AA3CB8019BBC9F200D07D51 /* RollOut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RollOut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AA3CB8319BBC9F200D07D51 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5AA3CB8519BBC9F200D07D51 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		5AA3CB8719BBC9F200D07D51 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		5AA3CB8B19BBC9F200D07D51 /* Spring-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Spring-Info.plist"; sourceTree = "<group>"; };
+		5AA3CB8B19BBC9F200D07D51 /* RollOut-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RollOut-Info.plist"; sourceTree = "<group>"; };
 		5AA3CB8D19BBC9F200D07D51 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5AA3CB8F19BBC9F200D07D51 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		5AA3CB9119BBC9F200D07D51 /* Spring-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Spring-Prefix.pch"; sourceTree = "<group>"; };
+		5AA3CB9119BBC9F200D07D51 /* RollOut-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RollOut-Prefix.pch"; sourceTree = "<group>"; };
 		5AA3CB9219BBC9F200D07D51 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5AA3CB9319BBC9F200D07D51 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		5AA3CB9619BBC9F200D07D51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5AA3CB9E19BBC9F200D07D51 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		5AA3CBA419BBC9F200D07D51 /* SpringTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpringTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5AA3CBA419BBC9F200D07D51 /* RollOutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RollOutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AA3CBA519BBC9F200D07D51 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		5AA3CBAD19BBC9F200D07D51 /* SpringTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SpringTests-Info.plist"; sourceTree = "<group>"; };
 		5AA3CBAF19BBC9F200D07D51 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -267,7 +267,7 @@
 		5AA3CB7719BBC9F200D07D51 = {
 			isa = PBXGroup;
 			children = (
-				5AA3CB8919BBC9F200D07D51 /* Spring */,
+				5AA3CB8919BBC9F200D07D51 /* RollOut */,
 				5AA3CBAB19BBC9F200D07D51 /* SpringTests */,
 				5AA3CB8219BBC9F200D07D51 /* Frameworks */,
 				5AA3CB8119BBC9F200D07D51 /* Products */,
@@ -277,8 +277,8 @@
 		5AA3CB8119BBC9F200D07D51 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5AA3CB8019BBC9F200D07D51 /* Spring.app */,
-				5AA3CBA419BBC9F200D07D51 /* SpringTests.xctest */,
+				5AA3CB8019BBC9F200D07D51 /* RollOut.app */,
+				5AA3CBA419BBC9F200D07D51 /* RollOutTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -322,7 +322,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		5AA3CB8919BBC9F200D07D51 /* Spring */ = {
+		5AA3CB8919BBC9F200D07D51 /* RollOut */ = {
 			isa = PBXGroup;
 			children = (
 				5AA3CB9219BBC9F200D07D51 /* AppDelegate.h */,
@@ -339,19 +339,19 @@
 				5AE4687B1A6CC70D0049BB7E /* Feed */,
 				5AA3CB9E19BBC9F200D07D51 /* Images.xcassets */,
 				5AA3CB8A19BBC9F200D07D51 /* Supporting Files */,
-				5A44C2731A53404800FBB2FC /* Spring-Bridging-Header.h */,
+				5A44C2731A53404800FBB2FC /* RollOut-Bridging-Header.h */,
 			);
-			path = Spring;
+			path = RollOut;
 			sourceTree = "<group>";
 		};
 		5AA3CB8A19BBC9F200D07D51 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
 				5AE468821A6D0D3D0049BB7E /* free-wallpaper-19.jpg */,
-				5AA3CB8B19BBC9F200D07D51 /* Spring-Info.plist */,
+				5AA3CB8B19BBC9F200D07D51 /* RollOut-Info.plist */,
 				5AA3CB8C19BBC9F200D07D51 /* InfoPlist.strings */,
 				5AA3CB8F19BBC9F200D07D51 /* main.m */,
-				5AA3CB9119BBC9F200D07D51 /* Spring-Prefix.pch */,
+				5AA3CB9119BBC9F200D07D51 /* RollOut-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -479,9 +479,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5AA3CB7F19BBC9F200D07D51 /* Spring */ = {
+		5AA3CB7F19BBC9F200D07D51 /* RollOut */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5AA3CBB519BBC9F200D07D51 /* Build configuration list for PBXNativeTarget "Spring" */;
+			buildConfigurationList = 5AA3CBB519BBC9F200D07D51 /* Build configuration list for PBXNativeTarget "RollOut" */;
 			buildPhases = (
 				5AA3CB7C19BBC9F200D07D51 /* Sources */,
 				5AA3CB7D19BBC9F200D07D51 /* Frameworks */,
@@ -491,14 +491,14 @@
 			);
 			dependencies = (
 			);
-			name = Spring;
+			name = RollOut;
 			productName = Spring;
-			productReference = 5AA3CB8019BBC9F200D07D51 /* Spring.app */;
+			productReference = 5AA3CB8019BBC9F200D07D51 /* RollOut.app */;
 			productType = "com.apple.product-type.application";
 		};
-		5AA3CBA319BBC9F200D07D51 /* SpringTests */ = {
+		5AA3CBA319BBC9F200D07D51 /* RollOutTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5AA3CBB819BBC9F200D07D51 /* Build configuration list for PBXNativeTarget "SpringTests" */;
+			buildConfigurationList = 5AA3CBB819BBC9F200D07D51 /* Build configuration list for PBXNativeTarget "RollOutTests" */;
 			buildPhases = (
 				5AA3CBA019BBC9F200D07D51 /* Sources */,
 				5AA3CBA119BBC9F200D07D51 /* Frameworks */,
@@ -509,9 +509,9 @@
 			dependencies = (
 				5AA3CBAA19BBC9F200D07D51 /* PBXTargetDependency */,
 			);
-			name = SpringTests;
+			name = RollOutTests;
 			productName = SpringTests;
-			productReference = 5AA3CBA419BBC9F200D07D51 /* SpringTests.xctest */;
+			productReference = 5AA3CBA419BBC9F200D07D51 /* RollOutTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -530,7 +530,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 5AA3CB7B19BBC9F200D07D51 /* Build configuration list for PBXProject "Spring" */;
+			buildConfigurationList = 5AA3CB7B19BBC9F200D07D51 /* Build configuration list for PBXProject "RollOut" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -544,8 +544,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5AA3CB7F19BBC9F200D07D51 /* Spring */,
-				5AA3CBA319BBC9F200D07D51 /* SpringTests */,
+				5AA3CB7F19BBC9F200D07D51 /* RollOut */,
+				5AA3CBA319BBC9F200D07D51 /* RollOutTests */,
 			);
 		};
 /* End PBXProject section */
@@ -620,7 +620,7 @@
 /* Begin PBXTargetDependency section */
 		5AA3CBAA19BBC9F200D07D51 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 5AA3CB7F19BBC9F200D07D51 /* Spring */;
+			target = 5AA3CB7F19BBC9F200D07D51 /* RollOut */;
 			targetProxy = 5AA3CBA919BBC9F200D07D51 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -741,12 +741,12 @@
 					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Spring/Spring-Prefix.pch";
-				INFOPLIST_FILE = "Spring/Spring-Info.plist";
+				GCC_PREFIX_HEADER = "RollOut/RollOut-Prefix.pch";
+				INFOPLIST_FILE = "RollOut/RollOut-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = RollOut;
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Spring/Spring-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "RollOut/RollOut-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = app;
 			};
@@ -768,12 +768,12 @@
 					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Spring/Spring-Prefix.pch";
-				INFOPLIST_FILE = "Spring/Spring-Info.plist";
+				GCC_PREFIX_HEADER = "RollOut/RollOut-Prefix.pch";
+				INFOPLIST_FILE = "RollOut/RollOut-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = RollOut;
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Spring/Spring-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "RollOut/RollOut-Bridging-Header.h";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -794,7 +794,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "SpringTests/SpringTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = RollOutTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -812,7 +812,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Spring/Spring-Prefix.pch";
 				INFOPLIST_FILE = "SpringTests/SpringTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = RollOutTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -821,7 +821,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5AA3CB7B19BBC9F200D07D51 /* Build configuration list for PBXProject "Spring" */ = {
+		5AA3CB7B19BBC9F200D07D51 /* Build configuration list for PBXProject "RollOut" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5AA3CBB319BBC9F200D07D51 /* Debug */,
@@ -830,7 +830,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5AA3CBB519BBC9F200D07D51 /* Build configuration list for PBXNativeTarget "Spring" */ = {
+		5AA3CBB519BBC9F200D07D51 /* Build configuration list for PBXNativeTarget "RollOut" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5AA3CBB619BBC9F200D07D51 /* Debug */,
@@ -839,7 +839,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5AA3CBB819BBC9F200D07D51 /* Build configuration list for PBXNativeTarget "SpringTests" */ = {
+		5AA3CBB819BBC9F200D07D51 /* Build configuration list for PBXNativeTarget "RollOutTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5AA3CBB919BBC9F200D07D51 /* Debug */,

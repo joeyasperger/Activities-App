@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5AA3CB7F19BBC9F200D07D51"
-               BuildableName = "Spring.app"
-               BlueprintName = "Spring"
-               ReferencedContainer = "container:Spring.xcodeproj">
+               BuildableName = "RollOut.app"
+               BlueprintName = "RollOut"
+               ReferencedContainer = "container:RollOut.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5AA3CBA319BBC9F200D07D51"
-               BuildableName = "SpringTests.xctest"
-               BlueprintName = "SpringTests"
-               ReferencedContainer = "container:Spring.xcodeproj">
+               BuildableName = "RollOutTests.xctest"
+               BlueprintName = "RollOutTests"
+               ReferencedContainer = "container:RollOut.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5AA3CB7F19BBC9F200D07D51"
-            BuildableName = "Spring.app"
-            BlueprintName = "Spring"
-            ReferencedContainer = "container:Spring.xcodeproj">
+            BuildableName = "RollOut.app"
+            BlueprintName = "RollOut"
+            ReferencedContainer = "container:RollOut.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5AA3CB7F19BBC9F200D07D51"
-            BuildableName = "Spring.app"
-            BlueprintName = "Spring"
-            ReferencedContainer = "container:Spring.xcodeproj">
+            BuildableName = "RollOut.app"
+            BlueprintName = "RollOut"
+            ReferencedContainer = "container:RollOut.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -80,9 +80,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5AA3CB7F19BBC9F200D07D51"
-            BuildableName = "Spring.app"
-            BlueprintName = "Spring"
-            ReferencedContainer = "container:Spring.xcodeproj">
+            BuildableName = "RollOut.app"
+            BlueprintName = "RollOut"
+            ReferencedContainer = "container:RollOut.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
