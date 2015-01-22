@@ -8,8 +8,11 @@
 
 #import "SelectActivitiyViewController.h"
 #import "Activity.h"
+#import "RollOut-Swift.h"
 
 @interface SelectActivitiyViewController ()
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -18,6 +21,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [UserInterface setTableViewBackground:self.tableView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -41,6 +46,7 @@
     }
     Activity *activity = self.activities[indexPath.row];
     cell.textLabel.text = activity.name;
+    cell.backgroundColor = [UIColor colorWithWhite:1 alpha:0.8];
 
     return cell;
 }

@@ -8,6 +8,7 @@
 
 #import "CreateEventTableViewController.h"
 #import "SelectActivitiyViewController.h"
+#import "RollOut-Swift.h"
 #import "Activity.h"
 
 @interface CreateEventTableViewController ()
@@ -40,12 +41,10 @@
     NSDate* currentDate = [NSDate date];
     self.eventDate = [self nextHourDate:currentDate];
     [self updateDateLabel];
-    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:0 green:222/256.0 blue:80/256.0 alpha:1.0]];
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    //[self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:0 green:222/256.0 blue:80/256.0 alpha:1.0]];
+    [UserInterface setTransparentNavBar:self.navigationController.navigationBar];
+    [UserInterface setTableViewBackground:self.tableView];
+    self.descriptionTextView.backgroundColor = [UIColor clearColor];
 }
 
 

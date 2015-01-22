@@ -27,33 +27,13 @@ class EventViewController: UITableViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let navBar = navigationController?.navigationBar{
-            setTransparentNavbar(navBar)
+        if let navBar = navigationController?.navigationBar {
+            UserInterface.setTransparentNavBar(navBar)
         }
-        
-        
-        tableView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
-        tableView.opaque = false
-        tableView.backgroundView = UIImageView(image: UIImage(named: "free-wallpaper-19.jpg"))
+        UserInterface.setTableViewBackground(tableView)
         
         navigationItem.title = event["displayName"] as? String
         loadPosts()
-    }
-    
-    func setTransparentNavbar(navBar: UINavigationBar){
-        navBar.barTintColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.6)
-        navBar.shadowImage = UIImage()
-        navBar.translucent = true
-        
-        var rect = CGRectMake(0, 0, 1, 1)
-        UIGraphicsBeginImageContext(rect.size)
-        var context = UIGraphicsGetCurrentContext()
-        CGContextSetFillColorWithColor(context, UIColor(white: 1, alpha: 0.8).CGColor)
-        CGContextFillRect(context, rect)
-        var image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        
-        navBar.setBackgroundImage(image, forBarMetrics: UIBarMetrics.Default)
     }
     
     // sets join button to checkmark and sends request to server to join event

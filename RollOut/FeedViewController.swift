@@ -3,15 +3,15 @@
 //  Spring
 //
 //  Created by Joseph Asperger on 12/30/14.
-//
+//  Copyright 2014
 //
 
 import UIKit
 
 
-class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class FeedViewController: UITableViewController, UITableViewDelegate, UITableViewDataSource {
 
-    @IBOutlet var tableView: UITableView!
+    //@IBOutlet var tableView: UITableView!
     
     var events = []
     
@@ -20,14 +20,21 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         //navigationController?.navigationBar.barTintColor = UIColor(red: 0, green: 222.0/256, blue: 80.0/256, alpha: 0)
         
-        if let navBar = navigationController?.navigationBar{
-            setTransparentNavbar(navBar)
+        if let navBar = navigationController?.navigationBar {
+            UserInterface.setTransparentNavBar(navBar)
         }
+        UserInterface.setTableViewBackground(tableView)
         
-        tableView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
-        tableView.opaque = false
-        tableView.backgroundView = UIImageView(image: UIImage(named: "free-wallpaper-19.jpg"))
+        refreshControl = UIRefreshControl()
+        refreshControl?.backgroundColor = UIColor.clearColor()
+        refreshControl?.tintColor = UIColor.blackColor()
+        refreshControl?.addTarget(self, action: "loadData", forControlEvents: UIControlEvents.ValueChanged)
+        refreshControl?.layer.zPosition += 1
         
+        loadData()
+    }
+    
+    func loadData() {
         var query = PFQuery(className:"Event")
         query.includeKey("creator")
         query.includeKey("activity")
@@ -37,28 +44,14 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             if (error == nil){
                 self.events = objects
                 self.tableView.reloadData()
+                self.refreshControl?.endRefreshing()
             }
             else{
                 NSLog("%@", error)
+                self.refreshControl?.endRefreshing()
             }
         }
-
-    }
-    
-    func setTransparentNavbar(navBar: UINavigationBar){
-        navBar.barTintColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.6)
-        navBar.shadowImage = UIImage()
-        navBar.translucent = true
         
-        var rect = CGRectMake(0, 0, 1, 1)
-        UIGraphicsBeginImageContext(rect.size)
-        var context = UIGraphicsGetCurrentContext()
-        CGContextSetFillColorWithColor(context, UIColor(white: 1, alpha: 0.8).CGColor)
-        CGContextFillRect(context, rect)
-        var image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        
-        navBar.setBackgroundImage(image, forBarMetrics: UIBarMetrics.Default)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -73,15 +66,15 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Dispose of any resources that can be recreated.
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
    
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return events.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell : EventTableViewCell = tableView.dequeueReusableCellWithIdentifier("EventCell", forIndexPath: indexPath) as EventTableViewCell
         var event: PFObject = events[indexPath.section] as PFObject
         var user: PFUser = event["creator"] as PFUser
@@ -91,7 +84,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         return cell
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         performSegueWithIdentifier("ShowEvent", sender: self)
     }
 

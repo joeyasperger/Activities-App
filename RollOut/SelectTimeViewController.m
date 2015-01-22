@@ -7,9 +7,11 @@
 //
 
 #import "SelectTimeViewController.h"
+#import "RollOut-Swift.h"
 
 @interface SelectTimeViewController ()
 
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 
@@ -24,6 +26,7 @@
         [self.datePicker setDate:self.date];
     }
     [self setDateLabelText];
+    [UserInterface setTableViewBackground:self.tableView];
 }
 
 - (void)didReceiveMemoryWarning {

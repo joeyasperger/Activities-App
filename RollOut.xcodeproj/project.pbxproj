@@ -17,6 +17,7 @@
 		5A44C2771A535DB600FBB2FC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44C2761A535DB600FBB2FC /* LoginViewController.swift */; };
 		5A44C27B1A5B67AA00FBB2FC /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44C27A1A5B67AA00FBB2FC /* SignUpViewController.swift */; };
 		5A45195619D8B59700B7B346 /* PrivacyPickerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A45195519D8B59700B7B346 /* PrivacyPickerTableViewCell.m */; };
+		5A680AA71A70F20E00A9218C /* UserInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A680AA61A70F20E00A9218C /* UserInterface.swift */; };
 		5A693E8619C3A884005C5377 /* CategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A693E8519C3A884005C5377 /* CategoryViewController.m */; };
 		5A693E8919C4A54E005C5377 /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A693E8819C4A54E005C5377 /* ActivityViewController.m */; };
 		5A693E8F19C7B286005C5377 /* AddActivitiesNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A693E8E19C7B286005C5377 /* AddActivitiesNavController.m */; };
@@ -100,6 +101,7 @@
 		5A44C27A1A5B67AA00FBB2FC /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		5A45195419D8B59700B7B346 /* PrivacyPickerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrivacyPickerTableViewCell.h; sourceTree = "<group>"; };
 		5A45195519D8B59700B7B346 /* PrivacyPickerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrivacyPickerTableViewCell.m; sourceTree = "<group>"; };
+		5A680AA61A70F20E00A9218C /* UserInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInterface.swift; sourceTree = "<group>"; };
 		5A693E8419C3A884005C5377 /* CategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryViewController.h; sourceTree = "<group>"; };
 		5A693E8519C3A884005C5377 /* CategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryViewController.m; sourceTree = "<group>"; };
 		5A693E8719C4A54E005C5377 /* ActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityViewController.h; sourceTree = "<group>"; };
@@ -328,6 +330,7 @@
 				5AA3CB9219BBC9F200D07D51 /* AppDelegate.h */,
 				5AA3CB9319BBC9F200D07D51 /* AppDelegate.m */,
 				5AA3CB9519BBC9F200D07D51 /* Main.storyboard */,
+				5A680AA61A70F20E00A9218C /* UserInterface.swift */,
 				5AACDDFD19D37B730085DBBC /* Base Objects */,
 				5AACDDFC19D339170085DBBC /* My Interests Tab */,
 				5AACDDFF19D37C9C0085DBBC /* Create Event */,
@@ -585,6 +588,7 @@
 				5A693E8F19C7B286005C5377 /* AddActivitiesNavController.m in Sources */,
 				5A92AEC619C251A1001C52F7 /* Activity.m in Sources */,
 				5AE468811A6CCD650049BB7E /* EventViewController.swift in Sources */,
+				5A680AA71A70F20E00A9218C /* UserInterface.swift in Sources */,
 				5A693E8619C3A884005C5377 /* CategoryViewController.m in Sources */,
 				5A336A1A19D516790062EC98 /* SelectActivitiyViewController.m in Sources */,
 				5A92AEB719BFA548001C52F7 /* Friend.m in Sources */,

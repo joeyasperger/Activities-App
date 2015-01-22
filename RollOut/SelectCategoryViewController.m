@@ -9,6 +9,7 @@
 #import "SelectCategoryViewController.h"
 #import "Activity.h"
 #import "SelectActivitiyViewController.h"
+#import "RollOut-Swift.h"
 
 @interface SelectCategoryViewController ()
 
@@ -47,6 +48,7 @@
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
     }];
+    [UserInterface setTableViewBackground:self.tableView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -61,7 +63,9 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [Activity categoryCell:self.categoryNames[indexPath.row] tableView:tableView];
+    UITableViewCell *cell = [Activity categoryCell:self.categoryNames[indexPath.row] tableView:tableView];
+    cell.backgroundColor = [UIColor colorWithWhite:1 alpha:0.8];
+    return cell;
 }
 
 - (void) tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{

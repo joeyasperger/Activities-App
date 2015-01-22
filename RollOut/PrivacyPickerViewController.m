@@ -8,9 +8,11 @@
 
 #import "PrivacyPickerViewController.h"
 #import "PrivacyPickerTableViewCell.h"
+#import "RollOut-Swift.h"
 
 @interface PrivacyPickerViewController ()
 
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property NSArray *pickerData;
 @property UIPickerView *pickerView;
 @property BOOL didSetupPicker;
@@ -24,6 +26,7 @@
     // Do any additional setup after loading the view.
     
     self.pickerData = @[@"Anyone", @"Friends", @"Group", @"Invite Only"];
+    [UserInterface setTableViewBackground:self.tableView];
 }
 
 - (void)didReceiveMemoryWarning {
