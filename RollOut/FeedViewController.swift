@@ -18,12 +18,7 @@ class FeedViewController: UITableViewController, UITableViewDelegate, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //navigationController?.navigationBar.barTintColor = UIColor(red: 0, green: 222.0/256, blue: 80.0/256, alpha: 0)
-        
-        if let navBar = navigationController?.navigationBar {
-            UserInterface.setTransparentNavBar(navBar)
-        }
-        UserInterface.setTableViewBackground(tableView)
+        navigationController?.navigationBar.barTintColor = UIColor(red: 0, green: 222.0/256, blue: 80.0/256, alpha: 0)
         
         refreshControl = UIRefreshControl()
         refreshControl?.backgroundColor = UIColor.clearColor()
@@ -80,7 +75,6 @@ class FeedViewController: UITableViewController, UITableViewDelegate, UITableVie
         var user: PFUser = event["creator"] as PFUser
         cell.userLabel.text = user["displayName"] as? String
         cell.nameLabel.text = event["name"] as? String
-        cell.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.8)
         return cell
     }
     

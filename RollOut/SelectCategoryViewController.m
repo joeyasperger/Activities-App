@@ -48,7 +48,6 @@
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
     }];
-    [UserInterface setTableViewBackground:self.tableView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -64,7 +63,6 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [Activity categoryCell:self.categoryNames[indexPath.row] tableView:tableView];
-    cell.backgroundColor = [UIColor colorWithWhite:1 alpha:0.8];
     return cell;
 }
 

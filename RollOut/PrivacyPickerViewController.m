@@ -26,7 +26,6 @@
     // Do any additional setup after loading the view.
     
     self.pickerData = @[@"Anyone", @"Friends", @"Group", @"Invite Only"];
-    [UserInterface setTableViewBackground:self.tableView];
 }
 
 - (void)didReceiveMemoryWarning {

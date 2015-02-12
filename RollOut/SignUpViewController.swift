@@ -18,15 +18,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        var imageView = UIImageView(image: UIImage(named: "free-wallpaper-19.jpg")!)
-        imageView.frame.size = view.frame.size
-        view.addSubview(imageView)
-        view.sendSubviewToBack(imageView)
-        emailField.backgroundColor = UIColor(white: 1, alpha: 0.8)
-        passwordField.backgroundColor = UIColor(white: 1, alpha: 0.8)
-        usernameField.backgroundColor = UIColor(white: 1, alpha: 0.8)
-        confirmPasswordField.backgroundColor = UIColor(white: 1, alpha: 0.8)
         self.errorLabel.text = ""
     }
     

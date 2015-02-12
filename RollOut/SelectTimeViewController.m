@@ -26,7 +26,6 @@
         [self.datePicker setDate:self.date];
     }
     [self setDateLabelText];
-    [UserInterface setTableViewBackground:self.tableView];
 }
 
 - (void)didReceiveMemoryWarning {

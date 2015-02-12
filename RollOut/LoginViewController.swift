@@ -19,13 +19,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBLoginViewDel
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var imageView = UIImageView(image: UIImage(named: "free-wallpaper-19.jpg")!)
-        imageView.frame.size = view.frame.size
-        view.addSubview(imageView)
-        view.sendSubviewToBack(imageView)
-        emailField.backgroundColor = UIColor(white: 1, alpha: 0.8)
-        passwordField.backgroundColor = UIColor(white: 1, alpha: 0.8)
-        
         
         errorLabel.text = ""
         emailField.text = "joeyasperger@gmail.com" //just for faster testing

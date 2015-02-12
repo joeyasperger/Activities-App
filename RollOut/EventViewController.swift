@@ -27,11 +27,6 @@ class EventViewController: UITableViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let navBar = navigationController?.navigationBar {
-            UserInterface.setTransparentNavBar(navBar)
-        }
-        UserInterface.setTableViewBackground(tableView)
-        
         navigationItem.title = event["displayName"] as? String
         loadPosts()
     }
@@ -172,7 +167,8 @@ class EventViewController: UITableViewController, UITextFieldDelegate {
             cell.creatorNameLabel.text = creator["displayName"] as? String
             cell.activityButton.setTitle(activity["name"] as? String, forState: UIControlState.Normal)
             cell.nameLabel.text = event["name"] as? String
-            cell.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.8)
+            cell.nameLabel.sizeToFit()
+            cell.nameLabel.layoutIfNeeded()
             cell.selectionStyle = UITableViewCellSelectionStyle.None
             return cell
         }
@@ -197,7 +193,6 @@ class EventViewController: UITableViewController, UITextFieldDelegate {
             else{
                 joinButton.addTarget(self, action: "joinButtonPressed", forControlEvents: UIControlEvents.TouchUpInside)
             }
-            cell.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.8)
             cell.selectionStyle = UITableViewCellSelectionStyle.None
             return cell
         }
@@ -205,7 +200,6 @@ class EventViewController: UITableViewController, UITextFieldDelegate {
             if (!self.isWritingPost){
                 var cell = tableView.dequeueReusableCellWithIdentifier("EventPostButtonCell", forIndexPath: indexPath) as UITableViewCell
                 cell.selectionStyle = UITableViewCellSelectionStyle.Default
-                cell.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.8)
                 return cell
             }
             else{
@@ -213,7 +207,6 @@ class EventViewController: UITableViewController, UITextFieldDelegate {
                 postField = cell.postField
                 postField.delegate = self
                 postField.becomeFirstResponder()
-                cell.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.8)
                 return cell
             }
         }
@@ -221,7 +214,6 @@ class EventViewController: UITableViewController, UITextFieldDelegate {
             var cell = tableView.dequeueReusableCellWithIdentifier("EventPostCell", forIndexPath: indexPath) as EventPostCell
             var post = posts[indexPath.row] as PFObject
             cell.postLabel.text = post["content"] as? String
-            cell.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.8)
             cell.selectionStyle = UITableViewCellSelectionStyle.None
             return cell
         }
