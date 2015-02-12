@@ -101,7 +101,21 @@
     
     cell.textLabel.text = user[@"displayName"];
     cell.imageView.image = [UIImage imageNamed:@"greybox.jpg"];
-    
+    if ([user[@"hasProfilePic"] boolValue]){
+        PFFile *imageFile = user[@"profilePic"];
+        [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+            if (!error){
+                UIImage *profileImage = [UIImage imageWithData:data];
+                [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                    cell.imageView.image = profileImage;
+                    cell.imageView.contentMode = UIViewContentModeScaleAspectFill;
+                }];
+            }
+            else{
+                NSLog(@"Error retrieving Image");
+            }
+        }];
+    }
     return cell;
 }
 

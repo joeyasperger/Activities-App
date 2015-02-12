@@ -519,6 +519,9 @@
                                 <state key="normal" title="Change Photo">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="changePhoto:" destination="RKQ-HJ-Ua4" eventType="touchUpInside" id="KVi-5p-ybE"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -532,10 +535,12 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="ProfileImageView" destination="BAU-MB-wns" id="2OJ-xn-mwo"/>
                         <outlet property="addFriendButton" destination="kHn-CB-um5" id="VCE-Uv-ohj"/>
                         <outlet property="changePhotoButton" destination="r6i-LU-rz8" id="1Tf-c0-zgD"/>
                         <outlet property="logoutButton" destination="96h-gW-zSV" id="bXU-9o-6oz"/>
                         <outlet property="nameLabel" destination="gSq-B5-WvP" id="6hc-NA-GUB"/>
+                        <outlet property="profileImageView" destination="BAU-MB-wns" id="i4O-cj-UIw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b67-zY-CPg" userLabel="First Responder" sceneMemberID="firstResponder"/>

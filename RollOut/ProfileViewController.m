@@ -8,12 +8,14 @@
 
 #import "ProfileViewController.h"
 #import "RollOut-Swift.h"
+#import <MobileCoreServices/MobileCoreServices.h>
 
 @interface ProfileViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *logoutButton;
 @property (weak, nonatomic) IBOutlet UIButton *addFriendButton;
 @property (weak, nonatomic) IBOutlet UIButton *changePhotoButton;
+@property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
 
 @end
 
@@ -53,6 +55,44 @@
 
 }
 
+- (IBAction)changePhoto:(id)sender {
+    
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    imagePicker.delegate = self;
+    
+    imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    imagePicker.mediaTypes = @[(NSString *) kUTTypeImage];
+    
+    imagePicker.allowsEditing = YES;
+    [self presentViewController:imagePicker animated:YES completion:nil];
+}
+
+-(void)imagePickerController: (UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    UIImage *image = info[UIImagePickerControllerEditedImage];
+    self.profileImageView.image = image;
+    self.profileImageView.contentMode = UIViewContentModeScaleAspectFill;
+    
+    NSData *imageData = UIImagePNGRepresentation(image);
+    NSString *fileName = [NSString stringWithFormat:@"ProfilePic%@.png", self.user.objectId];
+    PFFile *file = [PFFile fileWithName:fileName data:imageData];
+    self.user[@"profilePic"] = file;
+    self.user[@"hasProfilePic"] = @YES;
+    [self.user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (!error){
+            NSLog(@"Profile pic uploaded successfully");
+        }
+        else{
+            NSLog(@"Error uploading profile pic");
+        }
+    }];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)imagePickerControllerDidCancel: (UIImagePickerController *)picker
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -107,6 +147,22 @@
 
 -(void) loadData{
     self.nameLabel.text = self.user[@"displayName"];
+    if ([self.user[@"hasProfilePic"] boolValue]){
+        PFFile *imageFile = self.user[@"profilePic"];
+        [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+            if (!error){
+                UIImage *profileImage = [UIImage imageWithData:data];
+                // update image view on main thread
+                [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                    self.profileImageView.image = profileImage;
+                    self.profileImageView.contentMode = UIViewContentModeScaleAspectFill;
+                }];
+            }
+            else{
+                NSLog(@"Error retrieving image");
+            }
+        }];
+    }
     if (self.isCurrentUser){
         self.addFriendButton.userInteractionEnabled = NO;
         [self.addFriendButton setTitle:@"" forState:UIControlStateNormal];
@@ -116,6 +172,8 @@
         self.logoutButton.enabled = NO;
         self.logoutButton.title = @"";
         self.navigationItem.title = self.user[@"displayName"];
+        self.changePhotoButton.enabled = NO;
+        [self.changePhotoButton setTitle:@"" forState:UIControlStateNormal];
     }
 }
 
