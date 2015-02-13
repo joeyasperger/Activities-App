@@ -129,6 +129,7 @@
                                 <connections>
                                     <outlet property="activityButton" destination="ken-6i-gAo" id="cem-O9-Uif"/>
                                     <outlet property="creatorNameLabel" destination="C2I-8D-7aY" id="rTX-bx-tQL"/>
+                                    <outlet property="eventImageView" destination="wSP-s8-NKT" id="srw-8L-zJb"/>
                                     <outlet property="nameLabel" destination="hR3-lw-XRB" id="UQi-J2-Xeb"/>
                                     <outlet property="timeLabel" destination="teg-Cd-w3e" id="bPm-d8-Wep"/>
                                 </connections>

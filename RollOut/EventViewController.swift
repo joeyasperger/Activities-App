@@ -170,6 +170,20 @@ class EventViewController: UITableViewController, UITextFieldDelegate {
             cell.nameLabel.sizeToFit()
             cell.nameLabel.layoutIfNeeded()
             cell.selectionStyle = UITableViewCellSelectionStyle.None
+            var imageFile = Event.getEventImageFile(event)
+            imageFile?.getDataInBackgroundWithBlock({ (data, error) -> Void in
+                if (error == nil){
+                    var image = UIImage(data: data)
+                    //update imageview on main thread
+                    NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+                        cell.eventImageView.image = image
+                        cell.eventImageView.contentMode = UIViewContentMode.ScaleAspectFill
+                    })
+                }
+                else{
+                    println("Error retrieving image for feed")
+                }
+            })
             return cell
         }
         else if (indexPath.section == interestSection){
@@ -237,6 +251,7 @@ class EventHeaderCell: UITableViewCell {
     @IBOutlet weak var creatorNameLabel: UILabel!
     @IBOutlet weak var activityButton: UIButton!
     @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var eventImageView: UIImageView!
     
 }
 

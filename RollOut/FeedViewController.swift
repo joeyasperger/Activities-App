@@ -72,9 +72,26 @@ class FeedViewController: UITableViewController, UITableViewDelegate, UITableVie
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell : EventTableViewCell = tableView.dequeueReusableCellWithIdentifier("EventCell", forIndexPath: indexPath) as EventTableViewCell
         var event: PFObject = events[indexPath.section] as PFObject
-        var user: PFUser = event["creator"] as PFUser
-        cell.userLabel.text = user["displayName"] as? String
+        var creator: PFUser = event["creator"] as PFUser
+        cell.userLabel.text = creator["displayName"] as? String
         cell.nameLabel.text = event["name"] as? String
+        var imageFile = Event.getEventImageFile(event)
+        imageFile?.getDataInBackgroundWithBlock({ (data, error) -> Void in
+            if (error == nil){
+                var image = UIImage(data: data)
+                //update imageview on main thread
+                NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+                    cell.imageView.image = image
+                    cell.imageView.contentMode = UIViewContentMode.ScaleAspectFill
+                })
+            }
+            else{
+                println("Error retrieving image for feed")
+            }
+        })
+        if (imageFile == nil){
+            cell.imageView.image = UIImage(named: "greybox.jpg")
+        }
         return cell
     }
     

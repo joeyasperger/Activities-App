@@ -54,6 +54,7 @@
 		5AADF9F419E79D6F00D2BCD2 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AADF9F119E79D6F00D2BCD2 /* Security.framework */; };
 		5AADF9F519E79D6F00D2BCD2 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AADF9F219E79D6F00D2BCD2 /* StoreKit.framework */; };
 		5AADF9F619E79D6F00D2BCD2 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AADF9F319E79D6F00D2BCD2 /* SystemConfiguration.framework */; };
+		5ABCFD401A8D6E77003C719C /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABCFD3F1A8D6E77003C719C /* Event.swift */; };
 		5AC550231A1342190084411F /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AC550221A1342190084411F /* GoogleMaps.framework */; };
 		5AC550251A1342470084411F /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5AC550241A1342470084411F /* GoogleMaps.bundle */; };
 		5AC550271A13427F0084411F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AC550261A13427F0084411F /* CoreData.framework */; };
@@ -159,6 +160,7 @@
 		5AADF9F119E79D6F00D2BCD2 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		5AADF9F219E79D6F00D2BCD2 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		5AADF9F319E79D6F00D2BCD2 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		5ABCFD3F1A8D6E77003C719C /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		5AC550221A1342190084411F /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
 		5AC550241A1342470084411F /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
 		5AC550261A13427F0084411F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -434,6 +436,7 @@
 				5A92AEB519BFA548001C52F7 /* Friend.h */,
 				5A92AEB619BFA548001C52F7 /* Friend.m */,
 				5A1277141A6E36F6004AFDB4 /* User.swift */,
+				5ABCFD3F1A8D6E77003C719C /* Event.swift */,
 			);
 			name = "Base Objects";
 			sourceTree = "<group>";
@@ -592,6 +595,7 @@
 				5A693E8619C3A884005C5377 /* CategoryViewController.m in Sources */,
 				5A336A1A19D516790062EC98 /* SelectActivitiyViewController.m in Sources */,
 				5A92AEB719BFA548001C52F7 /* Friend.m in Sources */,
+				5ABCFD401A8D6E77003C719C /* Event.swift in Sources */,
 				5A336A1419D4EF280062EC98 /* CreateEventTableViewController.m in Sources */,
 				5AA3CB9419BBC9F200D07D51 /* AppDelegate.m in Sources */,
 				5A92AEB419BFA486001C52F7 /* FriendsViewController.m in Sources */,
