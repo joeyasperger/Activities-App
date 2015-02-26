@@ -22,7 +22,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *privacyLabel;
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
+@property (weak, nonatomic) IBOutlet UITextField *locationNameField;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *doneButton;
+@property BOOL setLocationName; // if the user has manually typed a location name so it won't be named automatically
 @property NSString *privacyType;
 @property NSDate *eventDate;
 @property CLLocationCoordinate2D eventLocation;
@@ -42,6 +44,7 @@
     [self.eventNameField addTarget:self
                   action:@selector(textFieldDidChange:)
         forControlEvents:UIControlEventEditingChanged];
+    self.locationNameField.delegate = self;
     self.privacyType = @"Anyone";
     self.privacyLabel.text = self.privacyType;
     NSDate* currentDate = [NSDate date];
@@ -101,6 +104,9 @@
     if (self.descriptionTextView.text.length > 0){
         event[@"description"] = self.descriptionTextView.text;
     }
+    if (self.locationNameField.text != nil){
+        event[@"locationName"] = self.locationNameField.text;
+    }
     [event saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (!error){
             // succeeded
@@ -115,6 +121,7 @@
 -(void) hideKeyboard{
     [self.descriptionTextView resignFirstResponder];
     [self.eventNameField resignFirstResponder];
+    [self.locationNameField resignFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -129,11 +136,24 @@
 }
 
 -(void) textFieldDidChange:(UITextField*)textField{
-    if (textField.text.length == 0){
-        self.doneButton.enabled = NO;
+    if (textField == self.eventNameField){
+        if (textField.text.length == 0){
+            self.doneButton.enabled = NO;
+        }
+        else{
+            self.doneButton.enabled = YES;
+        }
     }
-    else{
-        self.doneButton.enabled = YES;
+}
+
+-(void) textFieldDidEndEditing:(UITextField *)textField{
+    if (textField == self.locationNameField){
+        if ([textField.text isEqualToString:@""]){
+            self.setLocationName = NO;
+        }
+        else{
+            self.setLocationName = YES;
+        }
     }
 }
 
@@ -144,17 +164,16 @@
 }
 
 - (void) tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSLog(@"%ld",indexPath.row);
-    if (indexPath.section == 0 && indexPath.row == 1){ 
+    if (indexPath.section == 0 && indexPath.row == 1){
         [self performSegueWithIdentifier:@"SelectEventCategory" sender:nil];
     }
-    else if (indexPath.section == 1 && indexPath.row == 0){
+    else if (indexPath.section == 1 && indexPath.row == 1){
         [self performSegueWithIdentifier:@"SelectEventLocation" sender:nil];
     }
-    else if (indexPath.section == 1 && indexPath.row == 1){
+    else if (indexPath.section == 2 && indexPath.row == 0){
         [self performSegueWithIdentifier:@"SelectEventTime" sender:nil];
     }
-    else if (indexPath.section == 1 && indexPath.row == 2){
+    else if (indexPath.section == 2 && indexPath.row == 1){
         [self performSegueWithIdentifier:@"SelectEventPrivacy" sender:nil];
     }
 }
@@ -184,10 +203,17 @@
     self.privacyLabel.text = self.privacyType;
 }
 
--(void) recieveLocation:(CLLocationCoordinate2D)location{
+-(void) recieveLocation:(CLLocationCoordinate2D)location name:(NSString *)name{
     self.eventLocation = location;
-    NSLog(@"%f, %f", location.latitude, location.longitude);
     self.locationLabel.text = @"Location of marker";
+    if (!self.setLocationName){
+        if (name != nil){
+            self.locationNameField.text = name;
+        }
+        else{
+            self.locationNameField.text = @"";
+        }
+    }
 }
 
 

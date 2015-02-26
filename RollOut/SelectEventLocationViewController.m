@@ -59,12 +59,10 @@
 
 
 -(void) searchBarSearchButtonClicked:(UISearchBar *)searchBar{
-    NSLog(@"%@",searchBar.text);
     int searchDistance = 50000;
     CLLocationCoordinate2D currentMapLoc = self.mapView.camera.target;
     NSString *googleAPIKey = @"AIzaSyAK-qDZMj2bO2itJk_c16o09H23WZaiJO8";
     NSString *url = [NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/search/json?location=%f,%f&keyword=%@&radius=%@&sensor=false&key=%@", currentMapLoc.latitude, currentMapLoc.longitude, searchBar.text,[NSString stringWithFormat:@"%i", searchDistance], googleAPIKey];
-    NSLog(@"%@", url);
     url = [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSURL *googleRequestURL = [NSURL URLWithString:url];
     
@@ -181,7 +179,11 @@
 }
 
 -(void) viewWillDisappear:(BOOL)animated{
-    [self.delegate recieveLocation:self.eventLocationMarker.position];
+    NSString *locationName = nil;
+    if (![self.eventLocationMarker.title isEqualToString:@"Event Location"]){
+        locationName = self.eventLocationMarker.title;
+    }
+    [self.delegate recieveLocation:self.eventLocationMarker.position name:locationName];
 }
 
 @end

@@ -11,7 +11,7 @@
 
 @protocol SelectEventLocationDelegate
 
-- (void) recieveLocation:(CLLocationCoordinate2D) location;
+- (void) recieveLocation:(CLLocationCoordinate2D) location name:(NSString*) name;
 
 @end
 

@@ -13,6 +13,6 @@
 #import <Parse/Parse.h>
 
 
-@interface CreateEventTableViewController : UITableViewController<DateTimeDelegate,EventPrivacyDelegate, CLLocationManagerDelegate, SelectEventLocationDelegate>
+@interface CreateEventTableViewController : UITableViewController<DateTimeDelegate,EventPrivacyDelegate, CLLocationManagerDelegate, SelectEventLocationDelegate, UITextFieldDelegate>
 
 @end
