@@ -16,7 +16,6 @@
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property double latitude;
 @property double longitude;
-@property CLLocationManager *locationManager;
 @property GMSMarker *eventLocationMarker;
 
 @end
@@ -30,6 +29,10 @@
     // coordinate -33.86,151.20 at zoom level 6.
     self.latitude = 37.43;
     self.longitude = -122.17;
+    if (self.passedLocation){
+        self.latitude = self.location.latitude;
+        self.longitude = self.location.longitude;
+    }
     GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:self.latitude longitude:self.longitude zoom:13];
     self.mapView = [GMSMapView mapWithFrame:self.view.bounds camera:camera];
     UIEdgeInsets mapInsets = UIEdgeInsetsMake(90, 0, 0, 0);
@@ -49,18 +52,11 @@
     self.eventLocationMarker.draggable = YES;
 }
 
-/*
--(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
-    NSLog(@"Error: %@",error.description);
+- (IBAction)done:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (void)locationManager:(CLLocationManager *)manager
-     didUpdateLocations:(NSArray *)locations {
-    // If it's a relatively recent event, turn off updates to save power.
-    CLLocation* location = [locations lastObject];
-    NSDate* eventDate = location.timestamp;
-    NSTimeInterval howRecent = [eventDate timeIntervalSinceNow];
-}*/
+
 
 -(void) searchBarSearchButtonClicked:(UISearchBar *)searchBar{
     NSLog(@"%@",searchBar.text);
@@ -182,6 +178,10 @@
             }
         }
     }
+}
+
+-(void) viewWillDisappear:(BOOL)animated{
+    [self.delegate recieveLocation:self.eventLocationMarker.position];
 }
 
 @end

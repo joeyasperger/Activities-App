@@ -694,6 +694,12 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yXU-7w-WWW">
+                                                    <rect key="frame" x="102" y="12" width="177" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -787,6 +793,7 @@
                         <outlet property="descriptionTextView" destination="Btb-1P-prt" id="YcX-ON-vpq"/>
                         <outlet property="doneButton" destination="3WO-XN-4YE" id="vOP-LD-3f4"/>
                         <outlet property="eventNameField" destination="WYM-JT-6Fr" id="WFT-I6-2XQ"/>
+                        <outlet property="locationLabel" destination="yXU-7w-WWW" id="OLJ-FK-7sc"/>
                         <outlet property="privacyLabel" destination="frB-9v-0No" id="NyA-1M-Ey0"/>
                         <outlet property="timeLabel" destination="niG-rW-F9q" id="oeJ-9X-UiB"/>
                         <segue destination="DgO-BZ-p8o" kind="push" identifier="SelectEventCategory" id="L5L-Ch-Uqa"/>
@@ -797,7 +804,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F4t-FN-xt1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2801" y="-183"/>
+            <point key="canvasLocation" x="2801" y="-184"/>
         </scene>
         <!--Privacy-->
         <scene sceneID="L8s-mq-ySR">
@@ -876,7 +883,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Location" id="zLy-pv-eTi"/>
+                    <navigationItem key="navigationItem" title="Location" id="zLy-pv-eTi">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="xHL-k4-Rxo">
+                            <connections>
+                                <action selector="done:" destination="wai-PA-Nkc" id="V1T-Wa-k0S"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="searchBar" destination="vRc-BD-ljh" id="rnW-0s-rvf"/>
                     </connections>

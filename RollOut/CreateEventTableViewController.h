@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "SelectTimeViewController.h"
 #import "PrivacyPickerViewController.h"
+#import "SelectEventLocationViewController.h"
 #import <Parse/Parse.h>
 
-@interface CreateEventTableViewController : UITableViewController<DateTimeDelegate,EventPrivacyDelegate>
+
+@interface CreateEventTableViewController : UITableViewController<DateTimeDelegate,EventPrivacyDelegate, CLLocationManagerDelegate, SelectEventLocationDelegate>
 
 @end
