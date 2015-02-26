@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <GoogleMaps/GoogleMaps.h>
 
-@interface SelectEventLocationViewController : UIViewController<UISearchBarDelegate>
+@interface SelectEventLocationViewController : UIViewController<UISearchBarDelegate, CLLocationManagerDelegate, GMSMapViewDelegate>
 
 @end

@@ -790,9 +790,9 @@
                         <outlet property="privacyLabel" destination="frB-9v-0No" id="NyA-1M-Ey0"/>
                         <outlet property="timeLabel" destination="niG-rW-F9q" id="oeJ-9X-UiB"/>
                         <segue destination="DgO-BZ-p8o" kind="push" identifier="SelectEventCategory" id="L5L-Ch-Uqa"/>
-                        <segue destination="wai-PA-Nkc" kind="push" identifier="SelectEventLocation" id="4US-UW-KqA"/>
                         <segue destination="Kq2-4s-3LU" kind="push" identifier="SelectEventPrivacy" id="knH-Ec-Dfg"/>
                         <segue destination="CfG-kn-Gc3" kind="push" identifier="SelectEventTime" id="aDH-t4-W4j"/>
+                        <segue destination="wai-PA-Nkc" kind="push" identifier="SelectEventLocation" id="WNd-by-cjq"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F4t-FN-xt1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -878,12 +878,12 @@
                     </view>
                     <navigationItem key="navigationItem" title="Location" id="zLy-pv-eTi"/>
                     <connections>
-                        <outlet property="searchBar" destination="vRc-BD-ljh" id="rom-kq-lb2"/>
+                        <outlet property="searchBar" destination="vRc-BD-ljh" id="rnW-0s-rvf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X8T-GN-l21" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3648" y="-183"/>
+            <point key="canvasLocation" x="3339" y="-199"/>
         </scene>
         <!--Time-->
         <scene sceneID="IC6-CT-0bN">

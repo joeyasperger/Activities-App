@@ -7,6 +7,7 @@
 //
 
 #import "SelectEventLocationViewController.h"
+#import <CoreLocation/CoreLocation.h>
 
 
 @interface SelectEventLocationViewController ()
@@ -15,20 +16,21 @@
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property double latitude;
 @property double longitude;
+@property CLLocationManager *locationManager;
+@property GMSMarker *eventLocationMarker;
 
 @end
 
 @implementation SelectEventLocationViewController
 
 - (void)viewDidLoad {
+    [super viewDidLoad];
+    
     // Create a GMSCameraPosition that tells the map to display the
     // coordinate -33.86,151.20 at zoom level 6.
     self.latitude = 37.43;
     self.longitude = -122.17;
-    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:self.latitude
-                                                            longitude:self.longitude
-                                                                 zoom:13];
-    //self.mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
+    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:self.latitude longitude:self.longitude zoom:13];
     self.mapView = [GMSMapView mapWithFrame:self.view.bounds camera:camera];
     UIEdgeInsets mapInsets = UIEdgeInsetsMake(90, 0, 0, 0);
     
@@ -36,9 +38,29 @@
     self.mapView.myLocationEnabled = YES;
     self.mapView.settings.myLocationButton = YES;
     self.mapView.settings.compassButton = YES;
-    //self.view = self.mapView;
     [self.view insertSubview:self.mapView atIndex:0];
+    self.mapView.delegate = self;
+    self.eventLocationMarker = [GMSMarker new];
+    self.eventLocationMarker.icon = [GMSMarker markerImageWithColor:[UIColor greenColor]];
+    self.eventLocationMarker.position = CLLocationCoordinate2DMake(self.latitude , self.longitude);
+    self.eventLocationMarker.map = self.mapView;
+    self.mapView.selectedMarker = self.eventLocationMarker;
+    self.eventLocationMarker.title = @"Event Location";
+    self.eventLocationMarker.draggable = YES;
 }
+
+/*
+-(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
+    NSLog(@"Error: %@",error.description);
+}
+
+- (void)locationManager:(CLLocationManager *)manager
+     didUpdateLocations:(NSArray *)locations {
+    // If it's a relatively recent event, turn off updates to save power.
+    CLLocation* location = [locations lastObject];
+    NSDate* eventDate = location.timestamp;
+    NSTimeInterval howRecent = [eventDate timeIntervalSinceNow];
+}*/
 
 -(void) searchBarSearchButtonClicked:(UISearchBar *)searchBar{
     NSLog(@"%@",searchBar.text);
@@ -61,7 +83,61 @@
     [searchBar resignFirstResponder];
 }
 
--(void)fetchedData:(NSData *)responseData {
+-(BOOL) mapView:(GMSMapView *)mapView didTapMarker:(GMSMarker *)marker{
+    [self hideKeyboard];
+    if (marker != self.eventLocationMarker){
+        [self resetMarkerColor:self.eventLocationMarker];
+        // select new marker and set its color to green
+        self.eventLocationMarker = marker;
+        mapView.selectedMarker = marker;
+        mapView.selectedMarker.icon = [GMSMarker markerImageWithColor:[UIColor greenColor]];
+    }
+    mapView.selectedMarker = marker;
+    return YES;
+}
+
+-(void) mapView:(GMSMapView *)mapView didBeginDraggingMarker:(GMSMarker *)marker{
+    [self hideKeyboard];
+    if (marker != self.eventLocationMarker){
+        [self resetMarkerColor:self.eventLocationMarker];
+        // select new marker and set its color to green
+        self.eventLocationMarker = marker;
+        mapView.selectedMarker = marker;
+        mapView.selectedMarker.icon = [GMSMarker markerImageWithColor:[UIColor greenColor]];
+    }
+    marker.title = @"Event Location";
+    marker.snippet = nil;
+    mapView.selectedMarker = marker;
+}
+
+-(void) mapView:(GMSMapView *)mapView willMove:(BOOL)gesture{
+    [self hideKeyboard];
+}
+
+-(void) mapView:(GMSMapView *)mapView didTapAtCoordinate:(CLLocationCoordinate2D)coordinate{
+    [self hideKeyboard];
+}
+
+-(GMSMarker*) resetMarkerColor:(GMSMarker*)marker{
+    if ([marker.title  isEqual: @"Event Location"]){
+        marker.map = nil;
+        return nil;
+    }
+    GMSMarker *newMarker = [GMSMarker new];
+    newMarker.position = marker.position;
+    newMarker.title = marker.title;
+    newMarker.snippet = marker.snippet;
+    marker.map = nil; //remove old selected marker from map
+    newMarker.map = self.mapView;
+    newMarker.draggable = YES;
+    return newMarker;
+}
+
+-(void) hideKeyboard{
+    [self.searchBar resignFirstResponder];
+}
+
+-(void) fetchedData:(NSData *)responseData {
     //parse out the json data
     NSError* error;
     if (responseData){
@@ -93,9 +169,12 @@
                 marker.position = CLLocationCoordinate2DMake(latitude , longitude);
                 marker.title = name;
                 marker.snippet = address;
+                marker.draggable = YES;
                 marker.map = self.mapView;
                 if (!didSetSelected){
+                    self.eventLocationMarker = marker;
                     self.mapView.selectedMarker = marker;
+                    marker.icon = [GMSMarker markerImageWithColor:[UIColor greenColor]];
                     didSetSelected = YES;
                     GMSCameraUpdate *update = [GMSCameraUpdate setTarget:CLLocationCoordinate2DMake(latitude, longitude)];
                     [self.mapView animateWithCameraUpdate:update];
