@@ -33,7 +33,7 @@ class FeedViewController: UITableViewController, UITableViewDelegate, UITableVie
         var query = PFQuery(className:"Event")
         query.includeKey("creator")
         query.includeKey("activity")
-        query.orderByDescending("createdAt")
+        query.orderByDescending("time")
         query.cachePolicy = kPFCachePolicyNetworkElseCache
         query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]!, error: NSError!) -> Void in
             if (error == nil){
